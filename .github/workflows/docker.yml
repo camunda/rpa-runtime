@@ -32,4 +32,4 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         push: ${{ !github.event.pull_request.head.repo.fork }}
-        tags: ghcr.io/${{ github.repository_owner }}/prototype-rpa-worker:main
+        tags: ghcr.io/${{ github.repository_owner }}/rpa-runtime:main

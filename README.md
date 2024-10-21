@@ -74,7 +74,7 @@ If you prefer to run the Camunda RPA Runtime using Docker, you can pull the Dock
 To run the RPA Runtime from Docker, execute the following command:
 
 ```sh
-docker run -e ZEEBE_CLIENT_ID=<your-client-id> -e ZEEBE_CLIENT_SECRET=<your-client-secret> -e CAMUNDA_CLUSTER_ID=<your-cluster-id> -v /path/to/your/scripts:/usr/src/app/rpaScripts -p 36227:36227 ghcr.io/camunda/prototype-rpa-worker:main
+docker run -e ZEEBE_CLIENT_ID=<your-client-id> -e ZEEBE_CLIENT_SECRET=<your-client-secret> -e CAMUNDA_CLUSTER_ID=<your-cluster-id> -v /path/to/your/scripts:/usr/src/app/rpaScripts -p 36227:36227 ghcr.io/camunda/rpa-runtime:main
 ```
 
 If you prefer to use Docker Compose, you can create a `docker-compose.yml` file with the following content:
@@ -82,8 +82,8 @@ If you prefer to use Docker Compose, you can create a `docker-compose.yml` file 
 ```yaml
 version: '3'
 services:
-  rpa-worker:
-    image: ghcr.io/camunda/prototype-rpa-worker:main
+  rpa-runtime:
+    image: ghcr.io/camunda/rpa-runtime:main
     environment:
       - ZEEBE_CLIENT_ID=<your-client-id>
       - ZEEBE_CLIENT_SECRET=<your-client-secret>
