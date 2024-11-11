@@ -1,0 +1,38 @@
+{
+  "name": "@camunda/rpa-integration",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "test": "karma start"
+  },
+  "author": "",
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "@eslint/js": "^9.14.0",
+    "css-loader": "^7.1.2",
+    "eslint": "^9.14.0",
+    "eslint-plugin-bpmn-io": "^2.0.2",
+    "eslint-plugin-camunda-licensed": "^1.0.0",
+    "eslint-plugin-react": "^7.37.2",
+    "globals": "^15.12.0",
+    "karma": "^6.4.4",
+    "karma-chrome-launcher": "^3.2.0",
+    "karma-cli": "^2.0.0",
+    "karma-mocha": "^2.0.1",
+    "karma-sinon-chai": "^2.0.2",
+    "karma-webpack": "^5.0.1",
+    "mocha": "^10.8.2",
+    "mocha-test-container-support": "^0.2.0",
+    "monaco-editor": "^0.52.0",
+    "sinon": "^19.0.2",
+    "sinon-chai": "^4.0.0",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "monaco-editor-webpack-plugin": "^7.1.0"
+  }
+}
