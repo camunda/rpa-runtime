@@ -18,8 +18,19 @@ import './editorConfig.js';
  * @param {monaco.editor.IStandaloneEditorConstructionOptions} options
  * @returns {monaco.editor.IStandaloneCodeEditor}
  */
-export function createEditor(container, options) {
-  return monaco.editor.create(container, { language: 'robotframework', ...options });
+export function createEditor(container, { eventBus, ...options }) {
+
+  const editor = monaco.editor.create(container, { language: 'robotframework', automaticLayout: true, ...options });
+
+  // Get changes to the model and notify eventBus
+  editor.onDidChangeModelContent(() => {
+    eventBus.fire('property.change', {
+      key: 'script',
+      value: editor.getValue()
+    });
+  });
+
+  return editor;
 }
 
 export { monaco };
