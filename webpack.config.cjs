@@ -51,7 +51,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(bpmn|cmmn|dmn|form|robot)$/,
+        test: /\.(bpmn|cmmn|dmn|form|robot|rpa)$/,
         type: 'asset/source'
       },
 

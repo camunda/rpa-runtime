@@ -8,6 +8,15 @@
  * except in compliance with the MIT License.
  */
 
+/* eslint-env node */
+
+
+const path = require('path');
+const {
+  DefinePlugin,
+  NormalModuleReplacementPlugin
+} = require('webpack');
+
 // Karma configuration
 // Generated on Wed Nov 06 2024 10:50:06 GMT+0100 (Central European Standard Time)
 
@@ -20,7 +29,7 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://www.npmjs.com/search?q=keywords:karma-adapter
-    frameworks: [ 'mocha', 'webpack' ],
+    frameworks: [ 'webpack', 'mocha', 'sinon-chai' ],
 
 
     // list of files / patterns to load in the browser
@@ -45,14 +54,36 @@ module.exports = function(config) {
       mode: 'none',
 
       plugins: [
+        new DefinePlugin({
+          'process.env': JSON.stringify(process.env)
+        }),
+        new NormalModuleReplacementPlugin(
+          /^preact(\/[^/]+)?$/,
+          function(resource) {
+
+            const replMap = {
+              'preact/hooks': path.resolve('node_modules/@bpmn-io/properties-panel/preact/hooks/dist/hooks.module.js'),
+              'preact/jsx-runtime': path.resolve('node_modules/@bpmn-io/properties-panel/preact/jsx-runtime/dist/jsxRuntime.module.js'),
+              'preact': path.resolve('node_modules/@bpmn-io/properties-panel/preact/dist/preact.module.js')
+            };
+
+            const replacement = replMap[resource.request];
+
+            if (!replacement) {
+              return;
+            }
+
+            resource.request = replacement;
+          }
+        ),
+        new NormalModuleReplacementPlugin(
+          /^preact\/hooks/,
+          path.resolve('node_modules/@bpmn-io/properties-panel/preact/hooks/dist/hooks.module.js')
+        )
       ],
 
       module: {
         rules: [
-          {
-            test: /[/\\][A-Z][^/\\]+\.svg$/,
-            use: 'react-svg-loader'
-          },
           {
             test: /\.s[ac]ss$/,
             use: [
@@ -75,23 +106,11 @@ module.exports = function(config) {
             ]
           },
           {
-            test: /\.(bpmn|cmmn|dmn|form|robot)$/,
+            test: /\.(bpmn|cmmn|dmn|form|robot|rpa|svg)$/,
             type: 'asset/source'
-          },
-
-          // {
-          //   test: /\.js$/,
-          //   exclude: /node_modules/,
-          //   use: {
-          //     loader: 'babel-loader',
-          //     options: {
-          //       presets: [ '@babel/preset-react' ]
-          //     }
-          //   }
-          // }
+          }
         ]
       },
-
       resolve: {
         mainFields: [
           'dev:module',
@@ -136,7 +155,7 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
+    singleRun: true,
 
     // Concurrency level
     // how many browser instances should be started simultaneously
