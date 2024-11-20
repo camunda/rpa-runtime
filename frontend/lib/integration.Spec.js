@@ -8,35 +8,56 @@
  * except in compliance with the MIT License.
  */
 
-import { RPAEditor } from './index.js';
+import React from 'react';
 
 import TestContainer from 'mocha-test-container-support';
+import { createRoot } from 'react-dom/client';
+
+import { RPAEditor } from './index.js';
+
+import TestingTab from './testing-tab/index.js';
 
 import testRPA from './integration.rpa';
 
 const singleStart = process.env.SINGLE_START === 'true';
 
+
 describe('Integration', function() {
 
-  let container, editorContainer, propertiesContainer;
+  let container, editorContainer, outputTab, propertiesContainer;
 
   beforeEach(function() {
     container = TestContainer.get(this);
 
+    container.parentNode.style.height = '90vh';
+    container.style.display = 'flex';
+    container.style.flexDirection = 'column';
+
+    const editor = document.createElement('div');
+    editor.style.height = '70%';
+    editor.style.width = '100%';
+    editor.style.display = 'flex';
+    container.appendChild(editor);
+
     editorContainer = document.createElement('div');
     editorContainer.style.height = '100%';
     editorContainer.style.width = '70%';
-    container.appendChild(editorContainer);
+    editor.appendChild(editorContainer);
 
     propertiesContainer = document.createElement('div');
     propertiesContainer.style.height = '100%';
     propertiesContainer.style.width = '30%';
-    container.appendChild(propertiesContainer);
+    editor.appendChild(propertiesContainer);
+
+    outputTab = document.createElement('div');
+    outputTab.style.height = '30%';
+    outputTab.style.width = '100%';
+    outputTab.style.borderTop = '1px solid #ccc';
+    container.appendChild(outputTab);
+
   });
 
   (singleStart ? it.only : it)('should import RPA file', async function() {
-
-    container.style.display = 'flex';
 
     const handleChanged = function(script) {
       console.log(script);
@@ -50,6 +71,12 @@ describe('Integration', function() {
       },
       rpaFile: testRPA
     });
+
+    console.log(container, editorContainer, outputTab, propertiesContainer);
+
+    const root = createRoot(outputTab);
+    root.render(<TestingTab />);
+
   });
 
 });

@@ -20,6 +20,8 @@ const {
 // Karma configuration
 // Generated on Wed Nov 06 2024 10:50:06 GMT+0100 (Central European Standard Time)
 
+console.log(process.env.SINGLE_START);
+
 module.exports = function(config) {
   config.set({
 
@@ -55,7 +57,9 @@ module.exports = function(config) {
 
       plugins: [
         new DefinePlugin({
-          'process.env': JSON.stringify(process.env)
+          'process.env': {
+            SINGLE_START: JSON.stringify(process.env.SINGLE_START)
+          }
         }),
         new NormalModuleReplacementPlugin(
           /^preact(\/[^/]+)?$/,
@@ -108,7 +112,19 @@ module.exports = function(config) {
           {
             test: /\.(bpmn|cmmn|dmn|form|robot|rpa|svg)$/,
             type: 'asset/source'
-          }
+          },
+          {
+            test: /\.m?js$/,
+            exclude: /node_modules/,
+            use: {
+              loader: 'babel-loader',
+              options: {
+                plugins: [
+                  [ '@babel/plugin-transform-react-jsx' ]
+                ]
+              }
+            }
+          },
         ]
       },
       resolve: {

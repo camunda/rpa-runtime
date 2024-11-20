@@ -12,8 +12,10 @@
   "license": "MIT",
   "description": "",
   "devDependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.25.9",
     "@eslint/js": "^9.14.0",
     "@testing-library/preact": "^3.2.4",
+    "babel-loader": "^9.2.1",
     "chai": "^4.5.0",
     "cross-env": "^7.0.3",
     "css-loader": "^7.1.2",
@@ -32,6 +34,8 @@
     "mocha-test-container-support": "^0.2.0",
     "monaco-editor": "^0.52.0",
     "preact": "^10.24.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "sinon": "^19.0.2",
     "sinon-chai": "^3.7.0",
     "style-loader": "^4.0.0",
@@ -40,6 +44,8 @@
   },
   "dependencies": {
     "@bpmn-io/properties-panel": "^3.25.0",
+    "@carbon/icons-react": "^11.52.0",
+    "@carbon/react": "^1.70.0",
     "htm": "^3.1.1",
     "monaco-editor-webpack-plugin": "^7.1.0"
   }
