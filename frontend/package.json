@@ -36,6 +36,7 @@
     "preact": "^10.24.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "sass-loader": "^16.0.3",
     "sinon": "^19.0.2",
     "sinon-chai": "^3.7.0",
     "style-loader": "^4.0.0",

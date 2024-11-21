@@ -10,32 +10,128 @@
 
 import { ScriptReference } from '@carbon/icons-react';
 import React from 'react';
-import { Grid, Row, Column } from '@carbon/react';
+import { Grid, Row, Column, Tile, Heading, Section, CodeSnippet, Tag, SkeletonText, CodeSnippetSkeleton, TagSkeleton } from '@carbon/react';
 
+import './output.scss';
+
+const InlineSkeleton = () => {
+  return <span className="cds--skeleton__text" style={ {
+    display: 'inline-block',
+    marginBottom: '-2px',
+    width: '20%',
+
+    // ...style
+  } } />;
+};
 
 const EmptyState = () => {
   return (
     <Grid fullWidth>
-      <Row>
-        <Column lg={ { span: 8, offset: 4 } } md={ { span: 6, offset: 2 } } sm={ 4 }>
-          <div style={ { textAlign: 'center', padding: '2rem' } }>
-            <ScriptReference size={ 64 } />
-            <p style={ { marginTop: '1rem' } }>
-              Create and run a script or select a run version to see the output here.<br />
-              See more information about getting started with Camunda RPA
-            </p>
-          </div>
-        </Column>
-      </Row>
+      <Column lg={ { span: 8, offset: 4 } } md={ { span: 6, offset: 2 } } sm={ 4 }>
+        <div className="crpa-btm-empty">
+          <ScriptReference size={ 64 } />
+          <p>
+            Create and run a script or select a run version to see the output here.<br />
+            See more information about getting started with Camunda RPA
+          </p>
+        </div>
+      </Column>
     </Grid>
   );
 };
 
+const ResultsSkeleton = () => {
+  return (
+    <div className="cds--content crpa-btm-loading">
+      <Section level={ 3 }>
+        <Heading>Task Log</Heading>
+        <Grid fullWidth>
+          <Column lg={ 8 } md={ 4 } sm={ 4 }>
+            <Tile>
+              <h4>Execution Details</h4>
+              <p>Status: <TagSkeleton /></p>
+              <p>Last Run: <InlineSkeleton /></p>
+              <p>Duration: <InlineSkeleton /></p>
+            </Tile>
+          </Column>
+          <Column lg={ 8 } md={ 4 } sm={ 4 }>
+            <Tile>
+              <h4>Output Variables</h4>
+              <CodeSnippetSkeleton type="multi" />
+            </Tile>
+          </Column>
+        </Grid>
+      </Section>
 
-const OutputContent = function() {
-  return <>
-    <EmptyState />
-  </>;
+      <Section level={ 3 }>
+        <Heading>Execution Details</Heading>
+        <Grid fullWidth>
+          <Column lg={ 16 } md={ 8 } sm={ 4 }>
+            <SkeletonText paragraph={ true } lineCount={ 5 } />
+          </Column>
+        </Grid>
+      </Section>
+    </div>
+  );
+};
+
+const Results = ({ result }) => {
+  const { status, startTime, duration, variables, logUrl } = result;
+
+  return (
+    <div className="cds--content crpa-btm-results">
+      <Section level={ 3 }>
+        <Heading>Task Log</Heading>
+        <Grid fullWidth>
+          <Column lg={ 8 } md={ 4 } sm={ 4 }>
+            <Tile className="crpa-btm-exec-log">
+              <h4>Execution Details</h4>
+              <div>Status: <Tag size="sm" type={ status === 'PASS' ? 'green' : 'red' }>{status}</Tag></div>
+              <div>Last Run: {startTime}</div>
+              <div>Duration: {duration}</div>
+            </Tile>
+          </Column>
+          <Column lg={ 8 } md={ 4 } sm={ 4 }>
+            <Tile className="crpa-btm-vars">
+              <h4>Output Variables</h4>
+              <CodeSnippet type="multi">
+                {JSON.stringify(variables, null, 2)}
+              </CodeSnippet>
+            </Tile>
+          </Column>
+        </Grid>
+      </Section>
+
+      <Section level={ 3 }>
+        <Heading>Excecution Details</Heading>
+        <Grid fullWidth>
+          <Column lg={ 16 } md={ 8 } sm={ 4 }>
+            <iframe
+              src={ logUrl }
+              style={ { width: '100%', height: '600px', border: 'none' } }
+              title="Test Report"
+            />
+          </Column>
+        </Grid>
+      </Section>
+    </div>
+  );
+};
+
+const OutputContent = function({ result, loading }) {
+  let Component;
+  if (result) {
+    Component = Results;
+  } else if (loading) {
+    Component = ResultsSkeleton;
+  }
+  else {
+    Component = EmptyState;
+  }
+
+  return <div className="crpa-btm">
+    <Component result={ result } />
+  </div>;
 };
 
 OutputContent.displayName = 'OutputContent';

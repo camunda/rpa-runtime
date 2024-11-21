@@ -20,8 +20,6 @@ const {
 // Karma configuration
 // Generated on Wed Nov 06 2024 10:50:06 GMT+0100 (Central European Standard Time)
 
-console.log(process.env.SINGLE_START);
-
 module.exports = function(config) {
   config.set({
 
@@ -93,6 +91,7 @@ module.exports = function(config) {
             use: [
               'style-loader',
               'css-loader',
+              'sass-loader'
             ]
           },
           {
