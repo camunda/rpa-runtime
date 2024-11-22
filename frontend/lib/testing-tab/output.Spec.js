@@ -15,12 +15,12 @@ import { createRoot } from 'react-dom/client';
 
 import TestingTab from './index.js';
 
-// import testRPA from './integration.rpa';
 import mockResult from './mockResult.Spec.json';
 
+// eslint-disable-next-line no-undef
 global.IS_REACT_ACT_ENVIRONMENT = true;
 
-describe.only('Output', function() {
+describe('Output', function() {
 
   let container;
 

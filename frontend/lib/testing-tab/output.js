@@ -10,7 +10,7 @@
 
 import { ScriptReference } from '@carbon/icons-react';
 import React from 'react';
-import { Grid, Row, Column, Tile, Heading, Section, CodeSnippet, Tag, SkeletonText, CodeSnippetSkeleton, TagSkeleton } from '@carbon/react';
+import { Grid, Column, Tile, Heading, Section, CodeSnippet, Tag, SkeletonText, CodeSnippetSkeleton, TagSkeleton } from '@carbon/react';
 
 import './output.scss';
 
@@ -18,9 +18,7 @@ const InlineSkeleton = () => {
   return <span className="cds--skeleton__text" style={ {
     display: 'inline-block',
     marginBottom: '-2px',
-    width: '20%',
-
-    // ...style
+    width: '20%'
   } } />;
 };
 
@@ -134,6 +132,5 @@ const OutputContent = function({ result, loading }) {
   </div>;
 };
 
-OutputContent.displayName = 'OutputContent';
 
 export default OutputContent;
