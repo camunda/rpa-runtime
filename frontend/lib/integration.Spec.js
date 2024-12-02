@@ -17,10 +17,14 @@ import { RPAEditor } from './index.js';
 
 import TestingTab from './testing-tab/index.js';
 
-import testRPA from './integration.rpa';
+import testRPA from './integration.Spec.rpa';
+import TestRPAScriptForm from './testing-tab/runScript.js';
+
+import mockResult from './testing-tab/mockResult.Spec.json';
+
+import './integration.Spec.scss';
 
 const singleStart = process.env.SINGLE_START === 'true';
-
 
 describe('Integration', function() {
 
@@ -63,7 +67,7 @@ describe('Integration', function() {
       console.log(script);
     };
 
-    RPAEditor({
+    const { eventBus } = RPAEditor({
       onChanged: handleChanged,
       container: editorContainer,
       propertiesPanel: {
@@ -72,10 +76,47 @@ describe('Integration', function() {
       rpaFile: testRPA
     });
 
-    console.log(container, editorContainer, outputTab, propertiesContainer);
-
     const root = createRoot(outputTab);
-    root.render(<TestingTab />);
+    root.render(<TestingTab eventBus={ eventBus } />);
+
+    eventBus.on('open-run-dialog', function(event) {
+      console.log('open-run-dialog', event);
+
+      const runContainer = document.createElement('div');
+      runContainer.style.height = '300px';
+      runContainer.style.width = '300px';
+      runContainer.style.position = 'absolute';
+      runContainer.style.top = '10px';
+      runContainer.style.left = '10px';
+      runContainer.style.backgroundColor = 'white';
+      runContainer.style.border = '1px solid #ccc';
+
+      container.appendChild(runContainer);
+
+      const runRoot = createRoot(runContainer);
+      runRoot.render(<TestRPAScriptForm
+        onSubmit={ () => {
+          console.log('onSubmit');
+        } } eventBus={ eventBus }
+        runners={ [ { id: 'local', label: 'Local Runner' } ] }
+      />);
+
+      eventBus.on('run-script', function() {
+        runRoot.unmount();
+
+        const button = document.createElement('button');
+        button.textContent = 'Advance';
+        button.addEventListener('click', function() {
+          eventBus.fire('run-script-result', mockResult);
+          runContainer.remove();
+        });
+
+        runContainer.appendChild(button);
+      });
+    });
+
+
+
 
   });
 

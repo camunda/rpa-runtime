@@ -1,9 +1,11 @@
-@use '@carbon/react';
-
 .crpa-btm {
   height: 100%;
   width: 100%;
   overflow: auto;
+
+  .cds--snippet--multi {
+    max-inline-size: none;
+  } 
 
   .crpa-btm-empty {
     text-align: center;

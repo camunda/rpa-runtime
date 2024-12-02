@@ -9,8 +9,8 @@
  */
 
 import { ScriptReference } from '@carbon/icons-react';
-import React from 'react';
-import { Grid, Column, Tile, Heading, Section, CodeSnippet, Tag, SkeletonText, CodeSnippetSkeleton, TagSkeleton } from '@carbon/react';
+import React, { useEffect, useState } from 'react';
+import { Grid, Column, Tile, Heading, Section, CodeSnippet, Tag, SkeletonText, CodeSnippetSkeleton, TagSkeleton, Button } from '@carbon/react';
 
 import './output.scss';
 
@@ -22,7 +22,12 @@ const InlineSkeleton = () => {
   } } />;
 };
 
-const EmptyState = () => {
+const EmptyState = ({ eventBus }) => {
+
+  const handleClick = () => {
+    eventBus.fire('open-run-dialog');
+  };
+
   return (
     <Grid fullWidth>
       <Column lg={ { span: 8, offset: 4 } } md={ { span: 6, offset: 2 } } sm={ 4 }>
@@ -30,7 +35,7 @@ const EmptyState = () => {
           <ScriptReference size={ 64 } />
           <p>
             Create and run a script or select a run version to see the output here.<br />
-            See more information about getting started with Camunda RPA
+            <Button kind="ghost" onClick={ handleClick }>Run the current RPA script now.</Button>
           </p>
         </div>
       </Column>
@@ -116,11 +121,34 @@ const Results = ({ result }) => {
   );
 };
 
-const OutputContent = function({ result, loading }) {
+const OutputContent = function({ lastRun, loading, eventBus, ...rest }) {
+
+  const [ isLoading, setIsLoading ] = useState(loading);
+  const [ result, setResult ] = useState(lastRun);
+
+
+  useEffect(() => {
+    const handleLoading = () => {
+      setIsLoading(true);
+    };
+    const handleResult = (result) => {
+      setResult(result);
+      setIsLoading(false);
+    };
+
+    eventBus.on('run-script', handleLoading);
+    eventBus.on('run-script-result', handleResult);
+
+    return () => {
+      eventBus.off('run-script', handleLoading);
+      eventBus.off('run-script-result', handleResult);
+    };
+  }, [ eventBus ]);
+
   let Component;
   if (result) {
     Component = Results;
-  } else if (loading) {
+  } else if (isLoading) {
     Component = ResultsSkeleton;
   }
   else {
@@ -128,7 +156,7 @@ const OutputContent = function({ result, loading }) {
   }
 
   return <div className="crpa-btm">
-    <Component result={ result } />
+    <Component result={ result } eventBus={ eventBus } { ...rest } />
   </div>;
 };
 

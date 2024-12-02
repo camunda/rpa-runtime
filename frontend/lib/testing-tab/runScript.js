@@ -8,8 +8,8 @@
  * except in compliance with the MIT License.
  */
 
-import React, { useEffect, useState } from 'react';
-import { TextArea, Dropdown, Button, Form, Stack } from '@carbon/react';
+import React, { useState } from 'react';
+import { TextArea, Dropdown, Button, Form, Stack, Heading, Section } from '@carbon/react';
 import { useUpdateEffect } from '../utils/useUpdateEffect';
 
 const TestRPAScriptForm = ({
@@ -55,32 +55,52 @@ const TestRPAScriptForm = ({
 
   return (
     <Form className="crpa-run" onSubmit={ handleSubmit }>
-      <Stack gap={ 3 }>
-        <Dropdown
-          className="crpa-runner-selection"
-          label="RPA Runner"
-          titleText="RPA Runner"
-          items={ runners }
-          itemToString={ (item) => (item ? item.label : '') }
-          selectedItem={ runners.find((runner) => runner === selectedRunner) }
-          onChange={ ({ selectedItem }) => setSelectedRunner(selectedItem) }
-        />
-        <TextArea
-          className="crpa-variables"
-          labelText="Variables"
-          value={ jsonInput }
-          invalid={ !validateJson() }
-          invalidText="Variables must be valid JSON."
-          onChange={ handleJsonChange }
-          placeholder={ 'Example: {"orderNumber": "A12BH98", "date": "2020-10-15", "amount": 185.34}' }
-          rows={ 3 }
-        />
-        <Button type="submit">
-          Test script
-        </Button>
-      </Stack>
+      <Section level={ 3 }>
+        <Stack gap={ 3 }>
+          <Heading>Test Script</Heading>
+          <Dropdown
+            className="crpa-runner-selection"
+            label="RPA Runner"
+            titleText="RPA Runner"
+            items={ runners }
+            itemToString={ (item) => (item ? item.label : '') }
+            selectedItem={ runners.find((runner) => runner === selectedRunner) }
+            onChange={ ({ selectedItem }) => setSelectedRunner(selectedItem) }
+          />
+          <TextArea
+            className="crpa-variables"
+            labelText="Variables"
+            value={ jsonInput }
+            invalid={ !validateJson() }
+            invalidText="Variables must be valid JSON."
+            onChange={ handleJsonChange }
+            placeholder={ 'Example: {"orderNumber": "A12BH98", "date": "2020-10-15", "amount": 185.34}' }
+            rows={ 3 }
+          />
+          <Button type="submit">
+            Test script
+          </Button>
+        </Stack>
+      </Section>
     </Form>
   );
 };
 
-export default TestRPAScriptForm;
+
+const RunScript = ({ eventBus, onSubmit = () => {}, onChange = () => {}, ...props }) => {
+
+  const handleSubmit = (...args) => {
+    onSubmit(...args);
+    eventBus.fire('run-script', args);
+  };
+
+  const handleChange = (...args) => {
+    onChange(...args);
+    eventBus.fire('runform-changed', args);
+  };
+
+  return <TestRPAScriptForm onSubmit={ handleSubmit } onChange={ handleChange } { ...props } />;
+
+};
+
+export default RunScript;
