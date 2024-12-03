@@ -13,7 +13,7 @@ import React, { act } from 'react';
 import TestContainer from 'mocha-test-container-support';
 import { createRoot } from 'react-dom/client';
 
-import RunScript from './runScript.js';
+import RunScript from './RunScript.js';
 import Sinon from 'sinon';
 import { fireEvent } from '@testing-library/preact';
 

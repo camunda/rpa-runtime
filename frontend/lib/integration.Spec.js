@@ -18,7 +18,7 @@ import { RPAEditor } from './index.js';
 import TestingTab from './testing-tab/index.js';
 
 import testRPA from './integration.Spec.rpa';
-import TestRPAScriptForm from './testing-tab/runScript.js';
+import TestRPAScriptForm from './testing-tab/RunScript.js';
 
 import mockResult from './testing-tab/mockResult.Spec.json';
 
