@@ -59,3 +59,6 @@ export function RPAEditor({
     editor, propertiesPanel: _propertiesPanel, eventBus
   };
 }
+
+
+export * from './testing-tab';
