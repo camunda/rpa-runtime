@@ -44,7 +44,7 @@ const plugins = [
   commonjs(),
   postcss({
     extract: false,
-    modules: true,
+    modules: false,
     use: [ 'sass' ]
   }),
   string({
