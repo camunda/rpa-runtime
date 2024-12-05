@@ -26,6 +26,8 @@ export function RPAEditor({
     rpaFile = JSON.parse(rpaFile);
   }
 
+  console.log(rpaFile);
+
   // Register listeners
   const updateProperty = (key, value) => {
     rpaFile[key] = value;
@@ -55,8 +57,15 @@ export function RPAEditor({
     eventBus
   });
 
+  const getValue = () => {
+    return JSON.stringify(rpaFile, null, 2);
+  };
+
   return {
-    editor, propertiesPanel: _propertiesPanel, eventBus
+    editor,
+    propertiesPanel: _propertiesPanel,
+    eventBus,
+    getValue
   };
 }
 

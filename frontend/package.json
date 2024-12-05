@@ -1,9 +1,12 @@
 {
   "name": "@camunda/rpa-integration",
   "version": "0.0.0",
-  "main": "index.js",
+  "main": "dist/client.esm.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "webpack",
+    "build": "rollup -c",
     "dev": "npm test -- --auto-watch --no-single-run",
     "start": "cross-env SINGLE_START=true karma start --auto-watch --no-single-run",
     "test": "karma start"
