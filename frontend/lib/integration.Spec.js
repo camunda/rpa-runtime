@@ -67,17 +67,22 @@ describe('Integration', function() {
       console.log(script);
     };
 
-    const { eventBus } = RPAEditor({
+    const editor = RPAEditor({
       onChanged: handleChanged,
       container: editorContainer,
+      runnerConfig: {
+        runners: [ { id: 'local', label: 'Local Runner' } ]
+      },
       propertiesPanel: {
         container: propertiesContainer
       },
-      rpaFile: testRPA
+      value: testRPA
     });
 
+    const eventBus = editor.eventBus;
+
     const root = createRoot(outputTab);
-    root.render(<TestingTab eventBus={ eventBus } />);
+    root.render(<TestingTab editor={ editor } />);
 
     eventBus.on('open-run-dialog', function(event) {
       console.log('open-run-dialog', event);
@@ -97,8 +102,8 @@ describe('Integration', function() {
       runRoot.render(<TestRPAScriptForm
         onSubmit={ () => {
           console.log('onSubmit');
-        } } eventBus={ eventBus }
-        runners={ [ { id: 'local', label: 'Local Runner' } ] }
+        } }
+        editor={ editor }
       />);
 
       eventBus.on('run-script', function() {

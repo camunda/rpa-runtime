@@ -14,24 +14,26 @@ import { EventBus } from './utils/EventBus.js';
 
 export function RPAEditor({
   container,
+  runnerConfig = {
+    location: 'localhost',
+    port: 36227
+  },
   propertiesPanel: propertiesPanelConfig,
-  rpaFile,
+  value,
   onChanged = () => {}
 }) {
 
   // Setup
   const eventBus = new EventBus();
 
-  if (typeof rpaFile === 'string') {
-    rpaFile = JSON.parse(rpaFile);
+  if (typeof value === 'string') {
+    value = JSON.parse(value);
   }
-
-  console.log(rpaFile);
 
   // Register listeners
   const updateProperty = (key, value) => {
-    rpaFile[key] = value;
-    eventBus.fire('model.changed', rpaFile);
+    value[key] = value;
+    eventBus.fire('model.changed', value);
   };
 
   eventBus.on('property.change', ({ key, value }) => {
@@ -47,25 +49,27 @@ export function RPAEditor({
   const editor = createEditor(container,
     {
       eventBus,
-      value: rpaFile.script,
+      value: value.script,
     }
   );
 
   const _propertiesPanel = propertiesPanel({
     ...propertiesPanelConfig,
-    element: rpaFile,
+    element: value,
     eventBus
   });
 
   const getValue = () => {
-    return JSON.stringify(rpaFile, null, 2);
+    return JSON.stringify(value, null, 2);
   };
 
   return {
     editor,
+    runnerConfig,
     propertiesPanel: _propertiesPanel,
     eventBus,
-    getValue
+    getValue,
+    _state: {}
   };
 }
 

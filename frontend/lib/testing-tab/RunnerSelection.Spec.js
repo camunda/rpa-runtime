@@ -21,7 +21,7 @@ import '../integration.Spec.scss';
 // eslint-disable-next-line no-undef
 global.IS_REACT_ACT_ENVIRONMENT = true;
 
-describe.only('RunnerSelection', function() {
+describe('RunnerSelection', function() {
 
   let container;
 
@@ -34,7 +34,7 @@ describe.only('RunnerSelection', function() {
   it('should show', async function() {
 
     // given
-    await renderSelection({ });
+    await renderSelection();
 
     // then
     expect(container.querySelector('.crpa-Runner-Selection')).to.exist;
@@ -45,7 +45,7 @@ describe.only('RunnerSelection', function() {
 
     // given
     const eventBus = { fire: Sinon.spy() };
-    await renderSelection({ eventBus });
+    await renderSelection({ editor: { eventBus } });
 
     const locationInput = container.querySelector('.crpa-location-input input');
 
@@ -63,7 +63,7 @@ describe.only('RunnerSelection', function() {
 
     // given
     const eventBus = { fire: Sinon.spy() };
-    await renderSelection({ eventBus });
+    await renderSelection({ editor: { eventBus } });
 
     const portInput = container.querySelector('.crpa-port-input input');
 
@@ -80,7 +80,7 @@ describe.only('RunnerSelection', function() {
   it('should validate port', async function() {
 
     // given
-    await renderSelection({ });
+    await renderSelection();
     const portInput = container.querySelector('.crpa-port-input input');
 
     // assume
@@ -99,7 +99,7 @@ describe.only('RunnerSelection', function() {
   });
 
 
-  async function renderSelection(props) {
+  async function renderSelection(props = { editor: {} }) {
     await act(() => {
       createRoot(container).render(
         <RunnerSelection

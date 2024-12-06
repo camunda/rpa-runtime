@@ -13,12 +13,17 @@ import { TextArea, Dropdown, Button, Form, Stack, Heading, Section } from '@carb
 import { useUpdateEffect } from '../utils/useUpdateEffect';
 
 const TestRPAScriptForm = ({
-  runners = [ { id: 'invalid', label:'No runner configured' } ],
-  defaultVariables = '',
-  defaultRunner = runners[0],
+  editor = { runnerConfig: {} },
   onSubmit = () => { },
   onChange = () => { }
 }) => {
+
+  const {
+    runners = [ { id: 'invalid', label:'No runner configured' } ],
+    defaultVariables = '',
+    defaultRunner = runners[0]
+  } = editor.runnerConfig;
+
   const [ selectedRunner, setSelectedRunner ] = useState(defaultRunner);
   const [ jsonInput, setJsonInput ] = useState(defaultVariables);
 
@@ -87,7 +92,9 @@ const TestRPAScriptForm = ({
 };
 
 
-const RunScript = ({ eventBus, onSubmit = () => {}, onChange = () => {}, ...props }) => {
+const RunScript = ({ editor, onSubmit = () => {}, onChange = () => {}, ...props }) => {
+
+  const eventBus = editor.eventBus;
 
   const handleSubmit = (...args) => {
     onSubmit(...args);
@@ -99,7 +106,7 @@ const RunScript = ({ eventBus, onSubmit = () => {}, onChange = () => {}, ...prop
     eventBus.fire('runform-changed', args);
   };
 
-  return <TestRPAScriptForm onSubmit={ handleSubmit } onChange={ handleChange } { ...props } />;
+  return <TestRPAScriptForm editor={ editor } onSubmit={ handleSubmit } onChange={ handleChange } { ...props } />;
 
 };
 

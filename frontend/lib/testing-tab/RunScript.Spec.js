@@ -31,7 +31,7 @@ describe('Run', function() {
   it('should show', async function() {
 
     // given
-    await renderRun({ });
+    await renderRun({ editor: {} });
 
     // then
     expect(container.querySelector('.crpa-run')).to.exist;
@@ -48,7 +48,7 @@ describe('Run', function() {
 
     const onSubmit = Sinon.spy();
 
-    await renderRun({ runners, onSubmit });
+    await renderRun({ editor: { runnerConfig: { runners: runners } }, onSubmit });
 
     const dropdown = container.querySelector('.crpa-runner-selection');
     const submitButton = container.querySelector('button[type="submit"]');
@@ -110,7 +110,7 @@ describe('Run', function() {
 
     const onSubmit = Sinon.spy();
 
-    await renderRun({ runners, onSubmit });
+    await renderRun({ editor: { runnerConfig: { runners: runners } }, onSubmit });
 
     const variablesInput = container.querySelector('.crpa-variables textarea');
 
@@ -144,7 +144,7 @@ describe('Run', function() {
 
     const onSubmit = Sinon.spy();
 
-    await renderRun({ runners, onSubmit });
+    await renderRun({ editor: { runnerConfig: { runners: runners } }, onSubmit });
 
     const variablesInput = container.querySelector('.crpa-variables textarea');
 
@@ -174,7 +174,7 @@ describe('Run', function() {
     const defaultVariables = '{ "default": "value" }';
 
     // when
-    await renderRun({ runners, defaultVariables, defaultRunner: runners[1] });
+    await renderRun({ editor: { runnerConfig: { runners: runners, defaultVariables, defaultRunner: runners[1] } } });
 
     // then
     const variablesInput = container.querySelector('.crpa-variables textarea');
@@ -196,7 +196,7 @@ describe('Run', function() {
 
     const onChange = Sinon.spy();
 
-    await renderRun({ runners, onChange });
+    await renderRun({ editor: { runnerConfig: { runners } }, onChange });
 
     const variablesInput = container.querySelector('.crpa-variables textarea');
     const dropdown = container.querySelector('.crpa-runner-selection');
@@ -224,7 +224,13 @@ describe('Run', function() {
   });
 
 
-  async function renderRun(props) {
+  async function renderRun(props = {}) {
+    props.editor = {
+      eventBus: { fire: Sinon.spy() },
+      runnerConfig: {},
+      ...props.editor
+    };
+
     await act(() => {
       createRoot(container).render(
         <RunScript

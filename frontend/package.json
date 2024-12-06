@@ -1,6 +1,6 @@
 {
   "name": "@camunda/rpa-integration",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "dist/client.esm.js",
   "files": [
     "dist"
@@ -58,9 +58,8 @@
     "@bpmn-io/properties-panel": "^3.25.0",
     "@carbon/icons-react": "^11.52.0",
     "@carbon/react": "^1.70.0",
-    "monaco-editor": "^0.52.0",
     "htm": "^3.1.1",
-    "monaco-editor-webpack-plugin": "^7.1.0"
+    "monaco-editor": "^0.52.0"
   },
   "peerDependencies": {
     "preact": "*",

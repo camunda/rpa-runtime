@@ -121,7 +121,13 @@ const Results = ({ result }) => {
   );
 };
 
-const OutputContent = function({ lastRun, loading, eventBus, ...rest }) {
+const OutputContent = function({ editor, ...rest }) {
+
+  const state = editor._state;
+
+  const eventBus = editor.eventBus;
+
+  const { lastRun, loading } = state;
 
   const [ isLoading, setIsLoading ] = useState(loading);
   const [ result, setResult ] = useState(lastRun);

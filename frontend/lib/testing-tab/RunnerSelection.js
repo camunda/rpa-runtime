@@ -25,17 +25,21 @@ import {
 
 import './RunnerSelection.scss';
 
-const CamundaRPAConfig = ({ config, eventBus }) => {
-  const [ location, setLocation ] = useState('localhost');
-  const [ port, setPort ] = useState(36227);
+const CamundaRPAConfig = ({ editor }) => {
+
+  const { runnerConfig = {}, eventBus } = editor;
+
+  const [ location, setLocation ] = useState(runnerConfig.location || 'localhost');
+  const [ port, setPort ] = useState(runnerConfig.port || 36227);
 
 
   const handlePortChange = (_, { value }) => {
     setPort(value);
 
     if (validatePort(value)) {
+      runnerConfig.port = value;
       eventBus.fire('config.updated', {
-        ...config,
+        ...runnerConfig,
         port: value
       });
     };
@@ -43,8 +47,10 @@ const CamundaRPAConfig = ({ config, eventBus }) => {
 
   const handleLocationChange = (e) => {
     setLocation(e.target.value);
+
+    runnerConfig.location = e.target.value;
     eventBus.fire('config.updated', {
-      ...config,
+      ...runnerConfig,
       location: e.target.value
     });
   };
