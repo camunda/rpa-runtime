@@ -9,6 +9,7 @@
  */
 
 import { createEditor } from './editor/index.js';
+import registerHandlers from './handlers/index.js';
 import propertiesPanel from './properties-panel';
 import { EventBus } from './utils/EventBus.js';
 
@@ -63,7 +64,7 @@ export function RPAEditor({
     return JSON.stringify(value, null, 2);
   };
 
-  return {
+  const result = {
     editor,
     runnerConfig,
     propertiesPanel: _propertiesPanel,
@@ -71,6 +72,10 @@ export function RPAEditor({
     getValue,
     _state: {}
   };
+
+  registerHandlers(result);
+
+  return result;
 }
 
 

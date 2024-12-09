@@ -19,17 +19,15 @@ const TestRPAScriptForm = ({
 }) => {
 
   const {
-    runners = [ { id: 'invalid', label:'No runner configured' } ],
     defaultVariables = '',
-    defaultRunner = runners[0]
   } = editor.runnerConfig;
 
-  const [ selectedRunner, setSelectedRunner ] = useState(defaultRunner);
+  // const [ selectedRunner, setSelectedRunner ] = useState(defaultRunner);
   const [ jsonInput, setJsonInput ] = useState(defaultVariables);
 
-  useUpdateEffect(() => {
-    onChange({ runner: selectedRunner, variables: jsonInput });
-  }, [ selectedRunner, jsonInput ]);
+  // useUpdateEffect(() => {
+  //   onChange({ runner: selectedRunner, variables: jsonInput });
+  // }, [ selectedRunner, jsonInput ]);
 
   const handleJsonChange = (e) => {
     setJsonInput(e.target.value);
@@ -42,7 +40,7 @@ const TestRPAScriptForm = ({
       return;
     }
 
-    onSubmit({ runner: selectedRunner, variables: jsonInput });
+    onSubmit({ variables: jsonInput });
   };
 
   const validateJson = () => {
@@ -67,10 +65,10 @@ const TestRPAScriptForm = ({
             className="crpa-runner-selection"
             label="RPA Runner"
             titleText="RPA Runner"
-            items={ runners }
-            itemToString={ (item) => (item ? item.label : '') }
-            selectedItem={ runners.find((runner) => runner === selectedRunner) }
-            onChange={ ({ selectedItem }) => setSelectedRunner(selectedItem) }
+            readOnly={ true }
+            items={ [ 'Local Runner' ] }
+            itemToString={ (item) => (item) }
+            selectedItem={ 'Local Runner' }
           />
           <TextArea
             className="crpa-variables"
@@ -98,7 +96,7 @@ const RunScript = ({ editor, onSubmit = () => {}, onChange = () => {}, ...props 
 
   const handleSubmit = (...args) => {
     onSubmit(...args);
-    eventBus.fire('run-script', args);
+    eventBus.fire('script.run', args);
   };
 
   const handleChange = (...args) => {

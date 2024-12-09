@@ -71,7 +71,8 @@ describe('Integration', function() {
       onChanged: handleChanged,
       container: editorContainer,
       runnerConfig: {
-        runners: [ { id: 'local', label: 'Local Runner' } ]
+        location: 'localhost',
+        port: 36227
       },
       propertiesPanel: {
         container: propertiesContainer
@@ -106,13 +107,13 @@ describe('Integration', function() {
         editor={ editor }
       />);
 
-      eventBus.on('run-script', function() {
+      eventBus.on('script.run', function() {
         runRoot.unmount();
 
         const button = document.createElement('button');
         button.textContent = 'Advance';
         button.addEventListener('click', function() {
-          eventBus.fire('run-script-result', mockResult);
+          eventBus.fire('script.run.result', mockResult);
           runContainer.remove();
         });
 

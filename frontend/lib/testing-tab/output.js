@@ -142,12 +142,12 @@ const OutputContent = function({ editor, ...rest }) {
       setIsLoading(false);
     };
 
-    eventBus.on('run-script', handleLoading);
-    eventBus.on('run-script-result', handleResult);
+    eventBus.on('script.run', handleLoading);
+    eventBus.on('script.run.result', handleResult);
 
     return () => {
-      eventBus.off('run-script', handleLoading);
-      eventBus.off('run-script-result', handleResult);
+      eventBus.off('script.run', handleLoading);
+      eventBus.off('script.run.result', handleResult);
     };
   }, [ eventBus ]);
 
