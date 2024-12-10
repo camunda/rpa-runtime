@@ -11,11 +11,12 @@
 import OutputContent from './output';
 import RunnerSelection from './RunnerSelection';
 import RunDialog from './RunScript';
-
+import RunnerStatus from './RunnerStatus';
 
 export default OutputContent;
 export {
   OutputContent,
   RunnerSelection,
-  RunDialog
+  RunDialog,
+  RunnerStatus
 };

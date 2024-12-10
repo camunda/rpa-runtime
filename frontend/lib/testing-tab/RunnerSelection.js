@@ -29,30 +29,23 @@ const CamundaRPAConfig = ({ editor }) => {
 
   const { runnerConfig = {}, eventBus } = editor;
 
-  const [ location, setLocation ] = useState(runnerConfig.location || 'localhost');
+  const [ host, setHost ] = useState(runnerConfig.location || 'localhost');
   const [ port, setPort ] = useState(runnerConfig.port || 36227);
-
 
   const handlePortChange = (_, { value }) => {
     setPort(value);
 
     if (validatePort(value)) {
       runnerConfig.port = value;
-      eventBus.fire('config.updated', {
-        ...runnerConfig,
-        port: value
-      });
+      eventBus.fire('config.updated', runnerConfig);
     };
   };
 
   const handleLocationChange = (e) => {
-    setLocation(e.target.value);
+    setHost(e.target.value);
 
-    runnerConfig.location = e.target.value;
-    eventBus.fire('config.updated', {
-      ...runnerConfig,
-      location: e.target.value
-    });
+    runnerConfig.host = e.target.value;
+    eventBus.fire('config.updated', runnerConfig);
   };
 
   return (
@@ -89,11 +82,10 @@ const CamundaRPAConfig = ({ editor }) => {
                 <p>Define additional configurations for your local RPA runner.</p>
                 <TextInput
                   className="crpa-location-input"
-                  labelText="Location"
-                  value={ location }
+                  labelText="Hostname"
+                  value={ host }
                   onChange={ handleLocationChange }
-                  tooltipAlignment="end"
-                  helperText="Specify the location of the RPA Runner."
+                  helperText="Hostname or IP of the machine your RPA runtime is running on."
                 />
 
                 <NumberInput
@@ -105,8 +97,7 @@ const CamundaRPAConfig = ({ editor }) => {
                   invalidText="Port must be number between 1 and 65535."
                   value={ port }
                   onChange={ handlePortChange }
-                  tooltipAlignment="end"
-                  helperText="Specify the port for the RPA Runner."
+                  helperText="Port your RPA runtime is listening on."
                 />
               </Stack>
             </AccordionItem>
