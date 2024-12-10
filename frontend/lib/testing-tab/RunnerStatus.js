@@ -49,15 +49,12 @@ const RunnerStatus = ({ editor }) => {
     return () => eventBus.off('config.updated', updateFn);
   }, [ eventBus, host, port ]);
 
-  const handleClick = () => {
-    eventBus.fire('runnerConfig.open');
-  };
 
   return (
-    <button onClick={ handleClick } className="crpa-Runner-Status">
+    <div className="crpa-Runner-Status">
       {status === 'RUNNING' && (<><CheckmarkFilled className="status-icon" fill="green" /> RPA Runner connected</>)}
       {status === 'ERROR' && (<><ErrorFilled className="status-icon" fill="red" /> RPA Runner not connected</>)}
-    </button>
+    </div>
   );
 };
 

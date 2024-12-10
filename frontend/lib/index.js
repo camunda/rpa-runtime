@@ -16,7 +16,7 @@ import { EventBus } from './utils/EventBus.js';
 export function RPAEditor({
   container,
   runnerConfig = {
-    location: 'localhost',
+    host: 'localhost',
     port: 36227
   },
   propertiesPanel: propertiesPanelConfig,
