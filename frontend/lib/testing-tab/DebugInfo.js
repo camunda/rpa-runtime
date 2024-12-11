@@ -12,7 +12,7 @@ import { ScriptReference } from '@carbon/icons-react';
 import React, { useEffect, useState } from 'react';
 import { Grid, Column, Tile, Heading, Section, CodeSnippet, Tag, SkeletonText, CodeSnippetSkeleton, TagSkeleton, Button } from '@carbon/react';
 
-import './output.scss';
+import './DebugInfo.scss';
 
 const InlineSkeleton = () => {
   return <span className="cds--skeleton__text" style={ {
@@ -121,7 +121,7 @@ const Results = ({ result }) => {
   );
 };
 
-const OutputContent = function({ editor, ...rest }) {
+const DebugInfo = function({ editor, ...rest }) {
 
   const state = editor._state;
 
@@ -167,4 +167,4 @@ const OutputContent = function({ editor, ...rest }) {
 };
 
 
-export default OutputContent;
+export default DebugInfo;

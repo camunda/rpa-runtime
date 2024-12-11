@@ -1,6 +1,6 @@
 {
   "name": "@camunda/rpa-integration",
-  "version": "0.2.2",
+  "version": "0.2.4",
   "main": "dist/client.esm.js",
   "files": [
     "dist"

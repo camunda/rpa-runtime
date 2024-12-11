@@ -10,7 +10,6 @@
 
 import React, { useState } from 'react';
 import { TextArea, Dropdown, Button, Form, Stack, Heading, Section } from '@carbon/react';
-import { useUpdateEffect } from '../utils/useUpdateEffect';
 
 const TestRPAScriptForm = ({
   editor = { runnerConfig: {} },
@@ -22,12 +21,8 @@ const TestRPAScriptForm = ({
     defaultVariables = '',
   } = editor.runnerConfig;
 
-  // const [ selectedRunner, setSelectedRunner ] = useState(defaultRunner);
   const [ jsonInput, setJsonInput ] = useState(defaultVariables);
 
-  // useUpdateEffect(() => {
-  //   onChange({ runner: selectedRunner, variables: jsonInput });
-  // }, [ selectedRunner, jsonInput ]);
 
   const handleJsonChange = (e) => {
     setJsonInput(e.target.value);
@@ -90,7 +85,7 @@ const TestRPAScriptForm = ({
 };
 
 
-const RunScript = ({ editor, onSubmit = () => {}, onChange = () => {}, ...props }) => {
+const RunDialog = ({ editor, onSubmit = () => {}, onChange = () => {}, ...props }) => {
 
   const eventBus = editor.eventBus;
 
@@ -105,7 +100,6 @@ const RunScript = ({ editor, onSubmit = () => {}, onChange = () => {}, ...props 
   };
 
   return <TestRPAScriptForm editor={ editor } onSubmit={ handleSubmit } onChange={ handleChange } { ...props } />;
-
 };
 
-export default RunScript;
+export default RunDialog;

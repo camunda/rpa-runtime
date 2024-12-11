@@ -13,7 +13,7 @@ import React, { act } from 'react';
 import TestContainer from 'mocha-test-container-support';
 import { createRoot } from 'react-dom/client';
 
-import RunScript from './RunScript.js';
+import RunScript from './RunDialog.js';
 import Sinon from 'sinon';
 import { fireEvent } from '@testing-library/preact';
 
@@ -35,46 +35,6 @@ describe('Run', function() {
 
     // then
     expect(container.querySelector('.crpa-run')).to.exist;
-  });
-
-
-  it('should allow runner selection', async function() {
-
-    // given
-    const runners = [
-      { id: 'runner-1', label: 'Runner 1' },
-      { id: 'runner-2', label: 'Runner 2' }
-    ];
-
-    const onSubmit = Sinon.spy();
-
-    await renderRun({ editor: { runnerConfig: { runners: runners } }, onSubmit });
-
-    const dropdown = container.querySelector('.crpa-runner-selection');
-    const submitButton = container.querySelector('button[type="submit"]');
-
-    await act(() => {
-      dropdown.querySelector('button').click();
-    });
-
-    const options = dropdown.querySelectorAll('ul > li');
-
-    // assume
-    expect(dropdown).to.exist;
-    expect([ ...options ]).to.have.length(2);
-
-    // when
-    await act(() => {
-      options[1].click();
-    });
-
-    await act(() => {
-      submitButton.click();
-    });
-
-    // then
-    expect(onSubmit).to.have.been.called;
-    expect(onSubmit).to.have.been.calledWith({ runner: runners[1], variables: '' });
   });
 
 
@@ -137,14 +97,9 @@ describe('Run', function() {
   it('should submit valid', async function() {
 
     // given
-    const runners = [
-      { id: 'runner-1', label: 'Runner 1' },
-      { id: 'runner-2', label: 'Runner 2' }
-    ];
-
     const onSubmit = Sinon.spy();
 
-    await renderRun({ editor: { runnerConfig: { runners: runners } }, onSubmit });
+    await renderRun({ editor: { runnerConfig: { } }, onSubmit });
 
     const variablesInput = container.querySelector('.crpa-variables textarea');
 
@@ -160,67 +115,102 @@ describe('Run', function() {
 
     // then
     expect(onSubmit).to.have.been.calledOnce;
-    expect(onSubmit).to.have.been.calledWith({ runner: runners[0], variables: '{ "foo": "bar" }' });
+    expect(onSubmit).to.have.been.calledWith({ variables: '{ "foo": "bar" }' });
   });
 
 
   it('should show defaults', async function() {
 
     // given
-    const runners = [
-      { id: 'runner-1', label: 'Runner 1' },
-      { id: 'runner-2', label: 'Runner 2' }
-    ];
     const defaultVariables = '{ "default": "value" }';
 
     // when
-    await renderRun({ editor: { runnerConfig: { runners: runners, defaultVariables, defaultRunner: runners[1] } } });
+    await renderRun({ editor: { runnerConfig: { defaultVariables } } });
 
     // then
     const variablesInput = container.querySelector('.crpa-variables textarea');
     expect(variablesInput.value).to.equal(defaultVariables);
-
-    const dropdown = container.querySelector('.crpa-runner-selection');
-    const selectedRunner = dropdown.querySelector('.cds--list-box__label');
-    expect(selectedRunner.textContent).to.equal('Runner 2');
   });
 
 
-  it('should notify on change', async function() {
+  describe.skip('runner selection', function() {
 
-    // given
-    const runners = [
-      { id: 'runner-1', label: 'Runner 1' },
-      { id: 'runner-2', label: 'Runner 2' }
-    ];
+    it('should notify on change', async function() {
 
-    const onChange = Sinon.spy();
+      // given
+      const runners = [
+        { id: 'runner-1', label: 'Runner 1' },
+        { id: 'runner-2', label: 'Runner 2' }
+      ];
 
-    await renderRun({ editor: { runnerConfig: { runners } }, onChange });
+      const onChange = Sinon.spy();
 
-    const variablesInput = container.querySelector('.crpa-variables textarea');
-    const dropdown = container.querySelector('.crpa-runner-selection');
+      await renderRun({ editor: { runnerConfig: { runners } }, onChange });
 
-    await act(() => {
-      dropdown.querySelector('button').click();
+      const variablesInput = container.querySelector('.crpa-variables textarea');
+      const dropdown = container.querySelector('.crpa-runner-selection');
+
+      await act(() => {
+        dropdown.querySelector('button').click();
+      });
+
+      const options = dropdown.querySelectorAll('ul > li');
+
+      // when
+      await act(() => {
+        options[1].click();
+      });
+
+      await act(() => {
+        fireEvent.input(variablesInput, { target: { value: '{ "foo": "bar" }' } });
+
+        dropdown.querySelector('button').click();
+      });
+
+      // then
+      expect(onChange).to.have.been.calledTwice;
+      expect(onChange).to.have.been.calledWith({ runner: runners[1], variables: '{ "foo": "bar" }' });
     });
 
-    const options = dropdown.querySelectorAll('ul > li');
 
-    // when
-    await act(() => {
-      options[1].click();
+    it('should allow runner selection', async function() {
+
+      // given
+      const runners = [
+        { id: 'runner-1', label: 'Runner 1' },
+        { id: 'runner-2', label: 'Runner 2' }
+      ];
+
+      const onSubmit = Sinon.spy();
+
+      await renderRun({ editor: { runnerConfig: { runners: runners } }, onSubmit });
+
+      const dropdown = container.querySelector('.crpa-runner-selection');
+      const submitButton = container.querySelector('button[type="submit"]');
+
+      await act(() => {
+        dropdown.querySelector('button').click();
+      });
+
+      const options = dropdown.querySelectorAll('ul > li');
+
+      // assume
+      expect(dropdown).to.exist;
+      expect([ ...options ]).to.have.length(2);
+
+      // when
+      await act(() => {
+        options[1].click();
+      });
+
+      await act(() => {
+        submitButton.click();
+      });
+
+      // then
+      expect(onSubmit).to.have.been.called;
+      expect(onSubmit).to.have.been.calledWith({ runner: runners[1], variables: '' });
     });
-
-    await act(() => {
-      fireEvent.input(variablesInput, { target: { value: '{ "foo": "bar" }' } });
-
-      dropdown.querySelector('button').click();
-    });
-
-    // then
-    expect(onChange).to.have.been.calledTwice;
-    expect(onChange).to.have.been.calledWith({ runner: runners[1], variables: '{ "foo": "bar" }' });
   });
 
 

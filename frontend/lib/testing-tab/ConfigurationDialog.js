@@ -23,13 +23,13 @@ import {
   Heading,
 } from '@carbon/react';
 
-import './RunnerSelection.scss';
+import './ConfigurationDialog.scss';
 
-const CamundaRPAConfig = ({ editor }) => {
+const ConfigurationDialog = ({ editor }) => {
 
   const { runnerConfig = {}, eventBus } = editor;
 
-  const [ host, setHost ] = useState(runnerConfig.location || 'localhost');
+  const [ host, setHost ] = useState(runnerConfig.host || 'localhost');
   const [ port, setPort ] = useState(runnerConfig.port || 36227);
 
   const handlePortChange = (_, { value }) => {
@@ -41,7 +41,7 @@ const CamundaRPAConfig = ({ editor }) => {
     };
   };
 
-  const handleLocationChange = (e) => {
+  const handleHostChange = (e) => {
     setHost(e.target.value);
 
     runnerConfig.host = e.target.value;
@@ -81,10 +81,10 @@ const CamundaRPAConfig = ({ editor }) => {
               <Stack gap={ 3 }>
                 <p>Define additional configurations for your local RPA runner.</p>
                 <TextInput
-                  className="crpa-location-input"
+                  className="crpa-host-input"
                   labelText="Hostname"
                   value={ host }
-                  onChange={ handleLocationChange }
+                  onChange={ handleHostChange }
                   helperText="Hostname or IP of the machine your RPA runtime is running on."
                 />
 
@@ -122,7 +122,7 @@ const CamundaRPAConfig = ({ editor }) => {
 };
 
 
-export default CamundaRPAConfig;
+export default ConfigurationDialog;
 
 // Helpers
 

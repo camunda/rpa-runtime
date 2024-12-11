@@ -8,15 +8,15 @@
  * except in compliance with the MIT License.
  */
 
-import OutputContent from './output';
-import RunnerSelection from './RunnerSelection';
-import RunDialog from './RunScript';
+import DebugInfo from './DebugInfo';
+import ConfigurationDialog from './ConfigurationDialog';
+import RunDialog from './RunDialog';
 import RunnerStatus from './RunnerStatus';
 
-export default OutputContent;
+export default DebugInfo;
 export {
-  OutputContent,
-  RunnerSelection,
+  DebugInfo,
+  ConfigurationDialog,
   RunDialog,
   RunnerStatus
 };

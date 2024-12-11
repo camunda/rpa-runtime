@@ -14,14 +14,14 @@ import { createRoot } from 'react-dom/client';
 import Sinon from 'sinon';
 import { fireEvent } from '@testing-library/preact';
 
-import RunnerSelection from './RunnerSelection.js';
+import RunnerSelection from './ConfigurationDialog.js';
 
 import '../integration.Spec.scss';
 
 // eslint-disable-next-line no-undef
 global.IS_REACT_ACT_ENVIRONMENT = true;
 
-describe('RunnerSelection', function() {
+describe('ConfigurationDialog', function() {
 
   let container;
 
@@ -34,28 +34,28 @@ describe('RunnerSelection', function() {
   it('should show', async function() {
 
     // given
-    await renderSelection();
+    await renderDialog();
 
     // then
     expect(container.querySelector('.crpa-Runner-Selection')).to.exist;
   });
 
 
-  it('should update location', async function() {
+  it('should update hostname', async function() {
 
     // given
     const eventBus = { fire: Sinon.spy() };
-    await renderSelection({ editor: { eventBus } });
+    await renderDialog({ editor: { eventBus } });
 
-    const locationInput = container.querySelector('.crpa-location-input input');
+    const hostInput = container.querySelector('.crpa-host-input input');
 
     // when
     await act(() => {
-      fireEvent.input(locationInput, { target: { value: 'new-location' } });
+      fireEvent.input(hostInput, { target: { value: 'new-location' } });
     });
 
     // then
-    expect(eventBus.fire).to.have.been.calledWith('config.updated', Sinon.match({ location: 'new-location' }));
+    expect(eventBus.fire).to.have.been.calledWith('config.updated', Sinon.match({ host: 'new-location' }));
   });
 
 
@@ -63,7 +63,7 @@ describe('RunnerSelection', function() {
 
     // given
     const eventBus = { fire: Sinon.spy() };
-    await renderSelection({ editor: { eventBus } });
+    await renderDialog({ editor: { eventBus } });
 
     const portInput = container.querySelector('.crpa-port-input input');
 
@@ -80,7 +80,7 @@ describe('RunnerSelection', function() {
   it('should validate port', async function() {
 
     // given
-    await renderSelection();
+    await renderDialog();
     const portInput = container.querySelector('.crpa-port-input input');
 
     // assume
@@ -99,7 +99,7 @@ describe('RunnerSelection', function() {
   });
 
 
-  async function renderSelection(props = { editor: {} }) {
+  async function renderDialog(props = { editor: {} }) {
     await act(() => {
       createRoot(container).render(
         <RunnerSelection

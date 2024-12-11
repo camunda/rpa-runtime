@@ -20,6 +20,8 @@ import mockResult from './mockResult.Spec.json';
 // eslint-disable-next-line no-undef
 global.IS_REACT_ACT_ENVIRONMENT = true;
 
+const NOOP = () => {};
+
 describe('Output', function() {
 
   let container;
@@ -31,7 +33,7 @@ describe('Output', function() {
   it('should show empty state', async function() {
 
     // given
-    await renderTab({
+    await renderInfo({
       result: null
     });
 
@@ -42,7 +44,7 @@ describe('Output', function() {
   it('should show loading state', async function() {
 
     // given
-    await renderTab({
+    await renderInfo({
       result: null,
       loading: true
     });
@@ -55,8 +57,8 @@ describe('Output', function() {
   it('should show results', async function() {
 
     // given
-    await renderTab({
-      result: mockResult
+    await renderInfo({
+      lastRun: mockResult
     });
 
     // then
@@ -67,11 +69,11 @@ describe('Output', function() {
   });
 
 
-  async function renderTab(props) {
+  async function renderInfo(state) {
     await act(() => {
       createRoot(container).render(
         <TestingTab
-          { ...props }
+          editor={ { _state: state, eventBus: { on: NOOP, off: NOOP } } }
         />
       );
     });
