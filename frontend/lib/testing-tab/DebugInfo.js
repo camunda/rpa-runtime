@@ -155,10 +155,10 @@ const DebugInfo = function({ editor, ...rest }) {
   }, [ eventBus ]);
 
   let Component;
-  if (result) {
-    Component = Results;
-  } else if (isLoading) {
+  if (isLoading) {
     Component = ResultsSkeleton;
+  } else if (result) {
+    Component = Results;
   }
   else {
     Component = EmptyState;
