@@ -55,7 +55,9 @@ module.exports = function(config) {
 
       plugins: [
         new DefinePlugin({
-          'process.env': JSON.stringify(process.env)
+          'process.env': {
+            SINGLE_START: JSON.stringify(process.env.SINGLE_START)
+          }
         }),
         new NormalModuleReplacementPlugin(
           /^preact(\/[^/]+)?$/,
@@ -89,6 +91,7 @@ module.exports = function(config) {
             use: [
               'style-loader',
               'css-loader',
+              'sass-loader'
             ]
           },
           {
@@ -108,7 +111,19 @@ module.exports = function(config) {
           {
             test: /\.(bpmn|cmmn|dmn|form|robot|rpa|svg)$/,
             type: 'asset/source'
-          }
+          },
+          {
+            test: /\.m?js$/,
+            exclude: /node_modules/,
+            use: {
+              loader: 'babel-loader',
+              options: {
+                plugins: [
+                  [ '@babel/plugin-transform-react-jsx' ]
+                ]
+              }
+            }
+          },
         ]
       },
       resolve: {

@@ -1,4 +1,5 @@
 from quart import Quart, request, json, jsonify
+from quart_cors import cors
 import os
 import io
 import asyncio
@@ -16,6 +17,7 @@ from scripts.Secrets import SecretsManager
 class ServerManager:
     def __init__(self, zeebe_worker_manager: ZeebeWorkerManager):
         self.app = Quart(__name__)
+        self.app = cors(self.app, allow_origin="*")
         self.zeebe_worker_manager = zeebe_worker_manager
         self.shutdown_event = asyncio.Event()
         self.setup_routes()
