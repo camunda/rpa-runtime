@@ -1,0 +1,20 @@
+.crpa-btm {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+
+  .cds--snippet--multi {
+    max-inline-size: none;
+  } 
+
+  .crpa-btm-empty {
+    text-align: center;
+    padding: 2rem;
+
+    p {
+      margin-top: 1rem;
+    }
+  }
+}
+
+

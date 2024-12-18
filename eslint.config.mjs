@@ -21,8 +21,10 @@ export default [
   { files: [ 'lib/**/*.{js,mjs,cjs,jsx}' ] },
   { languageOptions: { globals: globals.browser } },
   pluginJs.configs.recommended,
-  pluginReact.configs.flat.recommended,
+
+  // pluginReact.configs.flat.recommended,
   ...bpmnIoPlugin.configs.recommended,
+  ...bpmnIoPlugin.configs.jsx,
   ...camundaLicensedPlugin.configs.mit,
   ...bpmnIoPlugin.configs.mocha.map(config => {
     return {
