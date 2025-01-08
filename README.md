@@ -88,6 +88,7 @@ services:
       - ZEEBE_CLIENT_ID=<your-client-id>
       - ZEEBE_CLIENT_SECRET=<your-client-secret>
       - CAMUNDA_CLUSTER_ID=<your-cluster-id>
+      - CAMUNDA_CLUSTER_REGION=<your-cluster-region>
     volumes:
       - /path/to/your/scripts:/usr/src/app/rpaScripts
     ports:
