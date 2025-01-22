@@ -13,19 +13,19 @@ import { CheckmarkFilled, ErrorFilled } from '@carbon/icons-react';
 
 import usePeriodicUpdate from '../utils/usePeriodicUpdate';
 
-import './RuntimeStatus.scss';
+import './WorkerStatus.scss';
 
-const RuntimeStatus = ({ editor }) => {
+const WorkerStatus = ({ editor }) => {
   const {
-    runtimeConfig = {
+    workerConfig = {
       host: 'localhost',
       port: 36227
     },
     eventBus
   } = editor;
 
-  const [ host, setHost ] = useState(runtimeConfig.host);
-  const [ port, setPort ] = useState(runtimeConfig.port);
+  const [ host, setHost ] = useState(workerConfig.host);
+  const [ port, setPort ] = useState(workerConfig.port);
 
   const status = usePeriodicUpdate(async () => {
     try {
@@ -47,24 +47,24 @@ const RuntimeStatus = ({ editor }) => {
       }
     };
 
-    eventBus.on('config.updated', updateFn);
-    return () => eventBus.off('config.updated', updateFn);
+    eventBus.on('config.changed', updateFn);
+    return () => eventBus.off('config.changed', updateFn);
   }, [ eventBus, host, port ]);
 
 
   useEffect(() => {
     editor.setState({
-      runtimeStatus: status
+      workerStatus: status
     });
   }, [ status ]);
 
 
   return (
-    <div className="crpa-runtime-status">
-      {status === 'RUNNING' && (<><CheckmarkFilled className="status-icon" fill="green" /> RPA Runtime connected</>)}
-      {status === 'ERROR' && (<><ErrorFilled className="status-icon" fill="red" /> RPA Runtime not connected</>)}
+    <div className="crpa-worker-status">
+      {status === 'RUNNING' && (<><CheckmarkFilled className="status-icon" fill="green" /> RPA worker connected</>)}
+      {status === 'ERROR' && (<><ErrorFilled className="status-icon" fill="red" /> RPA worker not connected</>)}
     </div>
   );
 };
 
-export default RuntimeStatus;
+export default WorkerStatus;

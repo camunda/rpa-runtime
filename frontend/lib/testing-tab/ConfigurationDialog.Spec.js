@@ -55,7 +55,7 @@ describe('ConfigurationDialog', function() {
     });
 
     // then
-    expect(eventBus.fire).to.have.been.calledWith('config.updated', Sinon.match({ host: 'new-location' }));
+    expect(eventBus.fire).to.have.been.calledWith('config.changed', Sinon.match({ host: 'new-location' }));
   });
 
 
@@ -73,7 +73,7 @@ describe('ConfigurationDialog', function() {
     });
 
     // then
-    expect(eventBus.fire).to.have.been.calledWith('config.updated', Sinon.match({ port: 1234 }));
+    expect(eventBus.fire).to.have.been.calledWith('config.changed', Sinon.match({ port: 1234 }));
   });
 
 

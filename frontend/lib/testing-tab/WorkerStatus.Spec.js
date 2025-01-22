@@ -14,7 +14,7 @@ import { createRoot } from 'react-dom/client';
 import Sinon from 'sinon';
 import { expect } from 'chai';
 
-import RuntimeStatus from './RuntimeStatus.js';
+import WorkerStatus from './WorkerStatus.js';
 
 const NOOP = () => {};
 
@@ -26,7 +26,7 @@ const EVENTBUS_MOCK = {
 // eslint-disable-next-line no-undef
 global.IS_REACT_ACT_ENVIRONMENT = true;
 
-describe('runtimeStatus', function() {
+describe('workerStatus', function() {
 
   let container;
   let fetchStub;
@@ -46,16 +46,16 @@ describe('runtimeStatus', function() {
 
     // given
     const eventBus = EVENTBUS_MOCK;
-    const runtimeConfig = { host: 'localhost', port: 36227 };
+    const workerConfig = { host: 'localhost', port: 36227 };
 
     fetchStub.resolves(new Response(null, { status: 200 }));
 
-    await renderStatus({ editor: { eventBus, _state: { runtimeConfig }, setState: NOOP } });
+    await renderStatus({ editor: { eventBus, _state: { workerConfig }, setState: NOOP } });
 
 
     // then
-    expect(container.querySelector('.crpa-runtime-status')).to.exist;
-    expect(container.querySelector('.crpa-runtime-status').textContent).to.include('RPA Runtime connected');
+    expect(container.querySelector('.crpa-worker-status')).to.exist;
+    expect(container.querySelector('.crpa-worker-status').textContent).to.include('RPA worker connected');
   });
 
 
@@ -63,22 +63,22 @@ describe('runtimeStatus', function() {
 
     // given
     const eventBus = EVENTBUS_MOCK;
-    const runtimeConfig = { host: 'localhost', port: 36227 };
+    const workerConfig = { host: 'localhost', port: 36227 };
 
     fetchStub.rejects(new Error('Network Error'));
 
-    await renderStatus({ editor: { eventBus, _state: { runtimeConfig }, setState: NOOP } });
+    await renderStatus({ editor: { eventBus, _state: { workerConfig }, setState: NOOP } });
 
     // then
-    expect(container.querySelector('.crpa-runtime-status')).to.exist;
-    expect(container.querySelector('.crpa-runtime-status').textContent).to.include('RPA Runtime not connected');
+    expect(container.querySelector('.crpa-worker-status')).to.exist;
+    expect(container.querySelector('.crpa-worker-status').textContent).to.include('RPA worker not connected');
   });
 
 
   async function renderStatus(props) {
     await act(() => {
       createRoot(container).render(
-        <RuntimeStatus
+        <WorkerStatus
           { ...props }
         />
       );

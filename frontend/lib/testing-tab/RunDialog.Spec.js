@@ -70,7 +70,7 @@ describe('Run', function() {
 
     const onSubmit = Sinon.spy();
 
-    await renderRun({ editor: { runtimeConfig: { runners: runners } }, onSubmit });
+    await renderRun({ editor: { workerConfig: { runners: runners } }, onSubmit });
 
     const variablesInput = container.querySelector('.crpa-variables textarea');
 
@@ -99,7 +99,7 @@ describe('Run', function() {
     // given
     const onSubmit = Sinon.spy();
 
-    await renderRun({ editor: { runtimeConfig: { } }, onSubmit });
+    await renderRun({ editor: { workerConfig: { } }, onSubmit });
 
     const variablesInput = container.querySelector('.crpa-variables textarea');
 
@@ -149,7 +149,7 @@ describe('Run', function() {
 
       const onChange = Sinon.spy();
 
-      await renderRun({ editor: { runtimeConfig: { runners } }, onChange });
+      await renderRun({ editor: { workerConfig: { runners } }, onChange });
 
       const variablesInput = container.querySelector('.crpa-variables textarea');
       const dropdown = container.querySelector('.crpa-runner-selection');
@@ -187,7 +187,7 @@ describe('Run', function() {
 
       const onSubmit = Sinon.spy();
 
-      await renderRun({ editor: { runtimeConfig: { runners: runners } }, onSubmit });
+      await renderRun({ editor: { workerConfig: { runners: runners } }, onSubmit });
 
       const dropdown = container.querySelector('.crpa-runner-selection');
       const submitButton = container.querySelector('button[type="submit"]');
@@ -220,10 +220,10 @@ describe('Run', function() {
 
   async function renderRun(props = {}) {
     props.editor = {
-      _state: { runtimeStatus: 'RUNNING' },
+      _state: { workerStatus: 'RUNNING' },
       setState: Sinon.spy(),
       eventBus: { fire: Sinon.spy() },
-      runtimeConfig: {},
+      workerConfig: {},
       ...props.editor
     };
 

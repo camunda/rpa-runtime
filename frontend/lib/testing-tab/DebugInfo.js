@@ -40,7 +40,7 @@ const DISCONNECTED_LABELS = {
 
 const EmptyState = ({ editor, eventBus }) => {
 
-  const workerStatus = useEditorState(editor, 'runtimeStatus');
+  const workerStatus = useEditorState(editor, 'workerStatus');
 
   const labels = workerStatus === 'RUNNING' ? CONNECTED_LABELS : DISCONNECTED_LABELS;
 
