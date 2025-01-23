@@ -61,7 +61,6 @@ export { exececutionHandler };
 
 
 async function runFile({ endpoint, script, variables }) {
-  console.log('Running script:', script);
   const body = {
     id: 'foobar',
     script
