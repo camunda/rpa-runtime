@@ -1,13 +1,13 @@
 {
-  "specversion": 1,
-  "name": "RPA.Word.Application",
-  "doc": "<div class=\"document\">\n<p><cite>Word.Application</cite> is a library for controlling the Word application.</p>\n<p><strong>Examples</strong></p>\n<p><strong>Robot Framework</strong></p>\n<pre class=\"code robotframework literal-block\">\n<span class=\"gh\">*** Settings ***</span><span class=\"p\">\n</span><span class=\"kn\">Library</span><span class=\"p\">                 </span><span class=\"nn\">RPA.Word.Application</span><span class=\"p\">\n</span><span class=\"kn\">Task Setup</span><span class=\"p\">              </span><span class=\"nf\">Open Application</span><span class=\"p\">\n</span><span class=\"kn\">Suite Teardown</span><span class=\"p\">          </span><span class=\"nf\">Quit Application</span><span class=\"p\">\n\n</span><span class=\"gh\">*** Tasks ***</span><span class=\"p\">\n</span><span class=\"gu\">Open existing file</span><span class=\"p\">\n    </span><span class=\"nf\">Open File</span><span class=\"p\">           </span><span class=\"s\">old.docx</span><span class=\"p\">\n    </span><span class=\"nf\">Write Text</span><span class=\"p\">          </span><span class=\"s\">Extra Line Text</span><span class=\"p\">\n    </span><span class=\"nf\">Write Text</span><span class=\"p\">          </span><span class=\"s\">Another Extra Line of Text</span><span class=\"p\">\n    </span><span class=\"nf\">Save Document AS</span><span class=\"p\">    ${</span><span class=\"nv\">CURDIR</span><span class=\"p\">}${</span><span class=\"nv\">/</span><span class=\"p\">}</span><span class=\"s\">new.docx</span><span class=\"p\">\n    ${</span><span class=\"nv\">texts</span><span class=\"p\">}=           </span><span class=\"nf\">Get all Texts</span><span class=\"p\">\n    </span><span class=\"nf\">Close Document</span>\n</pre>\n<p><strong>Python</strong></p>\n<pre class=\"code python literal-block\">\n<span class=\"kn\">from</span> <span class=\"nn\">RPA.Word.Application</span> <span class=\"kn\">import</span> <span class=\"n\">Application</span><span class=\"w\">\n\n</span><span class=\"n\">app</span> <span class=\"o\">=</span> <span class=\"n\">Application</span><span class=\"p\">()</span><span class=\"w\">\n</span><span class=\"n\">app</span><span class=\"o\">.</span><span class=\"n\">open_application</span><span class=\"p\">()</span><span class=\"w\">\n</span><span class=\"n\">app</span><span class=\"o\">.</span><span class=\"n\">open_file</span><span class=\"p\">(</span><span class=\"s1\">'old.docx'</span><span class=\"p\">)</span><span class=\"w\">\n</span><span class=\"n\">app</span><span class=\"o\">.</span><span class=\"n\">write_text</span><span class=\"p\">(</span><span class=\"s1\">'Extra Line Text'</span><span class=\"p\">)</span><span class=\"w\">\n</span><span class=\"n\">app</span><span class=\"o\">.</span><span class=\"n\">save_document_as</span><span class=\"p\">(</span><span class=\"s1\">'new.docx'</span><span class=\"p\">)</span><span class=\"w\">\n</span><span class=\"n\">app</span><span class=\"o\">.</span><span class=\"n\">quit_application</span><span class=\"p\">()</span>\n</pre>\n<p><strong>Caveats</strong></p>\n<p>This library works on a Windows operating system with UI enabled only, and you must\nensure that you open the app first with <tt class=\"docutils literal\">Open Application</tt> before running any\nother relevant keyword which requires to operate on an open app. The application is\nautomatically closed at the end of the task execution, so this can be changed by\nimporting the library with the <cite>autoexit=${False}</cite> setting.</p>\n<pre class=\"code robotframework literal-block\">\n<span class=\"gh\">*** Settings ***</span><span class=\"p\">\n</span><span class=\"kn\">Library</span><span class=\"p\">     </span><span class=\"nn\">RPA.Excel|Outlook|Word.Application</span><span class=\"p\">    </span><span class=\"s\">autoexit=</span><span class=\"p\">${</span><span class=\"nv\">False</span><span class=\"p\">}</span>\n</pre>\n<p>If you're running the Process by Control Room through a custom self-hosted Worker\nservice, then please make sure that you enable an RDP session by ticking &quot;Use\nDesktop Connection&quot; under the Step configuration.</p>\n<p>If you still encounter issues with opening a document, please ensure that file can\nbe opened first manually and dismiss any alert potentially blocking the process.</p>\n<p>Check the documentation below for more info:</p>\n<ul class=\"simple\">\n<li><a class=\"reference external\" href=\"https://robocorp.com/docs/control-room/unattended/worker-setups/windows-desktop\">https://robocorp.com/docs/control-room/unattended/worker-setups/windows-desktop</a></li>\n<li><a class=\"reference external\" href=\"https://robocorp.com/docs/faq/windows-server-2016\">https://robocorp.com/docs/faq/windows-server-2016</a></li>\n</ul>\n</div>\n",
+  "specversion": 2,
+  "name": "Camunda.Word.Application",
+  "doc": "<div class=\"document\">\n<p><cite>Word.Application</cite> is a library for controlling the Word application.</p>\n<p><strong>Examples</strong></p>\n<p><strong>Robot Framework</strong></p>\n<pre class=\"code robotframework literal-block\">\n<span class=\"gh\">*** Settings ***</span><span class=\"p\">\n</span><span class=\"kn\">Library</span><span class=\"p\">                 </span><span class=\"nn\">Camunda.Word.Application</span><span class=\"p\">\n</span><span class=\"kn\">Task Setup</span><span class=\"p\">              </span><span class=\"nf\">Open Application</span><span class=\"p\">\n</span><span class=\"kn\">Suite Teardown</span><span class=\"p\">          </span><span class=\"nf\">Quit Application</span><span class=\"p\">\n\n</span><span class=\"gh\">*** Tasks ***</span><span class=\"p\">\n</span><span class=\"gu\">Open existing file</span><span class=\"p\">\n    </span><span class=\"nf\">Open File</span><span class=\"p\">           </span><span class=\"s\">old.docx</span><span class=\"p\">\n    </span><span class=\"nf\">Write Text</span><span class=\"p\">          </span><span class=\"s\">Extra Line Text</span><span class=\"p\">\n    </span><span class=\"nf\">Write Text</span><span class=\"p\">          </span><span class=\"s\">Another Extra Line of Text</span><span class=\"p\">\n    </span><span class=\"nf\">Save Document AS</span><span class=\"p\">    ${</span><span class=\"nv\">CURDIR</span><span class=\"p\">}${</span><span class=\"nv\">/</span><span class=\"p\">}</span><span class=\"s\">new.docx</span><span class=\"p\">\n    ${</span><span class=\"nv\">texts</span><span class=\"p\">}=           </span><span class=\"nf\">Get all Texts</span><span class=\"p\">\n    </span><span class=\"nf\">Close Document</span>\n</pre>\n<p><strong>Python</strong></p>\n<pre class=\"code python literal-block\">\n<span class=\"kn\">from</span> <span class=\"nn\">Camunda.Word.Application</span> <span class=\"kn\">import</span> <span class=\"n\">Application</span><span class=\"w\">\n\n</span><span class=\"n\">app</span> <span class=\"o\">=</span> <span class=\"n\">Application</span><span class=\"p\">()</span><span class=\"w\">\n</span><span class=\"n\">app</span><span class=\"o\">.</span><span class=\"n\">open_application</span><span class=\"p\">()</span><span class=\"w\">\n</span><span class=\"n\">app</span><span class=\"o\">.</span><span class=\"n\">open_file</span><span class=\"p\">(</span><span class=\"s1\">'old.docx'</span><span class=\"p\">)</span><span class=\"w\">\n</span><span class=\"n\">app</span><span class=\"o\">.</span><span class=\"n\">write_text</span><span class=\"p\">(</span><span class=\"s1\">'Extra Line Text'</span><span class=\"p\">)</span><span class=\"w\">\n</span><span class=\"n\">app</span><span class=\"o\">.</span><span class=\"n\">save_document_as</span><span class=\"p\">(</span><span class=\"s1\">'new.docx'</span><span class=\"p\">)</span><span class=\"w\">\n</span><span class=\"n\">app</span><span class=\"o\">.</span><span class=\"n\">quit_application</span><span class=\"p\">()</span>\n</pre>\n<p><strong>Caveats</strong></p>\n<p>This library works on a Windows operating system with UI enabled only, and you must\nensure that you open the app first with <tt class=\"docutils literal\">Open Application</tt> before running any\nother relevant keyword which requires to operate on an open app. The application is\nautomatically closed at the end of the task execution, so this can be changed by\nimporting the library with the <cite>autoexit=${False}</cite> setting.</p>\n<pre class=\"code robotframework literal-block\">\n<span class=\"gh\">*** Settings ***</span><span class=\"p\">\n</span><span class=\"kn\">Library</span><span class=\"p\">     </span><span class=\"nn\">Camunda.Excel|Outlook|Word.Application</span><span class=\"p\">    </span><span class=\"s\">autoexit=</span><span class=\"p\">${</span><span class=\"nv\">False</span><span class=\"p\">}</span>\n</pre>\n<p>If you're running the Process by Control Room through a custom self-hosted Worker\nservice, then please make sure that you enable an RDP session by ticking &quot;Use\nDesktop Connection&quot; under the Step configuration.</p>\n<p>If you still encounter issues with opening a document, please ensure that file can\nbe opened first manually and dismiss any alert potentially blocking the process.</p>\n<p>Check the documentation below for more info:</p>\n<ul class=\"simple\">\n<li><a class=\"reference external\" href=\"https://robocorp.com/docs/control-room/unattended/worker-setups/windows-desktop\">https://robocorp.com/docs/control-room/unattended/worker-setups/windows-desktop</a></li>\n<li><a class=\"reference external\" href=\"https://robocorp.com/docs/faq/windows-server-2016\">https://robocorp.com/docs/faq/windows-server-2016</a></li>\n</ul>\n</div>\n",
   "version": "",
-  "generated": "2024-10-30 10:10:10",
+  "generated": "2025-02-03T13:00:06+00:00",
   "type": "LIBRARY",
   "scope": "GLOBAL",
   "docFormat": "HTML",
-  "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
+  "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
   "lineno": 20,
   "tags": [],
   "inits": [
@@ -16,6 +16,12 @@
       "args": [
         {
           "name": "autoexit",
+          "type": {
+            "name": "bool",
+            "typedoc": "boolean",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "bool"
           ],
@@ -31,7 +37,7 @@
       "doc": "<div class=\"document\">\n<p>Initialize the library instance by wrapping the COM Windows app.</p>\n<table class=\"docutils field-list\" frame=\"void\" rules=\"none\">\n<col class=\"field-name\" />\n<col class=\"field-body\" />\n<tbody valign=\"top\">\n<tr class=\"field\"><th class=\"field-name\">param autoexit:</th><td class=\"field-body\">Automatically close the app when the process finishes.</td>\n</tr>\n</tbody>\n</table>\n</div>\n",
       "shortdoc": "Initialize the library instance by wrapping the COM Windows app.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/application.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/application.py",
       "lineno": 116
     }
   ],
@@ -41,6 +47,12 @@
       "args": [
         {
           "name": "save_changes",
+          "type": {
+            "name": "bool",
+            "typedoc": "boolean",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "bool"
           ],
@@ -56,7 +68,7 @@
       "doc": "<div class=\"document\">\n<p>Close the active document and app (if open).</p>\n<table class=\"docutils field-list\" frame=\"void\" rules=\"none\">\n<col class=\"field-name\" />\n<col class=\"field-body\" />\n<tbody valign=\"top\">\n<tr class=\"field\"><th class=\"field-name\" colspan=\"2\">param save_changes:</th></tr>\n<tr class=\"field\"><td>&nbsp;</td><td class=\"field-body\">Enable changes saving on quit. (<cite>False</cite> by default)</td>\n</tr>\n</tbody>\n</table>\n</div>\n",
       "shortdoc": "Close the active document and app (if open).",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/application.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/application.py",
       "lineno": 179
     },
     {
@@ -65,7 +77,7 @@
       "doc": "<div class=\"document\">\n<p>Copy current text selection to clipboard.</p>\n</div>\n",
       "shortdoc": "Copy current text selection to clipboard.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
       "lineno": 330
     },
     {
@@ -74,7 +86,7 @@
       "doc": "<div class=\"document\">\n<p>Create new document for Word application</p>\n</div>\n",
       "shortdoc": "Create new document for Word application",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
       "lineno": 103
     },
     {
@@ -82,6 +94,12 @@
       "args": [
         {
           "name": "filename",
+          "type": {
+            "name": "str",
+            "typedoc": "string",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "str"
           ],
@@ -97,7 +115,7 @@
       "doc": "<div class=\"document\">\n<p>Export active document into PDF file.</p>\n<table class=\"docutils field-list\" frame=\"void\" rules=\"none\">\n<col class=\"field-name\" />\n<col class=\"field-body\" />\n<tbody valign=\"top\">\n<tr class=\"field\"><th class=\"field-name\">param filename:</th><td class=\"field-body\">PDF to export WORD into</td>\n</tr>\n</tbody>\n</table>\n</div>\n",
       "shortdoc": "Export active document into PDF file.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
       "lineno": 108
     },
     {
@@ -105,6 +123,12 @@
       "args": [
         {
           "name": "text",
+          "type": {
+            "name": "str",
+            "typedoc": "string",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "str"
           ],
@@ -118,6 +142,12 @@
         },
         {
           "name": "cursor_position",
+          "type": {
+            "name": "CursorPosition",
+            "typedoc": "CursorPosition",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "CursorPosition"
           ],
@@ -131,6 +161,12 @@
         },
         {
           "name": "copy",
+          "type": {
+            "name": "bool",
+            "typedoc": "boolean",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "bool"
           ],
@@ -146,7 +182,7 @@
       "doc": "<div class=\"document\">\n<p>Find text in the document.</p>\n<table class=\"docutils field-list\" frame=\"void\" rules=\"none\">\n<col class=\"field-name\" />\n<col class=\"field-body\" />\n<tbody valign=\"top\">\n<tr class=\"field\"><th class=\"field-name\">param text:</th><td class=\"field-body\">text to find</td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\" colspan=\"2\">param cursor_position:</th></tr>\n<tr class=\"field\"><td>&nbsp;</td><td class=\"field-body\">where to move cursor after finding text</td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\">param copy:</th><td class=\"field-body\">copy found text into clipboard</td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\" colspan=\"2\">raises AssertionError:</th></tr>\n<tr class=\"field\"><td>&nbsp;</td><td class=\"field-body\">if text is not found</td>\n</tr>\n</tbody>\n</table>\n</div>\n",
       "shortdoc": "Find text in the document.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
       "lineno": 264
     },
     {
@@ -155,7 +191,7 @@
       "doc": "<div class=\"document\">\n<p>Get all texts from active document</p>\n<table class=\"docutils field-list\" frame=\"void\" rules=\"none\">\n<col class=\"field-name\" />\n<col class=\"field-body\" />\n<tbody valign=\"top\">\n<tr class=\"field\"><th class=\"field-name\">return:</th><td class=\"field-body\">texts</td>\n</tr>\n</tbody>\n</table>\n</div>\n",
       "shortdoc": "Get all texts from active document",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
       "lineno": 184
     },
     {
@@ -164,7 +200,7 @@
       "doc": "<div class=\"document\">\n<p>Get the text of the current line in the document.</p>\n</div>\n",
       "shortdoc": "Get the text of the current line in the document.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
       "lineno": 196
     },
     {
@@ -173,7 +209,7 @@
       "doc": "<div class=\"document\">\n<p>Get the number of lines in the document.</p>\n</div>\n",
       "shortdoc": "Get the number of lines in the document.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
       "lineno": 204
     },
     {
@@ -181,6 +217,12 @@
       "args": [
         {
           "name": "characters",
+          "type": {
+            "name": "int",
+            "typedoc": "integer",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "int"
           ],
@@ -196,7 +238,7 @@
       "doc": "<div class=\"document\">\n<p>Move cursor horizontally from current cursor position.</p>\n<p>Remember that if cursor is already at the start the cursor can't move\nleft and if cursor is already at the end the cursor can't move right.</p>\n<table class=\"docutils field-list\" frame=\"void\" rules=\"none\">\n<col class=\"field-name\" />\n<col class=\"field-body\" />\n<tbody valign=\"top\">\n<tr class=\"field\"><th class=\"field-name\" colspan=\"2\">param characters:</th></tr>\n<tr class=\"field\"><td>&nbsp;</td><td class=\"field-body\">characters to move</td>\n</tr>\n</tbody>\n</table>\n</div>\n",
       "shortdoc": "Move cursor horizontally from current cursor position.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
       "lineno": 247
     },
     {
@@ -205,7 +247,7 @@
       "doc": "<div class=\"document\">\n<p>Move cursor to the end of the document.</p>\n</div>\n",
       "shortdoc": "Move cursor to the end of the document.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
       "lineno": 217
     },
     {
@@ -214,7 +256,7 @@
       "doc": "<div class=\"document\">\n<p>Move cursor to end of the line on the current cursor position.</p>\n</div>\n",
       "shortdoc": "Move cursor to end of the line on the current cursor position.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
       "lineno": 225
     },
     {
@@ -223,7 +265,7 @@
       "doc": "<div class=\"document\">\n<p>Move cursor to start of the line on the current cursor position.</p>\n</div>\n",
       "shortdoc": "Move cursor to start of the line on the current cursor position.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
       "lineno": 221
     },
     {
@@ -232,7 +274,7 @@
       "doc": "<div class=\"document\">\n<p>Move cursor to the top of the document.</p>\n</div>\n",
       "shortdoc": "Move cursor to the top of the document.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
       "lineno": 213
     },
     {
@@ -240,6 +282,12 @@
       "args": [
         {
           "name": "lines",
+          "type": {
+            "name": "int",
+            "typedoc": "integer",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "int"
           ],
@@ -255,7 +303,7 @@
       "doc": "<div class=\"document\">\n<p>Move cursor vertically from current cursor position.</p>\n<p>Remember that if cursor is already at the top the cursor can't\nmove up and if cursor is already at the bottom the cursor can't\nmove down.</p>\n<table class=\"docutils field-list\" frame=\"void\" rules=\"none\">\n<col class=\"field-name\" />\n<col class=\"field-body\" />\n<tbody valign=\"top\">\n<tr class=\"field\"><th class=\"field-name\">param lines:</th><td class=\"field-body\">lines to move</td>\n</tr>\n</tbody>\n</table>\n</div>\n",
       "shortdoc": "Move cursor vertically from current cursor position.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
       "lineno": 229
     },
     {
@@ -263,6 +311,12 @@
       "args": [
         {
           "name": "visible",
+          "type": {
+            "name": "bool",
+            "typedoc": "boolean",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "bool"
           ],
@@ -276,6 +330,12 @@
         },
         {
           "name": "display_alerts",
+          "type": {
+            "name": "bool",
+            "typedoc": "boolean",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "bool"
           ],
@@ -291,7 +351,7 @@
       "doc": "<div class=\"document\">\n<p>Open the application.</p>\n<table class=\"docutils field-list\" frame=\"void\" rules=\"none\">\n<col class=\"field-name\" />\n<col class=\"field-body\" />\n<tbody valign=\"top\">\n<tr class=\"field\"><th class=\"field-name\">param visible:</th><td class=\"field-body\">Show the window on opening. (<cite>False</cite> by default)</td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\" colspan=\"2\">param display_alerts:</th></tr>\n<tr class=\"field\"><td>&nbsp;</td><td class=\"field-body\">Display alert popups. (<cite>False</cite> by default)</td>\n</tr>\n</tbody>\n</table>\n</div>\n",
       "shortdoc": "Open the application.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/application.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/application.py",
       "lineno": 140
     },
     {
@@ -299,6 +359,12 @@
       "args": [
         {
           "name": "filename",
+          "type": {
+            "name": "str",
+            "typedoc": "string",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "str"
           ],
@@ -312,6 +378,12 @@
         },
         {
           "name": "read_only",
+          "type": {
+            "name": "bool",
+            "typedoc": "boolean",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "bool"
           ],
@@ -327,7 +399,7 @@
       "doc": "<div class=\"document\">\n<p>Open Word document with filename.</p>\n<table class=\"docutils field-list\" frame=\"void\" rules=\"none\">\n<col class=\"field-name\" />\n<col class=\"field-body\" />\n<tbody valign=\"top\">\n<tr class=\"field\"><th class=\"field-name\">param filename:</th><td class=\"field-body\">Word document path</td>\n</tr>\n</tbody>\n</table>\n</div>\n",
       "shortdoc": "Open Word document with filename.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
       "lineno": 67
     },
     {
@@ -336,7 +408,7 @@
       "doc": "<div class=\"document\">\n<p>Paste content from clipboard to the document's\ncurrent cursor position.</p>\n</div>\n",
       "shortdoc": "Paste content from clipboard to the document's current cursor position.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
       "lineno": 191
     },
     {
@@ -344,6 +416,12 @@
       "args": [
         {
           "name": "save_changes",
+          "type": {
+            "name": "bool",
+            "typedoc": "boolean",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "bool"
           ],
@@ -359,7 +437,7 @@
       "doc": "<div class=\"document\">\n<p>Quit the application.</p>\n<table class=\"docutils field-list\" frame=\"void\" rules=\"none\">\n<col class=\"field-name\" />\n<col class=\"field-body\" />\n<tbody valign=\"top\">\n<tr class=\"field\"><th class=\"field-name\" colspan=\"2\">param save_changes:</th></tr>\n<tr class=\"field\"><td>&nbsp;</td><td class=\"field-body\">Enable to save changes on quit. (<cite>False</cite> by default)</td>\n</tr>\n</tbody>\n</table>\n</div>\n",
       "shortdoc": "Quit the application.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/application.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/application.py",
       "lineno": 204
     },
     {
@@ -367,6 +445,12 @@
       "args": [
         {
           "name": "find",
+          "type": {
+            "name": "str",
+            "typedoc": "string",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "str"
           ],
@@ -380,6 +464,12 @@
         },
         {
           "name": "replace",
+          "type": {
+            "name": "str",
+            "typedoc": "string",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "str"
           ],
@@ -395,7 +485,7 @@
       "doc": "<div class=\"document\">\n<p>Replace text in active document</p>\n<table class=\"docutils field-list\" frame=\"void\" rules=\"none\">\n<col class=\"field-name\" />\n<col class=\"field-body\" />\n<tbody valign=\"top\">\n<tr class=\"field\"><th class=\"field-name\">param find:</th><td class=\"field-body\">text to replace</td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\">param replace:</th><td class=\"field-body\">new text</td>\n</tr>\n</tbody>\n</table>\n</div>\n",
       "shortdoc": "Replace text in active document",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
       "lineno": 119
     },
     {
@@ -404,7 +494,7 @@
       "doc": "<div class=\"document\">\n<p>Save active document</p>\n</div>\n",
       "shortdoc": "Save active document",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
       "lineno": 145
     },
     {
@@ -412,6 +502,12 @@
       "args": [
         {
           "name": "filename",
+          "type": {
+            "name": "str",
+            "typedoc": "string",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "str"
           ],
@@ -425,6 +521,25 @@
         },
         {
           "name": "fileformat",
+          "type": {
+            "name": "Union",
+            "typedoc": null,
+            "nested": [
+              {
+                "name": "str",
+                "typedoc": "string",
+                "nested": [],
+                "union": false
+              },
+              {
+                "name": "None",
+                "typedoc": "None",
+                "nested": [],
+                "union": false
+              }
+            ],
+            "union": true
+          },
           "types": [
             "str",
             "None"
@@ -442,7 +557,7 @@
       "doc": "<div class=\"document\">\n<p>Save document with filename and optionally with given fileformat</p>\n<table class=\"docutils field-list\" frame=\"void\" rules=\"none\">\n<col class=\"field-name\" />\n<col class=\"field-body\" />\n<tbody valign=\"top\">\n<tr class=\"field\"><th class=\"field-name\">param filename:</th><td class=\"field-body\">where to save document</td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\" colspan=\"2\">param fileformat:</th></tr>\n<tr class=\"field\"><td>&nbsp;</td><td class=\"field-body\">see &#64;FILEFORMATS dictionary for possible format,\ndefaults to None</td>\n</tr>\n</tbody>\n</table>\n</div>\n",
       "shortdoc": "Save document with filename and optionally with given fileformat",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
       "lineno": 155
     },
     {
@@ -451,7 +566,7 @@
       "doc": "<div class=\"document\">\n<p>Select text in current active paragraph.</p>\n</div>\n",
       "shortdoc": "Select text in current active paragraph.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
       "lineno": 326
     },
     {
@@ -459,6 +574,12 @@
       "args": [
         {
           "name": "count",
+          "type": {
+            "name": "int",
+            "typedoc": "integer",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "int"
           ],
@@ -474,7 +595,7 @@
       "doc": "<div class=\"document\">\n<p>Select paragraph(s) from current cursor position.</p>\n<p>Negative <cite>count</cite> moves cursor up number of paragraphs and\npositive <cite>count</cite> moves cursor down number of paragraphs.</p>\n<table class=\"docutils field-list\" frame=\"void\" rules=\"none\">\n<col class=\"field-name\" />\n<col class=\"field-body\" />\n<tbody valign=\"top\">\n<tr class=\"field\"><th class=\"field-name\">param count:</th><td class=\"field-body\">number of paragraphs to select</td>\n</tr>\n</tbody>\n</table>\n</div>\n",
       "shortdoc": "Select paragraph(s) from current cursor position.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
       "lineno": 334
     },
     {
@@ -482,6 +603,12 @@
       "args": [
         {
           "name": "text",
+          "type": {
+            "name": "str",
+            "typedoc": "string",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "str"
           ],
@@ -497,7 +624,7 @@
       "doc": "<div class=\"document\">\n<p>Set footer for the active document</p>\n<table class=\"docutils field-list\" frame=\"void\" rules=\"none\">\n<col class=\"field-name\" />\n<col class=\"field-body\" />\n<tbody valign=\"top\">\n<tr class=\"field\"><th class=\"field-name\">param text:</th><td class=\"field-body\">footer text to set</td>\n</tr>\n</tbody>\n</table>\n</div>\n",
       "shortdoc": "Set footer for the active document",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
       "lineno": 136
     },
     {
@@ -505,6 +632,12 @@
       "args": [
         {
           "name": "text",
+          "type": {
+            "name": "str",
+            "typedoc": "string",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "str"
           ],
@@ -520,7 +653,7 @@
       "doc": "<div class=\"document\">\n<p>Set header for the active document</p>\n<table class=\"docutils field-list\" frame=\"void\" rules=\"none\">\n<col class=\"field-name\" />\n<col class=\"field-body\" />\n<tbody valign=\"top\">\n<tr class=\"field\"><th class=\"field-name\">param text:</th><td class=\"field-body\">header text to set</td>\n</tr>\n</tbody>\n</table>\n</div>\n",
       "shortdoc": "Set header for the active document",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
       "lineno": 127
     },
     {
@@ -528,6 +661,7 @@
       "args": [
         {
           "name": "object_instance",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -537,6 +671,12 @@
         },
         {
           "name": "property_name",
+          "type": {
+            "name": "str",
+            "typedoc": "string",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "str"
           ],
@@ -550,6 +690,12 @@
         },
         {
           "name": "value",
+          "type": {
+            "name": "str",
+            "typedoc": "string",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "str"
           ],
@@ -565,7 +711,7 @@
       "doc": "<div class=\"document\">\n<p>Set the property of any object.</p>\n<p>This is a utility keyword for Robot Framework syntax to set object\nproperty values.</p>\n<pre class=\"code robotframework literal-block\">\n<span class=\"c\">${new_value}=</span><span class=\"p\">    </span><span class=\"c\">Replace String</span><span class=\"p\">    </span><span class=\"c\">${value}</span><span class=\"p\">    </span><span class=\"c\">10.132.</span><span class=\"p\">    </span><span class=\"c\">5511.11.</span><span class=\"p\">\n</span><span class=\"c\">Set Object Property</span><span class=\"p\">    </span><span class=\"c\">${result}</span><span class=\"p\">    </span><span class=\"c\">Value</span><span class=\"p\">    </span><span class=\"c\">${new_value}</span>\n</pre>\n<table class=\"docutils field-list\" frame=\"void\" rules=\"none\">\n<col class=\"field-name\" />\n<col class=\"field-body\" />\n<tbody valign=\"top\">\n<tr class=\"field\"><th class=\"field-name\" colspan=\"2\">param object_instance:</th></tr>\n<tr class=\"field\"><td>&nbsp;</td><td class=\"field-body\">object instance to set the property</td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\" colspan=\"2\">param property_name:</th></tr>\n<tr class=\"field\"><td>&nbsp;</td><td class=\"field-body\">property name to set</td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\">param value:</th><td class=\"field-body\">value to set</td>\n</tr>\n</tbody>\n</table>\n</div>\n",
       "shortdoc": "Set the property of any object.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/application.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/application.py",
       "lineno": 219
     },
     {
@@ -573,6 +719,12 @@
       "args": [
         {
           "name": "text",
+          "type": {
+            "name": "str",
+            "typedoc": "string",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "str"
           ],
@@ -586,6 +738,12 @@
         },
         {
           "name": "cursor_position",
+          "type": {
+            "name": "CursorPosition",
+            "typedoc": "CursorPosition",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "CursorPosition"
           ],
@@ -599,6 +757,12 @@
         },
         {
           "name": "end_of_text",
+          "type": {
+            "name": "bool",
+            "typedoc": "boolean",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "bool"
           ],
@@ -614,7 +778,7 @@
       "doc": "<div class=\"document\">\n<p>Writes given text at the end of the document</p>\n<table class=\"docutils field-list\" frame=\"void\" rules=\"none\">\n<col class=\"field-name\" />\n<col class=\"field-body\" />\n<tbody valign=\"top\">\n<tr class=\"field\"><th class=\"field-name\">param text:</th><td class=\"field-body\">string to write</td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\" colspan=\"2\">param cursor_position:</th></tr>\n<tr class=\"field\"><td>&nbsp;</td><td class=\"field-body\">where to move cursor before writing</td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\" colspan=\"2\">param end_of_text:</th></tr>\n<tr class=\"field\"><td>&nbsp;</td><td class=\"field-body\">if True moves cursor to the end of the text\nbefore writing</td>\n</tr>\n</tbody>\n</table>\n</div>\n",
       "shortdoc": "Writes given text at the end of the document",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/Word/Application.py",
       "lineno": 297
     }
   ],
