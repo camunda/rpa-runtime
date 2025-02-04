@@ -1,13 +1,13 @@
 {
-  "specversion": 1,
-  "name": "RPA.HTTP",
-  "doc": "<div class=\"document\">\n<p>The <em>RPA.HTTP</em> library extends functionality of the <a class=\"reference external\" href=\"https://marketsquare.github.io/robotframework-requests/doc/RequestsLibrary.html\">RequestsLibrary</a>.\nSee that documentation for several examples of how to issue <tt class=\"docutils literal\">GET</tt>\nrequests and utilize the returned <tt class=\"docutils literal\">result</tt> objects.</p>\n<p>This extension provides helper keywords to get an HTTP resource on a\nsession. The <tt class=\"docutils literal\">HTTP Get</tt> and <tt class=\"docutils literal\">Download</tt> keywords will initiate a\nsession if one does not exist for the provided URL, or use an existing\nsession. When using these keywords, you do not need to manage\nsessions with <tt class=\"docutils literal\">Create Session</tt>. Session management is still\nrequired if you use the underlying session keywords, e.g.,\n<tt class=\"docutils literal\">* On Session</tt>.</p>\n</div>\n",
+  "specversion": 2,
+  "name": "Camunda.HTTP",
+  "doc": "<div class=\"document\">\n<p>The <em>Camunda.HTTP</em> library extends functionality of the <a class=\"reference external\" href=\"https://marketsquare.github.io/robotframework-requests/doc/RequestsLibrary.html\">RequestsLibrary</a>.\nSee that documentation for several examples of how to issue <tt class=\"docutils literal\">GET</tt>\nrequests and utilize the returned <tt class=\"docutils literal\">result</tt> objects.</p>\n<p>This extension provides helper keywords to get an HTTP resource on a\nsession. The <tt class=\"docutils literal\">HTTP Get</tt> and <tt class=\"docutils literal\">Download</tt> keywords will initiate a\nsession if one does not exist for the provided URL, or use an existing\nsession. When using these keywords, you do not need to manage\nsessions with <tt class=\"docutils literal\">Create Session</tt>. Session management is still\nrequired if you use the underlying session keywords, e.g.,\n<tt class=\"docutils literal\">* On Session</tt>.</p>\n</div>\n",
   "version": "0.9.7",
-  "generated": "2024-10-30 10:09:56",
+  "generated": "2025-02-03T12:59:54+00:00",
   "type": "LIBRARY",
   "scope": "GLOBAL",
   "docFormat": "HTML",
-  "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/HTTP.py",
+  "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/HTTP.py",
   "lineno": 71,
   "tags": [],
   "inits": [
@@ -16,6 +16,7 @@
       "args": [
         {
           "name": "args",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -25,6 +26,7 @@
         },
         {
           "name": "kwargs",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -36,7 +38,7 @@
       "doc": "<div class=\"document\">\n<p>Initialize self.  See help(type(self)) for accurate signature.</p>\n</div>\n",
       "shortdoc": "Initialize self.  See help(type(self)) for accurate signature.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/HTTP.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/HTTP.py",
       "lineno": 91
     }
   ],
@@ -47,7 +49,7 @@
       "doc": "<div class=\"document\">\n<p>Check for possible vulnerabilities in the installed runtime\nenvironment packages.</p>\n<p>Currently will check only for OpenSSL version and outputs warning message on any\ndiscovered vulnerability.</p>\n<table class=\"docutils field-list\" frame=\"void\" rules=\"none\">\n<col class=\"field-name\" />\n<col class=\"field-body\" />\n<tbody valign=\"top\">\n<tr class=\"field\"><th class=\"field-name\">return:</th><td class=\"field-body\">list of all check results</td>\n</tr>\n</tbody>\n</table>\n<pre class=\"code robotframework literal-block\">\n<span class=\"gh\">*** Tasks ***</span><span class=\"p\">\n</span><span class=\"gu\">Vulnerability Check</span><span class=\"p\">\n    ${</span><span class=\"nv\">results</span><span class=\"p\">}=    </span><span class=\"nf\">Check Vulnerabilities</span><span class=\"p\">\n    </span><span class=\"nf\">FOR</span><span class=\"p\">    ${</span><span class=\"nv\">result</span><span class=\"p\">}    </span><span class=\"s\">IN</span><span class=\"p\">    &#64;{</span><span class=\"nv\">results</span><span class=\"p\">}\n        </span><span class=\"nf\">Log To Console</span><span class=\"p\">    </span><span class=\"s\">TYPE: </span><span class=\"p\">${</span><span class=\"nv\">result</span><span class=\"p\">}</span><span class=\"s\">[type]</span><span class=\"p\">\n        </span><span class=\"nf\">Log To Console</span><span class=\"p\">    </span><span class=\"s\">VULNERABLE: </span><span class=\"p\">${</span><span class=\"nv\">result</span><span class=\"p\">}</span><span class=\"s\">[vulnerable]</span><span class=\"p\">\n        </span><span class=\"nf\">Log To Console</span><span class=\"p\">    </span><span class=\"s\">MESSAGE: </span><span class=\"p\">${</span><span class=\"nv\">result</span><span class=\"p\">}</span><span class=\"s\">[message]</span><span class=\"p\">\n    </span><span class=\"nf\">END</span>\n</pre>\n</div>\n",
       "shortdoc": "Check for possible vulnerabilities in the installed runtime environment packages.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/HTTP.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/HTTP.py",
       "lineno": 262
     },
     {
@@ -55,6 +57,7 @@
       "args": [
         {
           "name": "alias",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -64,6 +67,7 @@
         },
         {
           "name": "url",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -73,6 +77,7 @@
         },
         {
           "name": "headers",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "{}",
@@ -82,6 +87,7 @@
         },
         {
           "name": "cookies",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "{}",
@@ -91,6 +97,7 @@
         },
         {
           "name": "client_certs",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -100,6 +107,7 @@
         },
         {
           "name": "timeout",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -109,6 +117,7 @@
         },
         {
           "name": "proxies",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -118,6 +127,7 @@
         },
         {
           "name": "verify",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "False",
@@ -127,6 +137,7 @@
         },
         {
           "name": "debug",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "0",
@@ -136,6 +147,7 @@
         },
         {
           "name": "max_retries",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "3",
@@ -145,6 +157,7 @@
         },
         {
           "name": "backoff_factor",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "0.1",
@@ -154,6 +167,7 @@
         },
         {
           "name": "disable_warnings",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "0",
@@ -163,6 +177,7 @@
         },
         {
           "name": "retry_status_list",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "[]",
@@ -172,18 +187,19 @@
         },
         {
           "name": "retry_method_list",
+          "type": null,
           "types": [],
           "typedocs": {},
-          "defaultValue": "['DELETE', 'GET', 'HEAD', 'PUT', 'TRACE', 'OPTIONS']",
+          "defaultValue": "['OPTIONS', 'GET', 'HEAD', 'TRACE', 'PUT', 'DELETE']",
           "kind": "POSITIONAL_OR_NAMED",
           "required": false,
-          "repr": "retry_method_list=['DELETE', 'GET', 'HEAD', 'PUT', 'TRACE', 'OPTIONS']"
+          "repr": "retry_method_list=['OPTIONS', 'GET', 'HEAD', 'TRACE', 'PUT', 'DELETE']"
         }
       ],
       "doc": "<div class=\"document\">\n<p>Create Session: create a HTTP session to a server</p>\n<p><tt class=\"docutils literal\">url</tt> Base url of the server</p>\n<p><tt class=\"docutils literal\">alias</tt> Robot Framework alias to identify the session</p>\n<p><tt class=\"docutils literal\">headers</tt> Dictionary of default headers</p>\n<p><tt class=\"docutils literal\">cookies</tt> Dictionary of cookies</p>\n<p><tt class=\"docutils literal\">client_certs</tt> ['client certificate', 'client key'] PEM files containing the client key and certificate</p>\n<p><tt class=\"docutils literal\">timeout</tt> Connection timeout</p>\n<dl class=\"docutils\">\n<dt><tt class=\"docutils literal\">proxies</tt> Dictionary mapping protocol or protocol and host to the URL of the proxy</dt>\n<dd>(e.g. {'http': 'foo.bar:3128', 'http://host.name': 'foo.bar:4012'})</dd>\n<dt><tt class=\"docutils literal\">verify</tt> Whether the SSL cert will be verified. A CA_BUNDLE path can also be provided.</dt>\n<dd>Defaults to False.</dd>\n<dt><tt class=\"docutils literal\">debug</tt> Enable http verbosity option more information</dt>\n<dd><a class=\"reference external\" href=\"https://docs.python.org/2/library/httplib.html#httplib.HTTPConnection.set_debuglevel\">https://docs.python.org/2/library/httplib.html#httplib.HTTPConnection.set_debuglevel</a></dd>\n<dt><tt class=\"docutils literal\">max_retries</tt> Number of maximum retries each connection should attempt.</dt>\n<dd>By default it will retry 3 times in case of connection errors only.\nA 0 value will disable any kind of retries regardless of other retry settings.\nIn case the number of retries is reached a retry exception is raised.</dd>\n</dl>\n<p><tt class=\"docutils literal\">disable_warnings</tt> Disable requests warning useful when you have large number of testcases</p>\n<dl class=\"docutils\">\n<dt><tt class=\"docutils literal\">backoff_factor</tt> Introduces a delay time between retries that is longer after each retry.</dt>\n<dd>eg. if backoff_factor is set to 0.1\nthe sleep between attemps will be: 0.0, 0.2, 0.4\nMore info here: <a class=\"reference external\" href=\"https://urllib3.readthedocs.io/en/latest/reference/urllib3.util.html\">https://urllib3.readthedocs.io/en/latest/reference/urllib3.util.html</a></dd>\n<dt><tt class=\"docutils literal\">retry_method_list</tt> List of uppercased HTTP method verbs where retries are allowed.</dt>\n<dd>By default retries are allowed only on HTTP requests methods that are considered to be\nidempotent (multiple requests with the same parameters end with the same state).\neg. set to ['POST', 'GET'] to retry only those kind of requests.</dd>\n<dt><tt class=\"docutils literal\">retry_status_list</tt> List of integer HTTP status codes that, if returned, a retry is attempted.</dt>\n<dd>eg. set to [502, 503] to retry requests if those status are returned.\nNote that max_retries must be greater than 0.</dd>\n</dl>\n</div>\n",
       "shortdoc": "Create Session: create a HTTP session to a server",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/SessionKeywords.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/SessionKeywords.py",
       "lineno": 191
     },
     {
@@ -191,6 +207,7 @@
       "args": [
         {
           "name": "alias",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -200,6 +217,7 @@
         },
         {
           "name": "url",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -209,6 +227,7 @@
         },
         {
           "name": "auth",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -218,6 +237,7 @@
         },
         {
           "name": "headers",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "{}",
@@ -227,6 +247,7 @@
         },
         {
           "name": "cookies",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "{}",
@@ -236,6 +257,7 @@
         },
         {
           "name": "timeout",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -245,6 +267,7 @@
         },
         {
           "name": "proxies",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -254,6 +277,7 @@
         },
         {
           "name": "verify",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "False",
@@ -263,6 +287,7 @@
         },
         {
           "name": "debug",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "0",
@@ -272,6 +297,7 @@
         },
         {
           "name": "max_retries",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "3",
@@ -281,6 +307,7 @@
         },
         {
           "name": "backoff_factor",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "0.1",
@@ -290,6 +317,7 @@
         },
         {
           "name": "disable_warnings",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "0",
@@ -299,6 +327,7 @@
         },
         {
           "name": "retry_status_list",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "[]",
@@ -308,18 +337,19 @@
         },
         {
           "name": "retry_method_list",
+          "type": null,
           "types": [],
           "typedocs": {},
-          "defaultValue": "['DELETE', 'GET', 'HEAD', 'PUT', 'TRACE', 'OPTIONS']",
+          "defaultValue": "['OPTIONS', 'GET', 'HEAD', 'TRACE', 'PUT', 'DELETE']",
           "kind": "POSITIONAL_OR_NAMED",
           "required": false,
-          "repr": "retry_method_list=['DELETE', 'GET', 'HEAD', 'PUT', 'TRACE', 'OPTIONS']"
+          "repr": "retry_method_list=['OPTIONS', 'GET', 'HEAD', 'TRACE', 'PUT', 'DELETE']"
         }
       ],
       "doc": "<div class=\"document\">\n<p>Create Session: create a HTTP session to a server</p>\n<p><tt class=\"docutils literal\">url</tt> Base url of the server</p>\n<p><tt class=\"docutils literal\">alias</tt> Robot Framework alias to identify the session</p>\n<p><tt class=\"docutils literal\">headers</tt> Dictionary of default headers</p>\n<p><tt class=\"docutils literal\">cookies</tt> Dictionary of cookies</p>\n<dl class=\"docutils\">\n<dt><tt class=\"docutils literal\">auth</tt> A Custom Authentication object to be passed on to the requests library.</dt>\n<dd><a class=\"reference external\" href=\"http://docs.python-requests.org/en/master/user/advanced/#custom-authentication\">http://docs.python-requests.org/en/master/user/advanced/#custom-authentication</a></dd>\n</dl>\n<p><tt class=\"docutils literal\">timeout</tt> Connection timeout</p>\n<dl class=\"docutils\">\n<dt><tt class=\"docutils literal\">proxies</tt> Dictionary mapping protocol or protocol and host to the URL of the proxy</dt>\n<dd>(e.g. {'http': 'foo.bar:3128', 'http://host.name': 'foo.bar:4012'})</dd>\n<dt><tt class=\"docutils literal\">verify</tt> Whether the SSL cert will be verified. A CA_BUNDLE path can also be provided.</dt>\n<dd>Defaults to False.</dd>\n<dt><tt class=\"docutils literal\">debug</tt> Enable http verbosity option more information</dt>\n<dd><a class=\"reference external\" href=\"https://docs.python.org/2/library/httplib.html#httplib.HTTPConnection.set_debuglevel\">https://docs.python.org/2/library/httplib.html#httplib.HTTPConnection.set_debuglevel</a></dd>\n<dt><tt class=\"docutils literal\">max_retries</tt> Number of maximum retries each connection should attempt.</dt>\n<dd>By default it will retry 3 times in case of connection errors only.\nA 0 value will disable any kind of retries regardless of other retry settings.\nIn case the number of retries is reached a retry exception is raised.</dd>\n</dl>\n<p><tt class=\"docutils literal\">disable_warnings</tt> Disable requests warning useful when you have large number of testcases</p>\n<dl class=\"docutils\">\n<dt><tt class=\"docutils literal\">backoff_factor</tt> Introduces a delay time between retries that is longer after each retry.</dt>\n<dd>eg. if backoff_factor is set to 0.1\nthe sleep between attemps will be: 0.0, 0.2, 0.4\nMore info here: <a class=\"reference external\" href=\"https://urllib3.readthedocs.io/en/latest/reference/urllib3.util.html\">https://urllib3.readthedocs.io/en/latest/reference/urllib3.util.html</a></dd>\n<dt><tt class=\"docutils literal\">retry_method_list</tt> List of uppercased HTTP method verbs where retries are allowed.</dt>\n<dd>By default retries are allowed only on HTTP requests methods that are considered to be\nidempotent (multiple requests with the same parameters end with the same state).\neg. set to ['POST', 'GET'] to retry only those kind of requests.</dd>\n<dt><tt class=\"docutils literal\">retry_status_list</tt> List of integer HTTP status codes that, if returned, a retry is attempted.</dt>\n<dd>eg. set to [502, 503] to retry requests if those status are returned.\nNote that max_retries must be greater than 0.</dd>\n</dl>\n</div>\n",
       "shortdoc": "Create Session: create a HTTP session to a server",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/SessionKeywords.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/SessionKeywords.py",
       "lineno": 277
     },
     {
@@ -327,6 +357,7 @@
       "args": [
         {
           "name": "alias",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -336,6 +367,7 @@
         },
         {
           "name": "url",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -345,6 +377,7 @@
         },
         {
           "name": "auth",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -354,6 +387,7 @@
         },
         {
           "name": "headers",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "{}",
@@ -363,6 +397,7 @@
         },
         {
           "name": "cookies",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "{}",
@@ -372,6 +407,7 @@
         },
         {
           "name": "timeout",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -381,6 +417,7 @@
         },
         {
           "name": "proxies",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -390,6 +427,7 @@
         },
         {
           "name": "verify",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "False",
@@ -399,6 +437,7 @@
         },
         {
           "name": "debug",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "0",
@@ -408,6 +447,7 @@
         },
         {
           "name": "max_retries",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "3",
@@ -417,6 +457,7 @@
         },
         {
           "name": "backoff_factor",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "0.1",
@@ -426,6 +467,7 @@
         },
         {
           "name": "disable_warnings",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "0",
@@ -435,6 +477,7 @@
         },
         {
           "name": "retry_status_list",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "[]",
@@ -444,18 +487,19 @@
         },
         {
           "name": "retry_method_list",
+          "type": null,
           "types": [],
           "typedocs": {},
-          "defaultValue": "['DELETE', 'GET', 'HEAD', 'PUT', 'TRACE', 'OPTIONS']",
+          "defaultValue": "['OPTIONS', 'GET', 'HEAD', 'TRACE', 'PUT', 'DELETE']",
           "kind": "POSITIONAL_OR_NAMED",
           "required": false,
-          "repr": "retry_method_list=['DELETE', 'GET', 'HEAD', 'PUT', 'TRACE', 'OPTIONS']"
+          "repr": "retry_method_list=['OPTIONS', 'GET', 'HEAD', 'TRACE', 'PUT', 'DELETE']"
         }
       ],
       "doc": "<div class=\"document\">\n<p>Create Session: create a HTTP session to a server</p>\n<p><tt class=\"docutils literal\">url</tt> Base url of the server</p>\n<p><tt class=\"docutils literal\">alias</tt> Robot Framework alias to identify the session</p>\n<p><tt class=\"docutils literal\">headers</tt> Dictionary of default headers</p>\n<p><tt class=\"docutils literal\">cookies</tt> Dictionary of cookies</p>\n<p><tt class=\"docutils literal\">auth</tt> ['DOMAIN', 'username', 'password'] for NTLM Authentication</p>\n<p><tt class=\"docutils literal\">timeout</tt> Connection timeout</p>\n<dl class=\"docutils\">\n<dt><tt class=\"docutils literal\">proxies</tt> Dictionary mapping protocol or protocol and host to the URL of the proxy</dt>\n<dd>(e.g. {'http': 'foo.bar:3128', 'http://host.name': 'foo.bar:4012'})</dd>\n<dt><tt class=\"docutils literal\">verify</tt> Whether the SSL cert will be verified. A CA_BUNDLE path can also be provided.</dt>\n<dd>Defaults to False.</dd>\n<dt><tt class=\"docutils literal\">debug</tt> Enable http verbosity option more information</dt>\n<dd><a class=\"reference external\" href=\"https://docs.python.org/2/library/httplib.html#httplib.HTTPConnection.set_debuglevel\">https://docs.python.org/2/library/httplib.html#httplib.HTTPConnection.set_debuglevel</a></dd>\n<dt><tt class=\"docutils literal\">max_retries</tt> Number of maximum retries each connection should attempt.</dt>\n<dd>By default it will retry 3 times in case of connection errors only.\nA 0 value will disable any kind of retries regardless of other retry settings.\nIn case the number of retries is reached a retry exception is raised.</dd>\n</dl>\n<p><tt class=\"docutils literal\">disable_warnings</tt> Disable requests warning useful when you have large number of testcases</p>\n<dl class=\"docutils\">\n<dt><tt class=\"docutils literal\">backoff_factor</tt> Introduces a delay time between retries that is longer after each retry.</dt>\n<dd>eg. if backoff_factor is set to 0.1\nthe sleep between attemps will be: 0.0, 0.2, 0.4\nMore info here: <a class=\"reference external\" href=\"https://urllib3.readthedocs.io/en/latest/reference/urllib3.util.html\">https://urllib3.readthedocs.io/en/latest/reference/urllib3.util.html</a></dd>\n<dt><tt class=\"docutils literal\">retry_method_list</tt> List of uppercased HTTP method verbs where retries are allowed.</dt>\n<dd>By default retries are allowed only on HTTP requests methods that are considered to be\nidempotent (multiple requests with the same parameters end with the same state).\neg. set to ['POST', 'GET'] to retry only those kind of requests.</dd>\n<dt><tt class=\"docutils literal\">retry_status_list</tt> List of integer HTTP status codes that, if returned, a retry is attempted.</dt>\n<dd>eg. set to [502, 503] to retry requests if those status are returned.\nNote that max_retries must be greater than 0.</dd>\n</dl>\n</div>\n",
       "shortdoc": "Create Session: create a HTTP session to a server",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/SessionKeywords.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/SessionKeywords.py",
       "lineno": 361
     },
     {
@@ -463,6 +507,7 @@
       "args": [
         {
           "name": "alias",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -472,6 +517,7 @@
         },
         {
           "name": "url",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -481,6 +527,7 @@
         },
         {
           "name": "auth",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -490,6 +537,7 @@
         },
         {
           "name": "headers",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "{}",
@@ -499,6 +547,7 @@
         },
         {
           "name": "cookies",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "{}",
@@ -508,6 +557,7 @@
         },
         {
           "name": "timeout",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -517,6 +567,7 @@
         },
         {
           "name": "proxies",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -526,6 +577,7 @@
         },
         {
           "name": "verify",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "False",
@@ -535,6 +587,7 @@
         },
         {
           "name": "debug",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "0",
@@ -544,6 +597,7 @@
         },
         {
           "name": "max_retries",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "3",
@@ -553,6 +607,7 @@
         },
         {
           "name": "backoff_factor",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "0.1",
@@ -562,6 +617,7 @@
         },
         {
           "name": "disable_warnings",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "0",
@@ -571,6 +627,7 @@
         },
         {
           "name": "retry_status_list",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "[]",
@@ -580,18 +637,19 @@
         },
         {
           "name": "retry_method_list",
+          "type": null,
           "types": [],
           "typedocs": {},
-          "defaultValue": "['DELETE', 'GET', 'HEAD', 'PUT', 'TRACE', 'OPTIONS']",
+          "defaultValue": "['OPTIONS', 'GET', 'HEAD', 'TRACE', 'PUT', 'DELETE']",
           "kind": "POSITIONAL_OR_NAMED",
           "required": false,
-          "repr": "retry_method_list=['DELETE', 'GET', 'HEAD', 'PUT', 'TRACE', 'OPTIONS']"
+          "repr": "retry_method_list=['OPTIONS', 'GET', 'HEAD', 'TRACE', 'PUT', 'DELETE']"
         }
       ],
       "doc": "<div class=\"document\">\n<p>Create Session: create a HTTP session to a server</p>\n<p><tt class=\"docutils literal\">url</tt> Base url of the server</p>\n<p><tt class=\"docutils literal\">alias</tt> Robot Framework alias to identify the session</p>\n<p><tt class=\"docutils literal\">headers</tt> Dictionary of default headers</p>\n<p><tt class=\"docutils literal\">cookies</tt> Dictionary of cookies</p>\n<p><tt class=\"docutils literal\">auth</tt> ['DOMAIN', 'username', 'password'] for NTLM Authentication</p>\n<p><tt class=\"docutils literal\">timeout</tt> Connection timeout</p>\n<dl class=\"docutils\">\n<dt><tt class=\"docutils literal\">proxies</tt> Dictionary mapping protocol or protocol and host to the URL of the proxy</dt>\n<dd>(e.g. {'http': 'foo.bar:3128', 'http://host.name': 'foo.bar:4012'})</dd>\n<dt><tt class=\"docutils literal\">verify</tt> Whether the SSL cert will be verified. A CA_BUNDLE path can also be provided.</dt>\n<dd>Defaults to False.</dd>\n<dt><tt class=\"docutils literal\">debug</tt> Enable http verbosity option more information</dt>\n<dd><a class=\"reference external\" href=\"https://docs.python.org/2/library/httplib.html#httplib.HTTPConnection.set_debuglevel\">https://docs.python.org/2/library/httplib.html#httplib.HTTPConnection.set_debuglevel</a></dd>\n<dt><tt class=\"docutils literal\">max_retries</tt> Number of maximum retries each connection should attempt.</dt>\n<dd>By default it will retry 3 times in case of connection errors only.\nA 0 value will disable any kind of retries regardless of other retry settings.\nIn case the number of retries is reached a retry exception is raised.</dd>\n</dl>\n<p><tt class=\"docutils literal\">disable_warnings</tt> Disable requests warning useful when you have large number of testcases</p>\n<dl class=\"docutils\">\n<dt><tt class=\"docutils literal\">backoff_factor</tt> Introduces a delay time between retries that is longer after each retry.</dt>\n<dd>eg. if backoff_factor is set to 0.1\nthe sleep between attemps will be: 0.0, 0.2, 0.4\nMore info here: <a class=\"reference external\" href=\"https://urllib3.readthedocs.io/en/latest/reference/urllib3.util.html\">https://urllib3.readthedocs.io/en/latest/reference/urllib3.util.html</a></dd>\n<dt><tt class=\"docutils literal\">retry_method_list</tt> List of uppercased HTTP method verbs where retries are allowed.</dt>\n<dd>By default retries are allowed only on HTTP requests methods that are considered to be\nidempotent (multiple requests with the same parameters end with the same state).\neg. set to ['POST', 'GET'] to retry only those kind of requests.</dd>\n<dt><tt class=\"docutils literal\">retry_status_list</tt> List of integer HTTP status codes that, if returned, a retry is attempted.</dt>\n<dd>eg. set to [502, 503] to retry requests if those status are returned.\nNote that max_retries must be greater than 0.</dd>\n</dl>\n</div>\n",
       "shortdoc": "Create Session: create a HTTP session to a server",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/SessionKeywords.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/SessionKeywords.py",
       "lineno": 439
     },
     {
@@ -599,6 +657,7 @@
       "args": [
         {
           "name": "alias",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -608,6 +667,7 @@
         },
         {
           "name": "url",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -617,6 +677,7 @@
         },
         {
           "name": "headers",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "{}",
@@ -626,6 +687,7 @@
         },
         {
           "name": "cookies",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "{}",
@@ -635,6 +697,7 @@
         },
         {
           "name": "auth",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -644,6 +707,7 @@
         },
         {
           "name": "timeout",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -653,6 +717,7 @@
         },
         {
           "name": "proxies",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -662,6 +727,7 @@
         },
         {
           "name": "verify",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "False",
@@ -671,6 +737,7 @@
         },
         {
           "name": "debug",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "0",
@@ -680,6 +747,7 @@
         },
         {
           "name": "max_retries",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "3",
@@ -689,6 +757,7 @@
         },
         {
           "name": "backoff_factor",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "0.1",
@@ -698,6 +767,7 @@
         },
         {
           "name": "disable_warnings",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "0",
@@ -707,6 +777,7 @@
         },
         {
           "name": "retry_status_list",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "[]",
@@ -716,18 +787,19 @@
         },
         {
           "name": "retry_method_list",
+          "type": null,
           "types": [],
           "typedocs": {},
-          "defaultValue": "['DELETE', 'GET', 'HEAD', 'PUT', 'TRACE', 'OPTIONS']",
+          "defaultValue": "['OPTIONS', 'GET', 'HEAD', 'TRACE', 'PUT', 'DELETE']",
           "kind": "POSITIONAL_OR_NAMED",
           "required": false,
-          "repr": "retry_method_list=['DELETE', 'GET', 'HEAD', 'PUT', 'TRACE', 'OPTIONS']"
+          "repr": "retry_method_list=['OPTIONS', 'GET', 'HEAD', 'TRACE', 'PUT', 'DELETE']"
         }
       ],
       "doc": "<div class=\"document\">\n<p>Create Session: create a HTTP session to a server</p>\n<p><tt class=\"docutils literal\">alias</tt> Robot Framework alias to identify the session</p>\n<p><tt class=\"docutils literal\">url</tt> Base url of the server</p>\n<p><tt class=\"docutils literal\">headers</tt> Dictionary of default headers</p>\n<p><tt class=\"docutils literal\">cookies</tt> Dictionary of cookies</p>\n<p><tt class=\"docutils literal\">auth</tt> List of username &amp; password for HTTP Basic Auth</p>\n<p><tt class=\"docutils literal\">timeout</tt> Connection timeout</p>\n<dl class=\"docutils\">\n<dt><tt class=\"docutils literal\">proxies</tt> Dictionary mapping protocol or protocol and host to the URL of the proxy</dt>\n<dd>(e.g. {'http': 'foo.bar:3128', 'http://host.name': 'foo.bar:4012'})</dd>\n</dl>\n<p><tt class=\"docutils literal\">verify</tt> Whether the SSL cert will be verified. A CA_BUNDLE path can also be provided.</p>\n<dl class=\"docutils\">\n<dt><tt class=\"docutils literal\">debug</tt> Enable http verbosity option more information</dt>\n<dd><a class=\"reference external\" href=\"https://docs.python.org/2/library/httplib.html#httplib.HTTPConnection.set_debuglevel\">https://docs.python.org/2/library/httplib.html#httplib.HTTPConnection.set_debuglevel</a></dd>\n<dt><tt class=\"docutils literal\">max_retries</tt> Number of maximum retries each connection should attempt.</dt>\n<dd>By default it will retry 3 times in case of connection errors only.\nA 0 value will disable any kind of retries regardless of other retry settings.\nIn case the number of retries is reached a retry exception is raised.</dd>\n</dl>\n<p><tt class=\"docutils literal\">disable_warnings</tt> Disable requests warning useful when you have large number of testcases</p>\n<dl class=\"docutils\">\n<dt><tt class=\"docutils literal\">backoff_factor</tt> Introduces a delay time between retries that is longer after each retry.</dt>\n<dd>eg. if backoff_factor is set to 0.1\nthe sleep between attemps will be: 0.0, 0.2, 0.4\nMore info here: <a class=\"reference external\" href=\"https://urllib3.readthedocs.io/en/latest/reference/urllib3.util.html\">https://urllib3.readthedocs.io/en/latest/reference/urllib3.util.html</a></dd>\n<dt><tt class=\"docutils literal\">retry_method_list</tt> List of uppercased HTTP method verbs where retries are allowed.</dt>\n<dd>By default retries are allowed only on HTTP requests methods that are considered to be\nidempotent (multiple requests with the same parameters end with the same state).\neg. set to ['POST', 'GET'] to retry only those kind of requests.</dd>\n<dt><tt class=\"docutils literal\">retry_status_list</tt> List of integer HTTP status codes that, if returned, a retry is attempted.</dt>\n<dd>eg. set to [502, 503] to retry requests if those status are returned.\nNote that max_retries must be greater than 0.</dd>\n</dl>\n</div>\n",
       "shortdoc": "Create Session: create a HTTP session to a server",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/SessionKeywords.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/SessionKeywords.py",
       "lineno": 109
     },
     {
@@ -735,6 +807,7 @@
       "args": [
         {
           "name": "args",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -744,6 +817,7 @@
         },
         {
           "name": "kwargs",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -755,7 +829,7 @@
       "doc": "<div class=\"document\">\n<p>Sends a DELETE request.</p>\n<p>The endpoint used to send the request is the <tt class=\"docutils literal\">url</tt> parameter.</p>\n<p>By default this keyword fails if a status code with error values is returned in the response,\nthis behavior can be modified using the <tt class=\"docutils literal\">expected_status</tt> and <tt class=\"docutils literal\">msg</tt> parameters,\nread more about it in <cite>Status Should Be</cite> keyword documentation.\nIn order to disable this implicit assert mechanism you can pass as <tt class=\"docutils literal\">expected_status</tt> the values <tt class=\"docutils literal\">any</tt> or\n<tt class=\"docutils literal\">anything</tt>.</p>\n<p>Other optional requests arguments can be passed using <tt class=\"docutils literal\">**kwargs</tt>\nsee the <cite>GET</cite> keyword for the complete list.</p>\n</div>\n",
       "shortdoc": "Sends a DELETE request.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/utils.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/utils.py",
       "lineno": 136
     },
     {
@@ -764,7 +838,7 @@
       "doc": "<div class=\"document\">\n<p>Removes all the session objects</p>\n</div>\n",
       "shortdoc": "Removes all the session objects",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/SessionKeywords.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/SessionKeywords.py",
       "lineno": 544
     },
     {
@@ -772,6 +846,7 @@
       "args": [
         {
           "name": "args",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -781,6 +856,7 @@
         },
         {
           "name": "kwargs",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -792,7 +868,7 @@
       "doc": "<div class=\"document\">\n<p>Sends a DELETE request on a previously created HTTP Session.</p>\n<p>Session will be identified using the <tt class=\"docutils literal\">alias</tt> name.\nThe endpoint used to send the request is the <tt class=\"docutils literal\">url</tt> parameter.</p>\n<p>By default this keyword fails if a status code with error values is returned in the response,\nthis behavior can be modified using the <tt class=\"docutils literal\">expected_status</tt> and <tt class=\"docutils literal\">msg</tt> parameters,\nread more about it in <cite>Status Should Be</cite> keyword documentation.\nIn order to disable this implicit assert mechanism you can pass as <tt class=\"docutils literal\">expected_status</tt> the values <tt class=\"docutils literal\">any</tt> or\n<tt class=\"docutils literal\">anything</tt>.</p>\n<p>Other optional requests arguments can be passed using <tt class=\"docutils literal\">**kwargs</tt>\nsee the <cite>GET</cite> keyword for the complete list.</p>\n</div>\n",
       "shortdoc": "Sends a DELETE request on a previously created HTTP Session.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/utils.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/utils.py",
       "lineno": 149
     },
     {
@@ -800,6 +876,7 @@
       "args": [
         {
           "name": "alias",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -809,6 +886,7 @@
         },
         {
           "name": "uri",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -818,6 +896,7 @@
         },
         {
           "name": "data",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -827,6 +906,7 @@
         },
         {
           "name": "json",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -836,6 +916,7 @@
         },
         {
           "name": "params",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -845,6 +926,7 @@
         },
         {
           "name": "headers",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -854,6 +936,7 @@
         },
         {
           "name": "allow_redirects",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -863,6 +946,7 @@
         },
         {
           "name": "timeout",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -874,14 +958,21 @@
       "doc": "<div class=\"document\">\n<p><em>DEPRECATED</em> Please use <cite>DELETE On Session</cite> instead.</p>\n<p>Send a DELETE request on the session object found using the\ngiven <cite>alias</cite></p>\n<p><tt class=\"docutils literal\">alias</tt> that will be used to identify the Session object in the cache</p>\n<p><tt class=\"docutils literal\">uri</tt> to send the DELETE request to</p>\n<dl class=\"docutils\">\n<dt><tt class=\"docutils literal\">json</tt> a value that will be json encoded</dt>\n<dd>and sent as request data if data is not specified</dd>\n</dl>\n<p><tt class=\"docutils literal\">headers</tt> a dictionary of headers to use with the request</p>\n<p><tt class=\"docutils literal\">allow_redirects</tt> Boolean. Set to True if POST/PUT/DELETE redirect following is allowed.</p>\n<p><tt class=\"docutils literal\">timeout</tt> connection timeout</p>\n</div>\n",
       "shortdoc": "*DEPRECATED* Please use `DELETE On Session` instead.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/DeprecatedKeywords.py",
-      "lineno": 261
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/DeprecatedKeywords.py",
+      "lineno": 261,
+      "deprecated": true
     },
     {
       "name": "Download",
       "args": [
         {
           "name": "url",
+          "type": {
+            "name": "str",
+            "typedoc": "string",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "str"
           ],
@@ -895,6 +986,25 @@
         },
         {
           "name": "target_file",
+          "type": {
+            "name": "Union",
+            "typedoc": null,
+            "nested": [
+              {
+                "name": "str",
+                "typedoc": "string",
+                "nested": [],
+                "union": false
+              },
+              {
+                "name": "None",
+                "typedoc": "None",
+                "nested": [],
+                "union": false
+              }
+            ],
+            "union": true
+          },
           "types": [
             "str",
             "None"
@@ -910,6 +1020,25 @@
         },
         {
           "name": "verify",
+          "type": {
+            "name": "Union",
+            "typedoc": null,
+            "nested": [
+              {
+                "name": "bool",
+                "typedoc": "boolean",
+                "nested": [],
+                "union": false
+              },
+              {
+                "name": "str",
+                "typedoc": "string",
+                "nested": [],
+                "union": false
+              }
+            ],
+            "union": true
+          },
           "types": [
             "bool",
             "str"
@@ -925,6 +1054,12 @@
         },
         {
           "name": "force_new_session",
+          "type": {
+            "name": "bool",
+            "typedoc": "boolean",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "bool"
           ],
@@ -938,6 +1073,12 @@
         },
         {
           "name": "overwrite",
+          "type": {
+            "name": "bool",
+            "typedoc": "boolean",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "bool"
           ],
@@ -951,6 +1092,12 @@
         },
         {
           "name": "stream",
+          "type": {
+            "name": "bool",
+            "typedoc": "boolean",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "bool"
           ],
@@ -964,6 +1111,7 @@
         },
         {
           "name": "kwargs",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -972,10 +1120,10 @@
           "repr": "**kwargs"
         }
       ],
-      "doc": "<div class=\"document\">\n<p>An alias for the <tt class=\"docutils literal\">HTTP Get</tt> keyword.</p>\n<p>The difference in use is that the URL is always downloaded based on\nthe URL path (even without <tt class=\"docutils literal\">target_file</tt>). If there is a filename\nin the path, then that is used as <tt class=\"docutils literal\">target_file</tt> to save to. By default,\nthe filename will be &quot;downloaded.html&quot;.</p>\n<pre class=\"code robotframework literal-block\">\n<span class=\"gh\">*** Settings ***</span><span class=\"p\">\n</span><span class=\"kn\">Library</span><span class=\"p\">    </span><span class=\"nn\">RPA.HTTP</span><span class=\"p\">\n\n</span><span class=\"gh\">*** Variables ***</span><span class=\"p\">\n${</span><span class=\"nv\">DOWNLOAD_PATH</span><span class=\"p\">}=   ${</span><span class=\"nv\">OUTPUT DIR</span><span class=\"p\">}${</span><span class=\"nv\">/</span><span class=\"p\">}</span><span class=\"s\">downloads</span><span class=\"p\">\n${</span><span class=\"nv\">WORD_EXAMPLE</span><span class=\"p\">}=    </span><span class=\"s\">https://file-examples.com/wp-content/uploads/2017/02/file-sample_100kB.doc</span><span class=\"p\">\n${</span><span class=\"nv\">EXCEL_EXAMPLE</span><span class=\"p\">}=   </span><span class=\"s\">https://file-examples.com/wp-content/uploads/2017/02/file_example_XLS_10.xls</span><span class=\"p\">\n\n</span><span class=\"gh\">*** Tasks ***</span><span class=\"p\">\n</span><span class=\"gu\">Download files with reused session with provided file names</span><span class=\"p\">\n    </span><span class=\"c\"># Starts a new session\n</span><span class=\"p\">    </span><span class=\"nf\">Download</span><span class=\"p\">    ${</span><span class=\"nv\">WORD_EXAMPLE</span><span class=\"p\">}    </span><span class=\"s\">target_file=</span><span class=\"p\">${</span><span class=\"nv\">DOWNLOAD_PATH</span><span class=\"p\">}\n    </span><span class=\"c\"># Uses the previous session\n</span><span class=\"p\">    </span><span class=\"nf\">Download</span><span class=\"p\">    ${</span><span class=\"nv\">EXCEL_EXAMPLE</span><span class=\"p\">}    </span><span class=\"s\">target_file=</span><span class=\"p\">${</span><span class=\"nv\">DOWNLOAD_PATH</span><span class=\"p\">}\n    </span><span class=\"c\"># Above files are downloaded using the same names as they have\n</span><span class=\"p\">    </span><span class=\"c\"># on the remote server.</span>\n</pre>\n<table class=\"docutils field-list\" frame=\"void\" rules=\"none\">\n<col class=\"field-name\" />\n<col class=\"field-body\" />\n<tbody valign=\"top\">\n<tr class=\"field\"><th class=\"field-name\">param url:</th><td class=\"field-body\">target URL for GET request</td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\" colspan=\"2\">param target_file:</th></tr>\n<tr class=\"field\"><td>&nbsp;</td><td class=\"field-body\">filepath to save request content, default <tt class=\"docutils literal\">None</tt></td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\">param verify:</th><td class=\"field-body\">if SSL verification should be done, default <tt class=\"docutils literal\">True</tt>,\na CA_BUNDLE path can also be provided</td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\" colspan=\"2\">param force_new_session:</th></tr>\n<tr class=\"field\"><td>&nbsp;</td><td class=\"field-body\">if new HTTP session should be created,\ndefault <tt class=\"docutils literal\">False</tt></td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\" colspan=\"2\">param overwrite:</th></tr>\n<tr class=\"field\"><td>&nbsp;</td><td class=\"field-body\">used together with <tt class=\"docutils literal\">target_file</tt>, if <tt class=\"docutils literal\">True</tt> will overwrite\nthe target file, default <tt class=\"docutils literal\">False</tt></td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\">param stream:</th><td class=\"field-body\">if <tt class=\"docutils literal\">False</tt> the response content will be immediately downloaded</td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\">return:</th><td class=\"field-body\">request response as a dict</td>\n</tr>\n</tbody>\n</table>\n</div>\n",
+      "doc": "<div class=\"document\">\n<p>An alias for the <tt class=\"docutils literal\">HTTP Get</tt> keyword.</p>\n<p>The difference in use is that the URL is always downloaded based on\nthe URL path (even without <tt class=\"docutils literal\">target_file</tt>). If there is a filename\nin the path, then that is used as <tt class=\"docutils literal\">target_file</tt> to save to. By default,\nthe filename will be &quot;downloaded.html&quot;.</p>\n<pre class=\"code robotframework literal-block\">\n<span class=\"gh\">*** Settings ***</span><span class=\"p\">\n</span><span class=\"kn\">Library</span><span class=\"p\">    </span><span class=\"nn\">Camunda.HTTP</span><span class=\"p\">\n\n</span><span class=\"gh\">*** Variables ***</span><span class=\"p\">\n${</span><span class=\"nv\">DOWNLOAD_PATH</span><span class=\"p\">}=   ${</span><span class=\"nv\">OUTPUT DIR</span><span class=\"p\">}${</span><span class=\"nv\">/</span><span class=\"p\">}</span><span class=\"s\">downloads</span><span class=\"p\">\n${</span><span class=\"nv\">WORD_EXAMPLE</span><span class=\"p\">}=    </span><span class=\"s\">https://file-examples.com/wp-content/uploads/2017/02/file-sample_100kB.doc</span><span class=\"p\">\n${</span><span class=\"nv\">EXCEL_EXAMPLE</span><span class=\"p\">}=   </span><span class=\"s\">https://file-examples.com/wp-content/uploads/2017/02/file_example_XLS_10.xls</span><span class=\"p\">\n\n</span><span class=\"gh\">*** Tasks ***</span><span class=\"p\">\n</span><span class=\"gu\">Download files with reused session with provided file names</span><span class=\"p\">\n    </span><span class=\"c\"># Starts a new session\n</span><span class=\"p\">    </span><span class=\"nf\">Download</span><span class=\"p\">    ${</span><span class=\"nv\">WORD_EXAMPLE</span><span class=\"p\">}    </span><span class=\"s\">target_file=</span><span class=\"p\">${</span><span class=\"nv\">DOWNLOAD_PATH</span><span class=\"p\">}\n    </span><span class=\"c\"># Uses the previous session\n</span><span class=\"p\">    </span><span class=\"nf\">Download</span><span class=\"p\">    ${</span><span class=\"nv\">EXCEL_EXAMPLE</span><span class=\"p\">}    </span><span class=\"s\">target_file=</span><span class=\"p\">${</span><span class=\"nv\">DOWNLOAD_PATH</span><span class=\"p\">}\n    </span><span class=\"c\"># Above files are downloaded using the same names as they have\n</span><span class=\"p\">    </span><span class=\"c\"># on the remote server.</span>\n</pre>\n<table class=\"docutils field-list\" frame=\"void\" rules=\"none\">\n<col class=\"field-name\" />\n<col class=\"field-body\" />\n<tbody valign=\"top\">\n<tr class=\"field\"><th class=\"field-name\">param url:</th><td class=\"field-body\">target URL for GET request</td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\" colspan=\"2\">param target_file:</th></tr>\n<tr class=\"field\"><td>&nbsp;</td><td class=\"field-body\">filepath to save request content, default <tt class=\"docutils literal\">None</tt></td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\">param verify:</th><td class=\"field-body\">if SSL verification should be done, default <tt class=\"docutils literal\">True</tt>,\na CA_BUNDLE path can also be provided</td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\" colspan=\"2\">param force_new_session:</th></tr>\n<tr class=\"field\"><td>&nbsp;</td><td class=\"field-body\">if new HTTP session should be created,\ndefault <tt class=\"docutils literal\">False</tt></td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\" colspan=\"2\">param overwrite:</th></tr>\n<tr class=\"field\"><td>&nbsp;</td><td class=\"field-body\">used together with <tt class=\"docutils literal\">target_file</tt>, if <tt class=\"docutils literal\">True</tt> will overwrite\nthe target file, default <tt class=\"docutils literal\">False</tt></td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\">param stream:</th><td class=\"field-body\">if <tt class=\"docutils literal\">False</tt> the response content will be immediately downloaded</td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\">return:</th><td class=\"field-body\">request response as a dict</td>\n</tr>\n</tbody>\n</table>\n</div>\n",
       "shortdoc": "An alias for the ``HTTP Get`` keyword.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/HTTP.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/HTTP.py",
       "lineno": 188
     },
     {
@@ -983,6 +1131,7 @@
       "args": [
         {
           "name": "args",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -992,6 +1141,7 @@
         },
         {
           "name": "kwargs",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1003,7 +1153,7 @@
       "doc": "<div class=\"document\">\n<p>Sends a GET request.</p>\n<p>The endpoint used to retrieve the resource is the <tt class=\"docutils literal\">url</tt>, while query\nstring parameters can be passed as string, dictionary (or list of tuples or bytes)\nthrough the <tt class=\"docutils literal\">params</tt>.</p>\n<p>By default this keyword fails if a status code with error values is returned in the response,\nthis behavior can be modified using the <tt class=\"docutils literal\">expected_status</tt> and <tt class=\"docutils literal\">msg</tt> parameters,\nread more about it in <cite>Status Should Be</cite> keyword documentation.\nIn order to disable this implicit assert mechanism you can pass as <tt class=\"docutils literal\">expected_status</tt> the values <tt class=\"docutils literal\">any</tt> or\n<tt class=\"docutils literal\">anything</tt>.</p>\n<p>Other optional requests arguments can be passed using <tt class=\"docutils literal\">**kwargs</tt> here is a list:</p>\n<div class=\"line-block\">\n<div class=\"line\"><tt class=\"docutils literal\">data</tt>     | Dictionary, list of tuples, bytes, or file-like object to send in the body of the request. |</div>\n<div class=\"line\"><tt class=\"docutils literal\">json</tt>     | A JSON serializable Python object to send in the body of the request. |</div>\n<div class=\"line\"><tt class=\"docutils literal\">headers</tt>  | Dictionary of HTTP Headers to send with the request. |</div>\n<div class=\"line\"><tt class=\"docutils literal\">cookies</tt>  | Dict or CookieJar object to send with the request. |</div>\n<div class=\"line\"><tt class=\"docutils literal\">files</tt>    | Dictionary of file-like-objects (or <tt class=\"docutils literal\">{'name': <span class=\"pre\">file-tuple}</span></tt>) for multipart encoding upload. |</div>\n<div class=\"line\"><tt class=\"docutils literal\"><span class=\"pre\">file-tuple</span></tt> | can be a 2-tuple <tt class=\"docutils literal\">('filename', fileobj)</tt>, 3-tuple <tt class=\"docutils literal\">('filename', fileobj, 'content_type')</tt> or a 4-tuple <tt class=\"docutils literal\">('filename', fileobj, 'content_type', custom_headers)</tt>, where <tt class=\"docutils literal\"><span class=\"pre\">'content-type'</span></tt> is a string defining the content type of the given file and <tt class=\"docutils literal\">custom_headers</tt> a dict-like object containing additional headers to add for the file. |</div>\n<div class=\"line\"><tt class=\"docutils literal\">auth</tt> | Auth tuple to enable Basic/Digest/Custom HTTP Auth. |</div>\n<div class=\"line\"><tt class=\"docutils literal\">timeout</tt> | How many seconds to wait for the server to send data before giving up, as a float, or a <tt class=\"docutils literal\">(connect timeout, read timeout)</tt> tuple. |</div>\n<div class=\"line\"><tt class=\"docutils literal\">allow_redirects</tt> | Boolean. Enable/disable GET/OPTIONS/POST/PUT/PATCH/DELETE/HEAD redirection. Defaults to <tt class=\"docutils literal\">${True}</tt>. |</div>\n<div class=\"line\"><tt class=\"docutils literal\">proxies</tt> | Dictionary mapping protocol or protocol and host to the URL of the proxy (e.g. {'http': 'foo.bar:3128', 'http://host.name': 'foo.bar:4012'}) |</div>\n<div class=\"line\"><tt class=\"docutils literal\">verify</tt>  | Either a boolean, in which case it controls whether we verify the server's TLS certificate, or a string, in which case it must be a path to a CA bundle to use. Defaults to <tt class=\"docutils literal\">${True}</tt>. Warning: if a session has been created with <tt class=\"docutils literal\"><span class=\"pre\">verify=${False}</span></tt> any other requests will not verify the SSL certificate. |</div>\n<div class=\"line\"><tt class=\"docutils literal\">stream</tt> | if <tt class=\"docutils literal\">${False}</tt>, the response content will be immediately downloaded. |</div>\n<div class=\"line\"><tt class=\"docutils literal\">cert</tt> | if String, path to ssl client cert file (.pem). If Tuple, ('cert', 'key') pair. |</div>\n</div>\n<p>For more updated and complete information verify the official Requests api documentation:\n<a class=\"reference external\" href=\"https://requests.readthedocs.io/en/latest/api/\">https://requests.readthedocs.io/en/latest/api/</a></p>\n</div>\n",
       "shortdoc": "Sends a GET request.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/utils.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/utils.py",
       "lineno": 136
     },
     {
@@ -1012,7 +1162,7 @@
       "doc": "<div class=\"document\">\n<p>Get request session alias that was used with the <tt class=\"docutils literal\">HTTP Get</tt> keyword.</p>\n<table class=\"docutils field-list\" frame=\"void\" rules=\"none\">\n<col class=\"field-name\" />\n<col class=\"field-body\" />\n<tbody valign=\"top\">\n<tr class=\"field\"><th class=\"field-name\">return:</th><td class=\"field-body\">name of session alias as a string</td>\n</tr>\n</tbody>\n</table>\n</div>\n",
       "shortdoc": "Get request session alias that was used with the ``HTTP Get`` keyword.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/HTTP.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/HTTP.py",
       "lineno": 181
     },
     {
@@ -1020,6 +1170,7 @@
       "args": [
         {
           "name": "path",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1031,7 +1182,7 @@
       "doc": "<div class=\"document\">\n<p>Opens and returns a file descriptor of a specified file to be passed as <tt class=\"docutils literal\">data</tt> parameter\nto other requests keywords.</p>\n<p>This allows streaming upload of large files without reading them into memory.</p>\n<p>File descriptor is binary mode and read only. Requests keywords will automatically close the file,\nif used outside this library it's up to the caller to close it.</p>\n</div>\n",
       "shortdoc": "Opens and returns a file descriptor of a specified file to be passed as ``data`` parameter to other requests keywords.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/RequestsKeywords.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/RequestsKeywords.py",
       "lineno": 142
     },
     {
@@ -1039,6 +1190,7 @@
       "args": [
         {
           "name": "args",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1048,6 +1200,7 @@
         },
         {
           "name": "kwargs",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1059,7 +1212,7 @@
       "doc": "<div class=\"document\">\n<p>Sends a GET request on a previously created HTTP Session.</p>\n<p>Session will be identified using the <tt class=\"docutils literal\">alias</tt> name.\nThe endpoint used to retrieve the resource is the <tt class=\"docutils literal\">url</tt>, while query\nstring parameters can be passed as string, dictionary (or list of tuples or bytes)\nthrough the <tt class=\"docutils literal\">params</tt>.</p>\n<p>By default this keyword fails if a status code with error values is returned in the response,\nthis behavior can be modified using the <tt class=\"docutils literal\">expected_status</tt> and <tt class=\"docutils literal\">msg</tt> parameters,\nread more about it in <cite>Status Should Be</cite> keyword documentation.\nIn order to disable this implicit assert mechanism you can pass as <tt class=\"docutils literal\">expected_status</tt> the values <tt class=\"docutils literal\">any</tt> or\n<tt class=\"docutils literal\">anything</tt>.</p>\n<p>Other optional requests arguments can be passed using <tt class=\"docutils literal\">**kwargs</tt>\nsee the <cite>GET</cite> keyword for the complete list.</p>\n</div>\n",
       "shortdoc": "Sends a GET request on a previously created HTTP Session.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/utils.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/utils.py",
       "lineno": 149
     },
     {
@@ -1067,6 +1220,7 @@
       "args": [
         {
           "name": "alias",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1076,6 +1230,7 @@
         },
         {
           "name": "uri",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1085,6 +1240,7 @@
         },
         {
           "name": "headers",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1094,6 +1250,7 @@
         },
         {
           "name": "data",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1103,6 +1260,7 @@
         },
         {
           "name": "json",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1112,6 +1270,7 @@
         },
         {
           "name": "params",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1121,6 +1280,7 @@
         },
         {
           "name": "allow_redirects",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1130,6 +1290,7 @@
         },
         {
           "name": "timeout",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1141,14 +1302,16 @@
       "doc": "<div class=\"document\">\n<p><em>DEPRECATED</em> Please use <cite>GET On Session</cite> instead.</p>\n<p>Send a GET request on the session object found using the\ngiven <cite>alias</cite></p>\n<p><tt class=\"docutils literal\">alias</tt> that will be used to identify the Session object in the cache</p>\n<p><tt class=\"docutils literal\">uri</tt> to send the GET request to</p>\n<p><tt class=\"docutils literal\">params</tt> url parameters to append to the uri</p>\n<p><tt class=\"docutils literal\">headers</tt> a dictionary of headers to use with the request</p>\n<dl class=\"docutils\">\n<dt><tt class=\"docutils literal\">data</tt> a dictionary of key-value pairs that will be urlencoded</dt>\n<dd>and sent as GET data\nor binary data that is sent as the raw body content</dd>\n<dt><tt class=\"docutils literal\">json</tt> a value that will be json encoded</dt>\n<dd>and sent as GET data if data is not specified</dd>\n</dl>\n<p><tt class=\"docutils literal\">allow_redirects</tt> Boolean. Set to True if POST/PUT/DELETE redirect following is allowed.</p>\n<p><tt class=\"docutils literal\">timeout</tt> connection timeout</p>\n</div>\n",
       "shortdoc": "*DEPRECATED* Please use `GET On Session` instead.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/DeprecatedKeywords.py",
-      "lineno": 36
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/DeprecatedKeywords.py",
+      "lineno": 36,
+      "deprecated": true
     },
     {
       "name": "HEAD",
       "args": [
         {
           "name": "args",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1158,6 +1321,7 @@
         },
         {
           "name": "kwargs",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1169,7 +1333,7 @@
       "doc": "<div class=\"document\">\n<p>Sends a HEAD request.</p>\n<p>The endpoint used to retrieve the HTTP headers is the <tt class=\"docutils literal\">url</tt>.</p>\n<p><tt class=\"docutils literal\">allow_redirects</tt> parameter is not provided, it will be set to <cite>False</cite> (as\nopposed to the default behavior).</p>\n<p>By default this keyword fails if a status code with error values is returned in the response,\nthis behavior can be modified using the <tt class=\"docutils literal\">expected_status</tt> and <tt class=\"docutils literal\">msg</tt> parameters,\nread more about it in <cite>Status Should Be</cite> keyword documentation.\nIn order to disable this implicit assert mechanism you can pass as <tt class=\"docutils literal\">expected_status</tt> the values <tt class=\"docutils literal\">any</tt> or\n<tt class=\"docutils literal\">anything</tt>.</p>\n<p>Other optional requests arguments can be passed using <tt class=\"docutils literal\">**kwargs</tt>\nsee the <cite>GET</cite> keyword for the complete list.</p>\n</div>\n",
       "shortdoc": "Sends a HEAD request.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/utils.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/utils.py",
       "lineno": 136
     },
     {
@@ -1177,6 +1341,7 @@
       "args": [
         {
           "name": "args",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1186,6 +1351,7 @@
         },
         {
           "name": "kwargs",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1197,7 +1363,7 @@
       "doc": "<div class=\"document\">\n<p>Sends a HEAD request on a previously created HTTP Session.</p>\n<p>Session will be identified using the <tt class=\"docutils literal\">alias</tt> name.\nThe endpoint used to retrieve the HTTP headers is the <tt class=\"docutils literal\">url</tt>.</p>\n<p><tt class=\"docutils literal\">allow_redirects</tt> parameter is not provided, it will be set to <cite>False</cite> (as\nopposed to the default behavior).</p>\n<p>By default this keyword fails if a status code with error values is returned in the response,\nthis behavior can be modified using the <tt class=\"docutils literal\">expected_status</tt> and <tt class=\"docutils literal\">msg</tt> parameters,\nread more about it in <cite>Status Should Be</cite> keyword documentation.\nIn order to disable this implicit assert mechanism you can pass as <tt class=\"docutils literal\">expected_status</tt> the values <tt class=\"docutils literal\">any</tt> or\n<tt class=\"docutils literal\">anything</tt>.</p>\n<p>Other optional requests arguments can be passed using <tt class=\"docutils literal\">**kwargs</tt>\nsee the <cite>GET</cite> keyword for the complete list.</p>\n</div>\n",
       "shortdoc": "Sends a HEAD request on a previously created HTTP Session.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/utils.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/utils.py",
       "lineno": 149
     },
     {
@@ -1205,6 +1371,7 @@
       "args": [
         {
           "name": "alias",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1214,6 +1381,7 @@
         },
         {
           "name": "uri",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1223,6 +1391,7 @@
         },
         {
           "name": "headers",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1232,6 +1401,7 @@
         },
         {
           "name": "allow_redirects",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1241,6 +1411,7 @@
         },
         {
           "name": "timeout",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1252,14 +1423,21 @@
       "doc": "<div class=\"document\">\n<p><em>DEPRECATED</em> Please use <cite>HEAD On Session</cite> instead.</p>\n<p>Send a HEAD request on the session object found using the\ngiven <cite>alias</cite></p>\n<p><tt class=\"docutils literal\">alias</tt> that will be used to identify the Session object in the cache</p>\n<p><tt class=\"docutils literal\">uri</tt> to send the HEAD request to</p>\n<p><tt class=\"docutils literal\">allow_redirects</tt> Boolean. Set to True if POST/PUT/DELETE redirect following is allowed.</p>\n<p><tt class=\"docutils literal\">headers</tt> a dictionary of headers to use with the request</p>\n<p><tt class=\"docutils literal\">timeout</tt> connection timeout</p>\n</div>\n",
       "shortdoc": "*DEPRECATED* Please use `HEAD On Session` instead.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/DeprecatedKeywords.py",
-      "lineno": 308
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/DeprecatedKeywords.py",
+      "lineno": 308,
+      "deprecated": true
     },
     {
       "name": "Http Get",
       "args": [
         {
           "name": "url",
+          "type": {
+            "name": "str",
+            "typedoc": "string",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "str"
           ],
@@ -1273,6 +1451,25 @@
         },
         {
           "name": "target_file",
+          "type": {
+            "name": "Union",
+            "typedoc": null,
+            "nested": [
+              {
+                "name": "str",
+                "typedoc": "string",
+                "nested": [],
+                "union": false
+              },
+              {
+                "name": "None",
+                "typedoc": "None",
+                "nested": [],
+                "union": false
+              }
+            ],
+            "union": true
+          },
           "types": [
             "str",
             "None"
@@ -1288,6 +1485,25 @@
         },
         {
           "name": "verify",
+          "type": {
+            "name": "Union",
+            "typedoc": null,
+            "nested": [
+              {
+                "name": "bool",
+                "typedoc": "boolean",
+                "nested": [],
+                "union": false
+              },
+              {
+                "name": "str",
+                "typedoc": "string",
+                "nested": [],
+                "union": false
+              }
+            ],
+            "union": true
+          },
           "types": [
             "bool",
             "str"
@@ -1303,6 +1519,12 @@
         },
         {
           "name": "force_new_session",
+          "type": {
+            "name": "bool",
+            "typedoc": "boolean",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "bool"
           ],
@@ -1316,6 +1538,12 @@
         },
         {
           "name": "overwrite",
+          "type": {
+            "name": "bool",
+            "typedoc": "boolean",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "bool"
           ],
@@ -1329,6 +1557,12 @@
         },
         {
           "name": "stream",
+          "type": {
+            "name": "bool",
+            "typedoc": "boolean",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "bool"
           ],
@@ -1342,6 +1576,7 @@
         },
         {
           "name": "kwargs",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1350,10 +1585,10 @@
           "repr": "**kwargs"
         }
       ],
-      "doc": "<div class=\"document\">\n<p>A helper method for <tt class=\"docutils literal\">Get Request</tt> that will create a session, perform GET\nrequest, and store the target file, if set by the <tt class=\"docutils literal\">target_file</tt> parameter.</p>\n<p>The old session will be used if the URL scheme and the host are the same as\npreviously, e.g., '<a class=\"reference external\" href=\"https://www.google.fi\">https://www.google.fi</a>' part of the URL.</p>\n<pre class=\"code robotframework literal-block\">\n<span class=\"gh\">*** Settings ***</span><span class=\"p\">\n</span><span class=\"kn\">Library</span><span class=\"p\">    </span><span class=\"nn\">RPA.HTTP</span><span class=\"p\">\n\n</span><span class=\"gh\">*** Variables ***</span><span class=\"p\">\n${</span><span class=\"nv\">DOWNLOAD_PATH</span><span class=\"p\">}=   ${</span><span class=\"nv\">OUTPUT DIR</span><span class=\"p\">}${</span><span class=\"nv\">/</span><span class=\"p\">}</span><span class=\"s\">downloads</span><span class=\"p\">\n${</span><span class=\"nv\">WORD_EXAMPLE</span><span class=\"p\">}=    </span><span class=\"s\">https://file-examples.com/wp-content/uploads/2017/02/file-sample_100kB.doc</span><span class=\"p\">\n${</span><span class=\"nv\">EXCEL_EXAMPLE</span><span class=\"p\">}=   </span><span class=\"s\">https://file-examples.com/wp-content/uploads/2017/02/file_example_XLS_10.xls</span><span class=\"p\">\n\n</span><span class=\"gh\">*** Tasks ***</span><span class=\"p\">\n</span><span class=\"gu\">Download files with reused session</span><span class=\"p\">\n    </span><span class=\"c\"># Starts a new session\n</span><span class=\"p\">    </span><span class=\"nf\">HTTP Get</span><span class=\"p\">    ${</span><span class=\"nv\">WORD_EXAMPLE</span><span class=\"p\">}    </span><span class=\"s\">target_file=</span><span class=\"p\">${</span><span class=\"nv\">DOWNLOAD_PATH</span><span class=\"p\">}${</span><span class=\"nv\">/</span><span class=\"p\">}</span><span class=\"s\">word-example.doc</span><span class=\"p\">\n    </span><span class=\"c\"># Uses the previous session\n</span><span class=\"p\">    </span><span class=\"nf\">HTTP Get</span><span class=\"p\">    ${</span><span class=\"nv\">EXCEL_EXAMPLE</span><span class=\"p\">}    </span><span class=\"s\">target_file=</span><span class=\"p\">${</span><span class=\"nv\">DOWNLOAD_PATH</span><span class=\"p\">}${</span><span class=\"nv\">/</span><span class=\"p\">}</span><span class=\"s\">excel-example.xls</span>\n</pre>\n<table class=\"docutils field-list\" frame=\"void\" rules=\"none\">\n<col class=\"field-name\" />\n<col class=\"field-body\" />\n<tbody valign=\"top\">\n<tr class=\"field\"><th class=\"field-name\">param url:</th><td class=\"field-body\">target URL for GET request</td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\" colspan=\"2\">param target_file:</th></tr>\n<tr class=\"field\"><td>&nbsp;</td><td class=\"field-body\">filepath to save request content, default <tt class=\"docutils literal\">None</tt></td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\">param verify:</th><td class=\"field-body\">if SSL verification should be done, default <tt class=\"docutils literal\">True</tt>,\na CA_BUNDLE path can also be provided</td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\" colspan=\"2\">param force_new_session:</th></tr>\n<tr class=\"field\"><td>&nbsp;</td><td class=\"field-body\">if new HTTP session should be created,\ndefault <tt class=\"docutils literal\">False</tt></td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\" colspan=\"2\">param overwrite:</th></tr>\n<tr class=\"field\"><td>&nbsp;</td><td class=\"field-body\">used together with <tt class=\"docutils literal\">target_file</tt>, if <tt class=\"docutils literal\">True</tt> will overwrite\nthe target file, default <tt class=\"docutils literal\">False</tt></td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\">param stream:</th><td class=\"field-body\">if <tt class=\"docutils literal\">False</tt>, the response content will be immediately downloaded</td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\">return:</th><td class=\"field-body\">request response as a dict</td>\n</tr>\n</tbody>\n</table>\n</div>\n",
+      "doc": "<div class=\"document\">\n<p>A helper method for <tt class=\"docutils literal\">Get Request</tt> that will create a session, perform GET\nrequest, and store the target file, if set by the <tt class=\"docutils literal\">target_file</tt> parameter.</p>\n<p>The old session will be used if the URL scheme and the host are the same as\npreviously, e.g., '<a class=\"reference external\" href=\"https://www.google.fi\">https://www.google.fi</a>' part of the URL.</p>\n<pre class=\"code robotframework literal-block\">\n<span class=\"gh\">*** Settings ***</span><span class=\"p\">\n</span><span class=\"kn\">Library</span><span class=\"p\">    </span><span class=\"nn\">Camunda.HTTP</span><span class=\"p\">\n\n</span><span class=\"gh\">*** Variables ***</span><span class=\"p\">\n${</span><span class=\"nv\">DOWNLOAD_PATH</span><span class=\"p\">}=   ${</span><span class=\"nv\">OUTPUT DIR</span><span class=\"p\">}${</span><span class=\"nv\">/</span><span class=\"p\">}</span><span class=\"s\">downloads</span><span class=\"p\">\n${</span><span class=\"nv\">WORD_EXAMPLE</span><span class=\"p\">}=    </span><span class=\"s\">https://file-examples.com/wp-content/uploads/2017/02/file-sample_100kB.doc</span><span class=\"p\">\n${</span><span class=\"nv\">EXCEL_EXAMPLE</span><span class=\"p\">}=   </span><span class=\"s\">https://file-examples.com/wp-content/uploads/2017/02/file_example_XLS_10.xls</span><span class=\"p\">\n\n</span><span class=\"gh\">*** Tasks ***</span><span class=\"p\">\n</span><span class=\"gu\">Download files with reused session</span><span class=\"p\">\n    </span><span class=\"c\"># Starts a new session\n</span><span class=\"p\">    </span><span class=\"nf\">HTTP Get</span><span class=\"p\">    ${</span><span class=\"nv\">WORD_EXAMPLE</span><span class=\"p\">}    </span><span class=\"s\">target_file=</span><span class=\"p\">${</span><span class=\"nv\">DOWNLOAD_PATH</span><span class=\"p\">}${</span><span class=\"nv\">/</span><span class=\"p\">}</span><span class=\"s\">word-example.doc</span><span class=\"p\">\n    </span><span class=\"c\"># Uses the previous session\n</span><span class=\"p\">    </span><span class=\"nf\">HTTP Get</span><span class=\"p\">    ${</span><span class=\"nv\">EXCEL_EXAMPLE</span><span class=\"p\">}    </span><span class=\"s\">target_file=</span><span class=\"p\">${</span><span class=\"nv\">DOWNLOAD_PATH</span><span class=\"p\">}${</span><span class=\"nv\">/</span><span class=\"p\">}</span><span class=\"s\">excel-example.xls</span>\n</pre>\n<table class=\"docutils field-list\" frame=\"void\" rules=\"none\">\n<col class=\"field-name\" />\n<col class=\"field-body\" />\n<tbody valign=\"top\">\n<tr class=\"field\"><th class=\"field-name\">param url:</th><td class=\"field-body\">target URL for GET request</td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\" colspan=\"2\">param target_file:</th></tr>\n<tr class=\"field\"><td>&nbsp;</td><td class=\"field-body\">filepath to save request content, default <tt class=\"docutils literal\">None</tt></td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\">param verify:</th><td class=\"field-body\">if SSL verification should be done, default <tt class=\"docutils literal\">True</tt>,\na CA_BUNDLE path can also be provided</td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\" colspan=\"2\">param force_new_session:</th></tr>\n<tr class=\"field\"><td>&nbsp;</td><td class=\"field-body\">if new HTTP session should be created,\ndefault <tt class=\"docutils literal\">False</tt></td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\" colspan=\"2\">param overwrite:</th></tr>\n<tr class=\"field\"><td>&nbsp;</td><td class=\"field-body\">used together with <tt class=\"docutils literal\">target_file</tt>, if <tt class=\"docutils literal\">True</tt> will overwrite\nthe target file, default <tt class=\"docutils literal\">False</tt></td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\">param stream:</th><td class=\"field-body\">if <tt class=\"docutils literal\">False</tt>, the response content will be immediately downloaded</td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\">return:</th><td class=\"field-body\">request response as a dict</td>\n</tr>\n</tbody>\n</table>\n</div>\n",
       "shortdoc": "A helper method for ``Get Request`` that will create a session, perform GET request, and store the target file, if set by the ``target_file`` parameter.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/HTTP.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/HTTP.py",
       "lineno": 98
     },
     {
@@ -1361,6 +1596,7 @@
       "args": [
         {
           "name": "args",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1370,6 +1606,7 @@
         },
         {
           "name": "kwargs",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1381,7 +1618,7 @@
       "doc": "<div class=\"document\">\n<p>Sends a OPTIONS request.</p>\n<p>The endpoint used to retrieve the resource is the <tt class=\"docutils literal\">url</tt>.</p>\n<p>By default this keyword fails if a status code with error values is returned in the response,\nthis behavior can be modified using the <tt class=\"docutils literal\">expected_status</tt> and <tt class=\"docutils literal\">msg</tt> parameters,\nread more about it in <cite>Status Should Be</cite> keyword documentation.\nIn order to disable this implicit assert mechanism you can pass as <tt class=\"docutils literal\">expected_status</tt> the values <tt class=\"docutils literal\">any</tt> or\n<tt class=\"docutils literal\">anything</tt>.</p>\n<p>Other optional requests arguments can be passed using <tt class=\"docutils literal\">**kwargs</tt>\nsee the <cite>GET</cite> keyword for the complete list.</p>\n</div>\n",
       "shortdoc": "Sends a OPTIONS request.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/utils.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/utils.py",
       "lineno": 136
     },
     {
@@ -1389,6 +1626,7 @@
       "args": [
         {
           "name": "args",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1398,6 +1636,7 @@
         },
         {
           "name": "kwargs",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1409,7 +1648,7 @@
       "doc": "<div class=\"document\">\n<p>Sends a OPTIONS request on a previously created HTTP Session.</p>\n<p>Session will be identified using the <tt class=\"docutils literal\">alias</tt> name.\nThe endpoint used to retrieve the resource is the <tt class=\"docutils literal\">url</tt>.</p>\n<p>By default this keyword fails if a status code with error values is returned in the response,\nthis behavior can be modified using the <tt class=\"docutils literal\">expected_status</tt> and <tt class=\"docutils literal\">msg</tt> parameters,\nread more about it in <cite>Status Should Be</cite> keyword documentation.\nIn order to disable this implicit assert mechanism you can pass as <tt class=\"docutils literal\">expected_status</tt> the values <tt class=\"docutils literal\">any</tt> or\n<tt class=\"docutils literal\">anything</tt>.</p>\n<p>Other optional requests arguments can be passed using <tt class=\"docutils literal\">**kwargs</tt>\nsee the <cite>GET</cite> keyword for the complete list.</p>\n</div>\n",
       "shortdoc": "Sends a OPTIONS request on a previously created HTTP Session.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/utils.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/utils.py",
       "lineno": 149
     },
     {
@@ -1417,6 +1656,7 @@
       "args": [
         {
           "name": "alias",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1426,6 +1666,7 @@
         },
         {
           "name": "uri",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1435,6 +1676,7 @@
         },
         {
           "name": "headers",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1444,6 +1686,7 @@
         },
         {
           "name": "allow_redirects",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1453,6 +1696,7 @@
         },
         {
           "name": "timeout",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1464,14 +1708,16 @@
       "doc": "<div class=\"document\">\n<p><em>DEPRECATED</em> Please use <cite>OPTIONS On Session</cite> instead.</p>\n<p>Send an OPTIONS request on the session object found using the\ngiven <cite>alias</cite></p>\n<p><tt class=\"docutils literal\">alias</tt> that will be used to identify the Session object in the cache</p>\n<p><tt class=\"docutils literal\">uri</tt> to send the OPTIONS request to</p>\n<p><tt class=\"docutils literal\">allow_redirects</tt> Boolean. Set to True if POST/PUT/DELETE redirect following is allowed.</p>\n<p><tt class=\"docutils literal\">headers</tt> a dictionary of headers to use with the request</p>\n<p><tt class=\"docutils literal\">timeout</tt> connection timeout</p>\n</div>\n",
       "shortdoc": "*DEPRECATED* Please use `OPTIONS On Session` instead.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/DeprecatedKeywords.py",
-      "lineno": 344
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/DeprecatedKeywords.py",
+      "lineno": 344,
+      "deprecated": true
     },
     {
       "name": "PATCH",
       "args": [
         {
           "name": "args",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1481,6 +1727,7 @@
         },
         {
           "name": "kwargs",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1492,7 +1739,7 @@
       "doc": "<div class=\"document\">\n<p>Sends a PUT request.</p>\n<p>The endpoint used to send the request is the <tt class=\"docutils literal\">url</tt> parameter, while its body\ncan be passed using <tt class=\"docutils literal\">data</tt> or <tt class=\"docutils literal\">json</tt> parameters.</p>\n<p><tt class=\"docutils literal\">data</tt> can be a dictionary, list of tuples, bytes, or file-like object.\nIf you want to pass a json body pass a dictionary as <tt class=\"docutils literal\">json</tt> parameter.</p>\n<p>By default this keyword fails if a status code with error values is returned in the response,\nthis behavior can be modified using the <tt class=\"docutils literal\">expected_status</tt> and <tt class=\"docutils literal\">msg</tt> parameters,\nread more about it in <cite>Status Should Be</cite> keyword documentation.\nIn order to disable this implicit assert mechanism you can pass as <tt class=\"docutils literal\">expected_status</tt> the values <tt class=\"docutils literal\">any</tt> or\n<tt class=\"docutils literal\">anything</tt>.</p>\n<p>Other optional requests arguments can be passed using <tt class=\"docutils literal\">**kwargs</tt>\nsee the <cite>GET</cite> keyword for the complete list.</p>\n</div>\n",
       "shortdoc": "Sends a PUT request.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/utils.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/utils.py",
       "lineno": 136
     },
     {
@@ -1500,6 +1747,7 @@
       "args": [
         {
           "name": "args",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1509,6 +1757,7 @@
         },
         {
           "name": "kwargs",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1520,7 +1769,7 @@
       "doc": "<div class=\"document\">\n<p>Sends a PATCH request on a previously created HTTP Session.</p>\n<p>Session will be identified using the <tt class=\"docutils literal\">alias</tt> name.\nThe endpoint used to send the request is the <tt class=\"docutils literal\">url</tt> parameter, while its body\ncan be passed using <tt class=\"docutils literal\">data</tt> or <tt class=\"docutils literal\">json</tt> parameters.</p>\n<p><tt class=\"docutils literal\">data</tt> can be a dictionary, list of tuples, bytes, or file-like object.\nIf you want to pass a json body pass a dictionary as <tt class=\"docutils literal\">json</tt> parameter.</p>\n<p>By default this keyword fails if a status code with error values is returned in the response,\nthis behavior can be modified using the <tt class=\"docutils literal\">expected_status</tt> and <tt class=\"docutils literal\">msg</tt> parameters,\nread more about it in <cite>Status Should Be</cite> keyword documentation.\nIn order to disable this implicit assert mechanism you can pass as <tt class=\"docutils literal\">expected_status</tt> the values <tt class=\"docutils literal\">any</tt> or\n<tt class=\"docutils literal\">anything</tt>.</p>\n<p>Other optional requests arguments can be passed using <tt class=\"docutils literal\">**kwargs</tt>\nsee the <cite>GET</cite> keyword for the complete list.</p>\n</div>\n",
       "shortdoc": "Sends a PATCH request on a previously created HTTP Session.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/utils.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/utils.py",
       "lineno": 149
     },
     {
@@ -1528,6 +1777,7 @@
       "args": [
         {
           "name": "alias",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1537,6 +1787,7 @@
         },
         {
           "name": "uri",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1546,6 +1797,7 @@
         },
         {
           "name": "data",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1555,6 +1807,7 @@
         },
         {
           "name": "json",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1564,6 +1817,7 @@
         },
         {
           "name": "params",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1573,6 +1827,7 @@
         },
         {
           "name": "headers",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1582,6 +1837,7 @@
         },
         {
           "name": "files",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1591,6 +1847,7 @@
         },
         {
           "name": "allow_redirects",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1600,6 +1857,7 @@
         },
         {
           "name": "timeout",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1611,14 +1869,16 @@
       "doc": "<div class=\"document\">\n<p><em>DEPRECATED</em> Please use <cite>PATCH On Session</cite> instead.</p>\n<p>Send a PATCH request on the session object found using the\ngiven <cite>alias</cite></p>\n<p><tt class=\"docutils literal\">alias</tt> that will be used to identify the Session object in the cache</p>\n<p><tt class=\"docutils literal\">uri</tt> to send the PATCH request to</p>\n<dl class=\"docutils\">\n<dt><tt class=\"docutils literal\">data</tt> a dictionary of key-value pairs that will be urlencoded</dt>\n<dd>and sent as PATCH data\nor binary data that is sent as the raw body content\nor file descriptor retrieved by Get File For Streaming Upload</dd>\n<dt><tt class=\"docutils literal\">json</tt> a value that will be json encoded</dt>\n<dd>and sent as PATCH data if data is not specified</dd>\n</dl>\n<p><tt class=\"docutils literal\">headers</tt> a dictionary of headers to use with the request</p>\n<p><tt class=\"docutils literal\">files</tt> a dictionary of file names containing file data to PATCH to the server</p>\n<p><tt class=\"docutils literal\">allow_redirects</tt> Boolean. Set to True if POST/PUT/DELETE redirect following is allowed.</p>\n<p><tt class=\"docutils literal\">params</tt> url parameters to append to the uri</p>\n<p><tt class=\"docutils literal\">timeout</tt> connection timeout</p>\n</div>\n",
       "shortdoc": "*DEPRECATED* Please use `PATCH On Session` instead.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/DeprecatedKeywords.py",
-      "lineno": 147
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/DeprecatedKeywords.py",
+      "lineno": 147,
+      "deprecated": true
     },
     {
       "name": "POST",
       "args": [
         {
           "name": "args",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1628,6 +1888,7 @@
         },
         {
           "name": "kwargs",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1639,7 +1900,7 @@
       "doc": "<div class=\"document\">\n<p>Sends a POST request.</p>\n<p>The endpoint used to send the request is the <tt class=\"docutils literal\">url</tt> parameter, while its body\ncan be passed using <tt class=\"docutils literal\">data</tt> or <tt class=\"docutils literal\">json</tt> parameters.</p>\n<p><tt class=\"docutils literal\">data</tt> can be a dictionary, list of tuples, bytes, or file-like object.\nIf you want to pass a json body pass a dictionary as <tt class=\"docutils literal\">json</tt> parameter.</p>\n<p>By default this keyword fails if a status code with error values is returned in the response,\nthis behavior can be modified using the <tt class=\"docutils literal\">expected_status</tt> and <tt class=\"docutils literal\">msg</tt> parameters,\nread more about it in <cite>Status Should Be</cite> keyword documentation.\nIn order to disable this implicit assert mechanism you can pass as <tt class=\"docutils literal\">expected_status</tt> the values <tt class=\"docutils literal\">any</tt> or\n<tt class=\"docutils literal\">anything</tt>.</p>\n<p>Other optional requests arguments can be passed using <tt class=\"docutils literal\">**kwargs</tt>\nsee the <cite>GET</cite> keyword for the complete list.</p>\n</div>\n",
       "shortdoc": "Sends a POST request.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/utils.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/utils.py",
       "lineno": 136
     },
     {
@@ -1647,6 +1908,7 @@
       "args": [
         {
           "name": "args",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1656,6 +1918,7 @@
         },
         {
           "name": "kwargs",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1667,7 +1930,7 @@
       "doc": "<div class=\"document\">\n<p>Sends a POST request on a previously created HTTP Session.</p>\n<p>Session will be identified using the <tt class=\"docutils literal\">alias</tt> name.\nThe endpoint used to send the request is the <tt class=\"docutils literal\">url</tt> parameter, while its body\ncan be passed using <tt class=\"docutils literal\">data</tt> or <tt class=\"docutils literal\">json</tt> parameters.</p>\n<p><tt class=\"docutils literal\">data</tt> can be a dictionary, list of tuples, bytes, or file-like object.\nIf you want to pass a json body pass a dictionary as <tt class=\"docutils literal\">json</tt> parameter.</p>\n<p>By default this keyword fails if a status code with error values is returned in the response,\nthis behavior can be modified using the <tt class=\"docutils literal\">expected_status</tt> and <tt class=\"docutils literal\">msg</tt> parameters,\nread more about it in <cite>Status Should Be</cite> keyword documentation.\nIn order to disable this implicit assert mechanism you can pass as <tt class=\"docutils literal\">expected_status</tt> the values <tt class=\"docutils literal\">any</tt> or\n<tt class=\"docutils literal\">anything</tt>.</p>\n<p>Other optional requests arguments can be passed using <tt class=\"docutils literal\">**kwargs</tt>\nsee the <cite>GET</cite> keyword for the complete list.</p>\n</div>\n",
       "shortdoc": "Sends a POST request on a previously created HTTP Session.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/utils.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/utils.py",
       "lineno": 149
     },
     {
@@ -1675,6 +1938,7 @@
       "args": [
         {
           "name": "alias",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1684,6 +1948,7 @@
         },
         {
           "name": "uri",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1693,6 +1958,7 @@
         },
         {
           "name": "data",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1702,6 +1968,7 @@
         },
         {
           "name": "json",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1711,6 +1978,7 @@
         },
         {
           "name": "params",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1720,6 +1988,7 @@
         },
         {
           "name": "headers",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1729,6 +1998,7 @@
         },
         {
           "name": "files",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1738,6 +2008,7 @@
         },
         {
           "name": "allow_redirects",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1747,6 +2018,7 @@
         },
         {
           "name": "timeout",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1758,14 +2030,16 @@
       "doc": "<div class=\"document\">\n<p><em>DEPRECATED</em> Please use <cite>POST On Session</cite> instead.</p>\n<p>Send a POST request on the session object found using the\ngiven <cite>alias</cite></p>\n<p><tt class=\"docutils literal\">alias</tt> that will be used to identify the Session object in the cache</p>\n<p><tt class=\"docutils literal\">uri</tt> to send the POST request to</p>\n<dl class=\"docutils\">\n<dt><tt class=\"docutils literal\">data</tt> a dictionary of key-value pairs that will be urlencoded</dt>\n<dd>and sent as POST data\nor binary data that is sent as the raw body content\nor passed as such for multipart form data if <tt class=\"docutils literal\">files</tt> is also defined\nor file descriptor retrieved by Get File For Streaming Upload</dd>\n<dt><tt class=\"docutils literal\">json</tt> a value that will be json encoded</dt>\n<dd>and sent as POST data if files or data is not specified</dd>\n</dl>\n<p><tt class=\"docutils literal\">params</tt> url parameters to append to the uri</p>\n<p><tt class=\"docutils literal\">headers</tt> a dictionary of headers to use with the request</p>\n<p><tt class=\"docutils literal\">files</tt> a dictionary of file names containing file data to POST to the server</p>\n<p><tt class=\"docutils literal\">allow_redirects</tt> Boolean. Set to True if POST/PUT/DELETE redirect following is allowed.</p>\n<p><tt class=\"docutils literal\">timeout</tt> connection timeout</p>\n</div>\n",
       "shortdoc": "*DEPRECATED* Please use `POST On Session` instead.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/DeprecatedKeywords.py",
-      "lineno": 88
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/DeprecatedKeywords.py",
+      "lineno": 88,
+      "deprecated": true
     },
     {
       "name": "PUT",
       "args": [
         {
           "name": "args",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1775,6 +2049,7 @@
         },
         {
           "name": "kwargs",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1786,7 +2061,7 @@
       "doc": "<div class=\"document\">\n<p>Sends a PUT request.</p>\n<p>The endpoint used to send the request is the <tt class=\"docutils literal\">url</tt> parameter, while its body\ncan be passed using <tt class=\"docutils literal\">data</tt> or <tt class=\"docutils literal\">json</tt> parameters.</p>\n<p><tt class=\"docutils literal\">data</tt> can be a dictionary, list of tuples, bytes, or file-like object.\nIf you want to pass a json body pass a dictionary as <tt class=\"docutils literal\">json</tt> parameter.</p>\n<p>By default this keyword fails if a status code with error values is returned in the response,\nthis behavior can be modified using the <tt class=\"docutils literal\">expected_status</tt> and <tt class=\"docutils literal\">msg</tt> parameters,\nread more about it in <cite>Status Should Be</cite> keyword documentation.\nIn order to disable this implicit assert mechanism you can pass as <tt class=\"docutils literal\">expected_status</tt> the values <tt class=\"docutils literal\">any</tt> or\n<tt class=\"docutils literal\">anything</tt>.</p>\n<p>Other optional requests arguments can be passed using <tt class=\"docutils literal\">**kwargs</tt>\nsee the <cite>GET</cite> keyword for the complete list.</p>\n</div>\n",
       "shortdoc": "Sends a PUT request.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/utils.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/utils.py",
       "lineno": 136
     },
     {
@@ -1794,6 +2069,7 @@
       "args": [
         {
           "name": "args",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1803,6 +2079,7 @@
         },
         {
           "name": "kwargs",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1814,7 +2091,7 @@
       "doc": "<div class=\"document\">\n<p>Sends a PUT request on a previously created HTTP Session.</p>\n<p>Session will be identified using the <tt class=\"docutils literal\">alias</tt> name.\nThe endpoint used to send the request is the <tt class=\"docutils literal\">url</tt> parameter, while its body\ncan be passed using <tt class=\"docutils literal\">data</tt> or <tt class=\"docutils literal\">json</tt> parameters.</p>\n<p><tt class=\"docutils literal\">data</tt> can be a dictionary, list of tuples, bytes, or file-like object.\nIf you want to pass a json body pass a dictionary as <tt class=\"docutils literal\">json</tt> parameter.</p>\n<p>By default this keyword fails if a status code with error values is returned in the response,\nthis behavior can be modified using the <tt class=\"docutils literal\">expected_status</tt> and <tt class=\"docutils literal\">msg</tt> parameters,\nread more about it in <cite>Status Should Be</cite> keyword documentation.\nIn order to disable this implicit assert mechanism you can pass as <tt class=\"docutils literal\">expected_status</tt> the values <tt class=\"docutils literal\">any</tt> or\n<tt class=\"docutils literal\">anything</tt>.</p>\n<p>Other optional requests arguments can be passed using <tt class=\"docutils literal\">**kwargs</tt>\nsee the <cite>GET</cite> keyword for the complete list.</p>\n</div>\n",
       "shortdoc": "Sends a PUT request on a previously created HTTP Session.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/utils.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/utils.py",
       "lineno": 149
     },
     {
@@ -1822,6 +2099,7 @@
       "args": [
         {
           "name": "alias",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1831,6 +2109,7 @@
         },
         {
           "name": "uri",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1840,6 +2119,7 @@
         },
         {
           "name": "data",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1849,6 +2129,7 @@
         },
         {
           "name": "json",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1858,6 +2139,7 @@
         },
         {
           "name": "params",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1867,6 +2149,7 @@
         },
         {
           "name": "files",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1876,6 +2159,7 @@
         },
         {
           "name": "headers",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1885,6 +2169,7 @@
         },
         {
           "name": "allow_redirects",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1894,6 +2179,7 @@
         },
         {
           "name": "timeout",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1905,14 +2191,16 @@
       "doc": "<div class=\"document\">\n<p><em>DEPRECATED</em> Please use <cite>PUT On Session</cite> instead.</p>\n<p>Send a PUT request on the session object found using the\ngiven <cite>alias</cite></p>\n<p><tt class=\"docutils literal\">alias</tt> that will be used to identify the Session object in the cache</p>\n<p><tt class=\"docutils literal\">uri</tt> to send the PUT request to</p>\n<dl class=\"docutils\">\n<dt><tt class=\"docutils literal\">data</tt> a dictionary of key-value pairs that will be urlencoded</dt>\n<dd>and sent as PUT data\nor binary data that is sent as the raw body content\nor file descriptor retrieved by Get File For Streaming Upload</dd>\n<dt><tt class=\"docutils literal\">json</tt> a value that will be json encoded</dt>\n<dd>and sent as PUT data if data is not specified</dd>\n</dl>\n<p><tt class=\"docutils literal\">headers</tt> a dictionary of headers to use with the request</p>\n<p><tt class=\"docutils literal\">allow_redirects</tt> Boolean. Set to True if POST/PUT/DELETE redirect following is allowed.</p>\n<p><tt class=\"docutils literal\">params</tt> url parameters to append to the uri</p>\n<p><tt class=\"docutils literal\">timeout</tt> connection timeout</p>\n</div>\n",
       "shortdoc": "*DEPRECATED* Please use `PUT On Session` instead.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/DeprecatedKeywords.py",
-      "lineno": 205
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/DeprecatedKeywords.py",
+      "lineno": 205,
+      "deprecated": true
     },
     {
       "name": "Request Should Be Successful",
       "args": [
         {
           "name": "response",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1924,7 +2212,7 @@
       "doc": "<div class=\"document\">\n<p>Fails if response status code is a client or server error (4xx, 5xx).</p>\n<p><tt class=\"docutils literal\">response</tt> is the output of other requests keywords like <cite>GET On Session</cite>.\nIf omitted the last response will be used.</p>\n<p>In case of failure an HTTPError will be automatically raised.</p>\n<p>For a more versatile assert keyword see <cite>Status Should Be</cite>.</p>\n</div>\n",
       "shortdoc": "Fails if response status code is a client or server error (4xx, 5xx).",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/RequestsKeywords.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/RequestsKeywords.py",
       "lineno": 125
     },
     {
@@ -1932,6 +2220,7 @@
       "args": [
         {
           "name": "alias",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1943,7 +2232,7 @@
       "doc": "<div class=\"document\">\n<p>Return True if the session has been already created</p>\n<p><tt class=\"docutils literal\">alias</tt> that has been used to identify the Session object in the cache</p>\n</div>\n",
       "shortdoc": "Return True if the session has been already created",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/SessionKeywords.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/SessionKeywords.py",
       "lineno": 532
     },
     {
@@ -1951,6 +2240,7 @@
       "args": [
         {
           "name": "expected_status",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1960,6 +2250,7 @@
         },
         {
           "name": "response",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1969,6 +2260,7 @@
         },
         {
           "name": "msg",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -1980,7 +2272,7 @@
       "doc": "<div class=\"document\">\n<p>Fails if response status code is different than the expected.</p>\n<p><tt class=\"docutils literal\">expected_status</tt> could be the code number as an integer or as string.\nBut it could also be a named status code like 'ok', 'created', 'accepted' or\n'bad request', 'not found' etc.</p>\n<p><tt class=\"docutils literal\">response</tt> is the output of other requests keywords like <cite>GET</cite> or <cite>GET On Session</cite>.\nIf omitted the last response will be used.</p>\n<p>In case of failure an HTTPError will be automatically raised.\nA custom failure message <tt class=\"docutils literal\">msg</tt> can be added like in built-in keywords.</p>\n<p>New requests keywords like <cite>GET</cite> or <cite>GET On Session</cite> (starting from 0.8 version) already have an implicit assert\nmechanism that, by default, verifies the response status code.\n<cite>Status Should Be</cite> keyword can be useful when you disable implicit assert using <tt class=\"docutils literal\">expected_status=anything</tt>.</p>\n<p>For example when you have a nested keyword that is used for both OK and ERROR responses:</p>\n<div class=\"line-block\">\n<div class=\"line\"><strong>* Test Cases *</strong></div>\n<div class=\"line\"><br /></div>\n<div class=\"line\">Test Get Request And Make Sure Is A 404 Response</div>\n<div class=\"line-block\">\n<div class=\"line\">${resp}=            GET Custom Keyword That Returns OK or ERROR Response  case=notfound</div>\n<div class=\"line\">Status Should Be    404    ${resp}</div>\n<div class=\"line\">Should Be Equal As Strings  NOT FOUND  ${resp.reason}</div>\n<div class=\"line\"><br /></div>\n</div>\n<div class=\"line\">Test Get Request And Make Sure Is OK</div>\n<div class=\"line-block\">\n<div class=\"line\">${resp}=            GET Custom Keyword That Returns OK or ERROR Response  case=pass</div>\n<div class=\"line\">Status Should Be    200    ${resp}</div>\n<div class=\"line\">Should Be Equal As Strings  OK  ${resp.reason}</div>\n<div class=\"line\"><br /></div>\n</div>\n<div class=\"line\"><strong>* Keywords *</strong></div>\n<div class=\"line\"><br /></div>\n<div class=\"line\">GET Custom Keyword That Returns OK or ERROR Response</div>\n<div class=\"line\">[Arguments]  $case</div>\n<div class=\"line-block\">\n<div class=\"line-block\">\n<div class=\"line\">[...]</div>\n</div>\n<div class=\"line\">IF $case == notfound</div>\n<div class=\"line-block\">\n<div class=\"line\">$resp=     GET [...] expected_status=Anything</div>\n<div class=\"line\">[Return]   $resp</div>\n</div>\n<div class=\"line\">ELSE</div>\n<div class=\"line-block\">\n<div class=\"line\">[...]</div>\n</div>\n</div>\n</div>\n</div>\n",
       "shortdoc": "Fails if response status code is different than the expected.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/RequestsKeywords.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/RequestsKeywords.py",
       "lineno": 77
     },
     {
@@ -1988,6 +2280,7 @@
       "args": [
         {
           "name": "content",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -1997,6 +2290,7 @@
         },
         {
           "name": "pretty_print",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "False",
@@ -2008,14 +2302,16 @@
       "doc": "<div class=\"document\">\n<p><em>DEPRECATED</em> Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</p>\n<p>Convert a string to a JSON object</p>\n<p><tt class=\"docutils literal\">content</tt> String content to convert into JSON</p>\n<p><tt class=\"docutils literal\">pretty_print</tt> If defined, will output JSON is pretty print format</p>\n</div>\n",
       "shortdoc": "*DEPRECATED* Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/DeprecatedKeywords.py",
-      "lineno": 15
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/DeprecatedKeywords.py",
+      "lineno": 15,
+      "deprecated": true
     },
     {
       "name": "Update Session",
       "args": [
         {
           "name": "alias",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -2025,6 +2321,7 @@
         },
         {
           "name": "headers",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -2034,6 +2331,7 @@
         },
         {
           "name": "cookies",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "None",
@@ -2045,7 +2343,7 @@
       "doc": "<div class=\"document\">\n<p>Updates HTTP Session Headers and Cookies.</p>\n<p>Session will be identified using the <tt class=\"docutils literal\">alias</tt> name.\nDictionary of <tt class=\"docutils literal\">headers</tt> and <tt class=\"docutils literal\">cookies</tt> to be updated and merged into session data.</p>\n</div>\n",
       "shortdoc": "Updates HTTP Session Headers and Cookies.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RequestsLibrary/SessionKeywords.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RequestsLibrary/SessionKeywords.py",
       "lineno": 552
     }
   ],

@@ -1,13 +1,13 @@
 {
-  "specversion": 1,
-  "name": "RPA.SAP",
+  "specversion": 2,
+  "name": "Camunda.SAP",
   "doc": "<p>This library wraps the upstream <a href=\"https://frankvanderkuur.github.io/SapGuiLibrary.html\">SapGuiLibrary</a>.</p>\n<p>Keywords are only available in Windows.</p>",
   "version": "",
-  "generated": "2024-10-30 10:10:08",
+  "generated": "2025-02-03T13:00:04+00:00",
   "type": "LIBRARY",
   "scope": "GLOBAL",
   "docFormat": "HTML",
-  "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/SAP.py",
+  "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/SAP.py",
   "lineno": 27,
   "tags": [],
   "inits": [
@@ -16,6 +16,7 @@
       "args": [
         {
           "name": "args",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -25,6 +26,7 @@
         },
         {
           "name": "kwargs",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -36,7 +38,7 @@
       "doc": "<p>Initialize self.  See help(type(self)) for accurate signature.</p>",
       "shortdoc": "Initialize self.  See help(type(self)) for accurate signature.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/SAP.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/SAP.py",
       "lineno": 36
     }
   ],
@@ -46,6 +48,12 @@
       "args": [
         {
           "name": "element_id",
+          "type": {
+            "name": "str",
+            "typedoc": "string",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "str"
           ],
@@ -59,6 +67,25 @@
         },
         {
           "name": "wait_time",
+          "type": {
+            "name": "Union",
+            "typedoc": null,
+            "nested": [
+              {
+                "name": "float",
+                "typedoc": "float",
+                "nested": [],
+                "union": false
+              },
+              {
+                "name": "None",
+                "typedoc": "None",
+                "nested": [],
+                "union": false
+              }
+            ],
+            "union": true
+          },
           "types": [
             "float",
             "None"
@@ -76,7 +103,7 @@
       "doc": "<p>Set focus into the element and click it.</p>\n<p>Note. The default library wait time can be adjusted using <span class=\"name\">Set Explicit Wait</span> keyword. Library's <span class=\"name\">explicit_wait</span> will be used if <span class=\"name\">wait_time</span> parameter is not set.</p>\n<p>:param element_id: locator for the element :param wait_time: the wait time after the action</p>",
       "shortdoc": "Set focus into the element and click it.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/SAP.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/SAP.py",
       "lineno": 59
     },
     {
@@ -84,6 +111,12 @@
       "args": [
         {
           "name": "element_id",
+          "type": {
+            "name": "str",
+            "typedoc": "string",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "str"
           ],
@@ -97,6 +130,12 @@
         },
         {
           "name": "text",
+          "type": {
+            "name": "str",
+            "typedoc": "string",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "str"
           ],
@@ -110,6 +149,25 @@
         },
         {
           "name": "wait_time",
+          "type": {
+            "name": "Union",
+            "typedoc": null,
+            "nested": [
+              {
+                "name": "float",
+                "typedoc": "float",
+                "nested": [],
+                "union": false
+              },
+              {
+                "name": "None",
+                "typedoc": "None",
+                "nested": [],
+                "union": false
+              }
+            ],
+            "union": true
+          },
           "types": [
             "float",
             "None"
@@ -127,7 +185,7 @@
       "doc": "<p>Set focus into the element and input text into it.</p>\n<p>Note. The default library wait time can be adjusted using <span class=\"name\">Set Explicit Wait</span> keyword. Library's <span class=\"name\">explicit_wait</span> will be used if <span class=\"name\">wait_time</span> parameter is not set.</p>\n<p>:param element_id: locator for the element :param text: text to be inputted :param wait_time: the wait time after the action</p>",
       "shortdoc": "Set focus into the element and input text into it.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/SAP.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/SAP.py",
       "lineno": 75
     },
     {
@@ -135,6 +193,7 @@
       "args": [
         {
           "name": "element_id",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -144,6 +203,7 @@
         },
         {
           "name": "click_type",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": "press",
@@ -155,7 +215,7 @@
       "doc": "<p>Performs a single click on a given element.</p>\n<p>Differs from <span class=\"name\">Click Element</span> keyword so that element type is ignored, instead <span class=\"name\">click_type</span> (either <span class=\"name\">press</span> or <span class=\"name\">select</span>) is performed on the element if possible.</p>\n<p>In case you want to change a value of an element like checkboxes of selecting an option in dropdown lists, use <span class=\"name\">select checkbox</span> or <span class=\"name\">select from list by label</span> instead.</p>\n<p>:param element_id: locator for the element :param click_type: either <code>press</code> (default) or <code>select</code></p>",
       "shortdoc": "Performs a single click on a given element.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/SAP.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/SAP.py",
       "lineno": 150
     },
     {
@@ -163,6 +223,7 @@
       "args": [
         {
           "name": "element_id",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -172,6 +233,7 @@
         },
         {
           "name": "password",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -183,7 +245,7 @@
       "doc": "<p>Inserts the given password into the text field identified by locator.</p>\n<p>This keyword does NOT depend on the type of the element. Will set password to the element's 'text' attribute if possible.</p>\n<p>The password is not recorded in the log.</p>\n<p>:param element_id: locator for the element :param password: password to be inputted</p>",
       "shortdoc": "Inserts the given password into the text field identified by locator.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/SAP.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/SAP.py",
       "lineno": 94
     },
     {
@@ -191,6 +253,7 @@
       "args": [
         {
           "name": "element_id",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -200,6 +263,7 @@
         },
         {
           "name": "text",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -211,7 +275,7 @@
       "doc": "<p>Inserts the given text into the text field identified by locator. Use keyword <span class=\"name\">input password</span> to insert a password in a text field.</p>\n<p>This keyword does NOT depend on the type of the element. Will set text to the element's 'text' attribute if possible.</p>\n<p>:param element_id: locator for the element :param text: text to be inputted</p>",
       "shortdoc": "Inserts the given text into the text field identified by locator. Use keyword `input password` to insert a password in a text field.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/SAP.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/SAP.py",
       "lineno": 107
     },
     {
@@ -219,6 +283,7 @@
       "args": [
         {
           "name": "table_id",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -228,6 +293,7 @@
         },
         {
           "name": "row_num",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -237,6 +303,7 @@
         },
         {
           "name": "col_id",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -248,7 +315,7 @@
       "doc": "<p>Returns the cell value for the specified cell.</p>\n<p>:param table_id: locator for the table element :param row_num: table row number :param col_id: table cell id :return: text in the specified cell</p>",
       "shortdoc": "Returns the cell value for the specified cell.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/SAP.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/SAP.py",
       "lineno": 179
     },
     {
@@ -256,6 +323,7 @@
       "args": [
         {
           "name": "element",
+          "type": null,
           "types": [],
           "typedocs": {},
           "defaultValue": null,
@@ -267,7 +335,7 @@
       "doc": "<p>Returns the Sap element type for the given element.</p>\n<p>:param element: SAP element :return: type of the SAP element</p>",
       "shortdoc": "Returns the Sap element type for the given element.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/SAP.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/SAP.py",
       "lineno": 119
     },
     {
@@ -275,6 +343,25 @@
       "args": [
         {
           "name": "window",
+          "type": {
+            "name": "Union",
+            "typedoc": null,
+            "nested": [
+              {
+                "name": "str",
+                "typedoc": "string",
+                "nested": [],
+                "union": false
+              },
+              {
+                "name": "None",
+                "typedoc": "None",
+                "nested": [],
+                "union": false
+              }
+            ],
+            "union": true
+          },
           "types": [
             "str",
             "None"
@@ -292,7 +379,7 @@
       "doc": "<p>Retrieves the messageType in the statusbar the given window.</p>\n<p>Takes screenshot on error.</p>\n<p>:param window: locator for the statusbar, default 'wnd[0]' :return: messageType of the /sbar element or empty string</p>",
       "shortdoc": "Retrieves the messageType in the statusbar the given window.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/SAP.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/SAP.py",
       "lineno": 43
     },
     {
@@ -300,6 +387,12 @@
       "args": [
         {
           "name": "element_id",
+          "type": {
+            "name": "str",
+            "typedoc": "string",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "str"
           ],
@@ -315,7 +408,7 @@
       "doc": "<p>Calls the PressF1 function on the passed element id. The element can be a textfield or a GridView inside a shell.</p>\n<p>:param element_id: id of the SAP element</p>",
       "shortdoc": "Calls the PressF1 function on the passed element id. The element can be a textfield or a GridView inside a shell.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/SAP.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/SAP.py",
       "lineno": 197
     },
     {
@@ -323,6 +416,12 @@
       "args": [
         {
           "name": "element_id",
+          "type": {
+            "name": "str",
+            "typedoc": "string",
+            "nested": [],
+            "union": false
+          },
           "types": [
             "str"
           ],
@@ -338,7 +437,7 @@
       "doc": "<p>Calls the PressF4 function on the passed element id. The element can be a textfield or a GridView inside a shell.</p>\n<p>:param element_id: id of the SAP element</p>",
       "shortdoc": "Calls the PressF4 function on the passed element id. The element can be a textfield or a GridView inside a shell.",
       "tags": [],
-      "source": "/home/stamm/Develop/RPA/worker/.venv/lib/python3.10/site-packages/RPA/SAP.py",
+      "source": "/home/stamm/Develop/RPA/worker/runtime/.venv/lib/python3.10/site-packages/RPA/SAP.py",
       "lineno": 210
     }
   ],
