@@ -7,5 +7,9 @@ setup(
    author='',
    author_email='noone@example.com',
    packages=['Camunda'], 
-   install_requires=[], 
+   install_requires=[
+      "rpaframework",
+      "rpaframework-pdf",
+      "rpaframework-windows"
+   ], 
 )
