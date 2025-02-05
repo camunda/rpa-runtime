@@ -78,7 +78,10 @@ describe('Output', function() {
     expect(container.querySelector('.crpa-btm-results')).to.exist;
     expect(container.querySelector('.crpa-btm-exec-log')).to.exist;
     expect(container.querySelector('.crpa-btm-vars')).to.exist;
-    expect(container.querySelector('.crpa-btm-results iframe')).to.exist;
+
+    // TODO: adjust once results are proxied
+    // expect(container.querySelector('.crpa-btm-results iframe')).to.exist;
+    expect(container.querySelector('.crpa-btm-results pre')).to.exist;
   });
 
 

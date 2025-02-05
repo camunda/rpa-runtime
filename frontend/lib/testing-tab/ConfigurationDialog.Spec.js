@@ -41,61 +41,21 @@ describe('ConfigurationDialog', function() {
   });
 
 
-  it('should update hostname', async function() {
+  it('should update baseURL', async function() {
 
     // given
     const eventBus = { fire: Sinon.spy() };
     await renderDialog({ editor: { eventBus } });
 
-    const hostInput = container.querySelector('.crpa-host-input input');
+    const baseUrlInput = container.querySelector('.crpa-host-input input');
 
     // when
     await act(() => {
-      fireEvent.input(hostInput, { target: { value: 'new-location' } });
+      fireEvent.input(baseUrlInput, { target: { value: 'http://example.com/' } });
     });
 
     // then
-    expect(eventBus.fire).to.have.been.calledWith('config.changed', Sinon.match({ host: 'new-location' }));
-  });
-
-
-  it('should update port', async function() {
-
-    // given
-    const eventBus = { fire: Sinon.spy() };
-    await renderDialog({ editor: { eventBus } });
-
-    const portInput = container.querySelector('.crpa-port-input input');
-
-    // when
-    await act(() => {
-      fireEvent.change(portInput, { target: { value: '1234' } });
-    });
-
-    // then
-    expect(eventBus.fire).to.have.been.calledWith('config.changed', Sinon.match({ port: 1234 }));
-  });
-
-
-  it('should validate port', async function() {
-
-    // given
-    await renderDialog();
-    const portInput = container.querySelector('.crpa-port-input input');
-
-    // assume
-    let errorMessage = container.querySelector('.cds--form-requirement');
-    expect(errorMessage).not.to.exist;
-
-
-    // when
-    await act(() => {
-      fireEvent.change(portInput, { target: { value: '70000' } });
-    });
-
-    // then
-    errorMessage = container.querySelector('.cds--form-requirement');
-    expect(errorMessage).to.exist;
+    expect(eventBus.fire).to.have.been.calledWith('config.changed', Sinon.match({ baseUrl: 'http://example.com/' }));
   });
 
 

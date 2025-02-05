@@ -18,38 +18,32 @@ import './WorkerStatus.scss';
 const WorkerStatus = ({ editor }) => {
   const {
     workerConfig = {
-      host: 'localhost',
-      port: 36227
+      baseUrl: 'http://localhost:36227',
     },
     eventBus
   } = editor;
 
-  const [ host, setHost ] = useState(workerConfig.host);
-  const [ port, setPort ] = useState(workerConfig.port);
+  const [ baseUrl, setBaseUrl ] = useState(workerConfig.baseUrl);
 
   const status = usePeriodicUpdate(async () => {
     try {
-      await fetch(`http://${host}:${port}/status`);
+      await fetch(`${workerConfig.baseUrl}status`);
       return 'RUNNING';
     } catch (error) {
       return 'ERROR';
     }
-  }, [ host, port ], 'ERROR', 1000);
+  }, [ workerConfig.baseUrl ], 'ERROR', 1000);
 
   useEffect(() => {
     const updateFn = (newConfig) => {
-      if (newConfig.host !== host) {
-        setHost(newConfig.host);
-      }
-
-      if (newConfig.port !== port) {
-        setPort(newConfig.port);
+      if (newConfig.baseUrl !== baseUrl) {
+        setBaseUrl(newConfig.baseUrl);
       }
     };
 
     eventBus.on('config.changed', updateFn);
     return () => eventBus.off('config.changed', updateFn);
-  }, [ eventBus, host, port ]);
+  }, [ eventBus, baseUrl ]);
 
 
   useEffect(() => {

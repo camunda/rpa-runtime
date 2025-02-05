@@ -21,7 +21,7 @@ const exececutionHandler = (editor) => {
     try {
 
       const runResult = await runFile({
-        endpoint: `http://${workerConfig.host}:${workerConfig.port}/`,
+        endpoint: workerConfig.baseUrl,
         script: monaco.getValue(),
         variables
       });
@@ -31,9 +31,8 @@ const exececutionHandler = (editor) => {
       mappedResult = {
         startTime: startTime.toISOString(),
         duration: (endDate - startTime) / 1000 + 's',
-        status: 'PASS',
-        variables: runResult.variables,
-        logUrl: 'file://' + runResult.logPath
+        logUrl: 'file://' + runResult.logPath,
+        ...runResult
       };
 
     } catch (error) {
@@ -77,7 +76,7 @@ async function runFile({ endpoint, script, variables }) {
   }
 
 
-  const response = await fetch(endpoint + 'run', {
+  const response = await fetch(endpoint + 'script/evaluate', {
     method: 'POST',
     body: JSON.stringify(body),
     headers: {

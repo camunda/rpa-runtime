@@ -13,7 +13,6 @@ import {
   Accordion,
   AccordionItem,
   TextInput,
-  NumberInput,
   Link,
   OrderedList,
   ListItem,
@@ -30,22 +29,12 @@ const ConfigurationDialog = ({ editor }) => {
 
   const { workerConfig = {}, eventBus } = editor;
 
-  const [ host, setHost ] = useState(workerConfig.host || 'localhost');
-  const [ port, setPort ] = useState(workerConfig.port || 36227);
-
-  const handlePortChange = (_, { value }) => {
-    setPort(value);
-
-    if (validatePort(value)) {
-      workerConfig.port = value;
-      eventBus.fire('config.changed', workerConfig);
-    };
-  };
+  const [ baseUrl, setBaseUrl ] = useState(workerConfig.baseUrl || 'http://localhost:36227/');
 
   const handleHostChange = (e) => {
-    setHost(e.target.value);
+    setBaseUrl(e.target.value);
 
-    workerConfig.host = e.target.value;
+    workerConfig.baseUrl = e.target.value;
     eventBus.fire('config.changed', workerConfig);
   };
 
@@ -84,23 +73,10 @@ const ConfigurationDialog = ({ editor }) => {
                 <TextInput
                   id="crpa-host-input"
                   className="crpa-host-input"
-                  labelText="Hostname"
-                  value={ host }
+                  labelText="Base URL"
+                  value={ baseUrl }
                   onChange={ handleHostChange }
-                  helperText="Hostname or IP of the machine your RPA worker is running on."
-                />
-
-                <NumberInput
-                  id="crpa-port-input"
-                  className="crpa-port-input"
-                  label="Port"
-                  min={ 1 }
-                  max={ 65535 }
-                  invalid={ !validatePort(port) }
-                  invalidText="Port must be number between 1 and 65535."
-                  value={ port }
-                  onChange={ handlePortChange }
-                  helperText="Port your RPA worker is listening on."
+                  helperText="Hostname and port of the machine your RPA worker is running on."
                 />
               </Stack>
             </AccordionItem>
@@ -126,7 +102,3 @@ const ConfigurationDialog = ({ editor }) => {
 
 
 export default ConfigurationDialog;
-
-// Helpers
-
-const validatePort = (port) => !isNaN(port) && port >= 1 && port <= 65535;
