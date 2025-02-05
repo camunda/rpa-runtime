@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-   name='Camunda',
+   name='Camunda2',
    version='1.0',
    description='',
    author='',
