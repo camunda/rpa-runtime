@@ -15,9 +15,7 @@ import { EventBus } from './utils/EventBus.js';
 
 export function RPAEditor({
   container,
-  workerConfig = {
-    baseUrl: 'http://localhost:36227/'
-  },
+  workerConfig = { },
   propertiesPanel: propertiesPanelConfig,
   value,
   onChanged = () => {}
@@ -64,7 +62,10 @@ export function RPAEditor({
     _state: {},
     propertiesPanel: _propertiesPanel,
     eventBus,
-    workerConfig
+    workerConfig: {
+      ...workerConfig,
+      baseUrl: workerConfig.baseUrl || 'http://localhost:36227/'
+    }
   };
 
   // Lifecycle events
