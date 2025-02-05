@@ -102,9 +102,7 @@ const ResultsSkeleton = () => {
 };
 
 const Results = ({ result }) => {
-  const { result: status, startTime, duration, variables, logUrl, log } = result;
-
-  console.log('result', result);
+  const { result: status = 'FAILED', startTime, duration, variables, log } = result;
 
   return (
     <div className="cds--content crpa-btm-results">
