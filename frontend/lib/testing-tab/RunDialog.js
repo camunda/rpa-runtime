@@ -103,9 +103,9 @@ const RunDialog = ({ editor, onSubmit = () => {}, ...props }) => {
 
   const eventBus = editor.eventBus;
 
-  const handleSubmit = (...args) => {
-    onSubmit(...args);
-    eventBus.fire('script.run', args);
+  const handleSubmit = (options) => {
+    onSubmit(options);
+    eventBus.fire('script.run', options);
   };
 
 
