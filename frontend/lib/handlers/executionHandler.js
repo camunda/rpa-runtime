@@ -37,7 +37,7 @@ const exececutionHandler = (editor) => {
       mappedResult = {
         startTime: startTime.toISOString(),
         duration: (endDate - startTime) / 1000 + 's',
-        logUrl: logLocation && (workerConfig.baseUrl + logLocation),
+        logUrl: logLocation && (workerConfig.baseUrl + logLocation).replace(/([^:]\/)\/+/g, '$1'),
         ...runResult
       };
 
