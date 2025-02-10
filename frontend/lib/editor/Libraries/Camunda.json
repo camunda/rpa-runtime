@@ -1,0 +1,193 @@
+{
+  "specversion": 2,
+  "name": "Camunda",
+  "doc": "<div class=\"document\">\n<p>Documentation for library <tt class=\"docutils literal\">Camunda</tt>.</p>\n</div>\n",
+  "version": "",
+  "generated": "2025-02-10T12:41:52+00:00",
+  "type": "LIBRARY",
+  "scope": "GLOBAL",
+  "docFormat": "HTML",
+  "source": "/home/stamm/Develop/RPA/worker/runtime/Camunda/__init__.py",
+  "lineno": 13,
+  "tags": [],
+  "inits": [],
+  "keywords": [
+    {
+      "name": "Download Documents",
+      "args": [
+        {
+          "name": "fileDescriptor",
+          "type": null,
+          "types": [],
+          "typedocs": {},
+          "defaultValue": null,
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": true,
+          "repr": "fileDescriptor"
+        },
+        {
+          "name": "path",
+          "type": {
+            "name": "Union",
+            "typedoc": null,
+            "nested": [
+              {
+                "name": "str",
+                "typedoc": "string",
+                "nested": [],
+                "union": false
+              },
+              {
+                "name": "None",
+                "typedoc": "None",
+                "nested": [],
+                "union": false
+              }
+            ],
+            "union": true
+          },
+          "types": [
+            "str",
+            "None"
+          ],
+          "typedocs": {
+            "str": "string",
+            "None": "None"
+          },
+          "defaultValue": "",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "path: str | None = "
+        }
+      ],
+      "doc": "<div class=\"document\">\n<p>Retrieve one or multiple documents from the backend.</p>\n<table class=\"docutils field-list\" frame=\"void\" rules=\"none\">\n<col class=\"field-name\" />\n<col class=\"field-body\" />\n<tbody valign=\"top\">\n<tr class=\"field\"><th class=\"field-name\" colspan=\"2\">param fileDescriptor:</th></tr>\n<tr class=\"field\"><td>&nbsp;</td><td class=\"field-body\">The file descriptor of the document to retrieve.</td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\">param path:</th><td class=\"field-body\">The path where the document should be saved to. Defaults to root directory.</td>\n</tr>\n</tbody>\n</table>\n<p>Examples:</p>\n<pre class=\"code robotframework literal-block\">\n<span class=\"c\"># Downloads documents into <span class=\"name\">input</span> directory\n${inputFiles} =</span><span class=\"p\">    </span><span class=\"c\">Download Document</span><span class=\"p\">    </span><span class=\"c\">${fileDescriptor}</span><span class=\"p\">    </span><span class=\"c\">input</span><span class=\"p\">\n\n</span><span class=\"c\"># Downloads a single document into the root directory\n${inputFile} =</span><span class=\"p\">    </span><span class=\"c\">Download Document</span><span class=\"p\">    </span><span class=\"c\">${fileDescriptor}</span>\n</pre>\n</div>\n",
+      "shortdoc": "Retrieve one or multiple documents from the backend.",
+      "tags": [],
+      "source": "/home/stamm/Develop/RPA/worker/runtime/Camunda/Camunda.py",
+      "lineno": 87
+    },
+    {
+      "name": "Set Output Variable",
+      "args": [
+        {
+          "name": "name",
+          "type": null,
+          "types": [],
+          "typedocs": {},
+          "defaultValue": null,
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": true,
+          "repr": "name"
+        },
+        {
+          "name": "value",
+          "type": null,
+          "types": [],
+          "typedocs": {},
+          "defaultValue": null,
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": true,
+          "repr": "value"
+        }
+      ],
+      "doc": "<div class=\"document\">\n<p>Sets the output variable of the Task in the calling process.</p>\n<table class=\"docutils field-list\" frame=\"void\" rules=\"none\">\n<col class=\"field-name\" />\n<col class=\"field-body\" />\n<tbody valign=\"top\">\n<tr class=\"field\"><th class=\"field-name\">param name:</th><td class=\"field-body\">The name of the output variable.</td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\">param value:</th><td class=\"field-body\">The value of the output variable.</td>\n</tr>\n</tbody>\n</table>\n<p>Examples:</p>\n<pre class=\"code robotframework literal-block\">\n<span class=\"c\"># Set the output variable 'result' to the value 'Hello, World!'\nSet Output Variable</span><span class=\"p\">    </span><span class=\"c\">result</span><span class=\"p\">    </span><span class=\"c\">Hello, World!</span><span class=\"p\">\n\n</span><span class=\"c\"># Set output variable 'result' to the value of the variable ${output}\nSet Output Variable</span><span class=\"p\">    </span><span class=\"c\">result</span><span class=\"p\">    </span><span class=\"c\">${output}</span>\n</pre>\n</div>\n",
+      "shortdoc": "Sets the output variable of the Task in the calling process.",
+      "tags": [],
+      "source": "/home/stamm/Develop/RPA/worker/runtime/Camunda/Camunda.py",
+      "lineno": 25
+    },
+    {
+      "name": "Upload Documents",
+      "args": [
+        {
+          "name": "glob",
+          "type": {
+            "name": "str",
+            "typedoc": "string",
+            "nested": [],
+            "union": false
+          },
+          "types": [
+            "str"
+          ],
+          "typedocs": {
+            "str": "string"
+          },
+          "defaultValue": null,
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": true,
+          "repr": "glob: str"
+        },
+        {
+          "name": "variableName",
+          "type": {
+            "name": "Union",
+            "typedoc": null,
+            "nested": [
+              {
+                "name": "str",
+                "typedoc": "string",
+                "nested": [],
+                "union": false
+              },
+              {
+                "name": "None",
+                "typedoc": "None",
+                "nested": [],
+                "union": false
+              }
+            ],
+            "union": true
+          },
+          "types": [
+            "str",
+            "None"
+          ],
+          "typedocs": {
+            "str": "string",
+            "None": "None"
+          },
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "variableName: str | None = None"
+        }
+      ],
+      "doc": "<div class=\"document\">\n<p>Upload a document to Camunda. Optionaly store the file descriptor in a variable.</p>\n<table class=\"docutils field-list\" frame=\"void\" rules=\"none\">\n<col class=\"field-name\" />\n<col class=\"field-body\" />\n<tbody valign=\"top\">\n<tr class=\"field\"><th class=\"field-name\">param glob:</th><td class=\"field-body\">A glob pattern with files to upload.</td>\n</tr>\n<tr class=\"field\"><th class=\"field-name\" colspan=\"2\">param variableName:</th></tr>\n<tr class=\"field\"><td>&nbsp;</td><td class=\"field-body\">The name of the variable to store the file descriptor in.</td>\n</tr>\n</tbody>\n</table>\n<p>Examples:</p>\n<pre class=\"code robotframework literal-block\">\n<span class=\"c\"># Upload a single file\nUpload Document</span><span class=\"p\">    </span><span class=\"c\">path/to/file.txt</span><span class=\"p\">\n</span><span class=\"c\">Set Output Variable</span><span class=\"p\">    </span><span class=\"c\">fileDescriptor</span><span class=\"p\">    </span><span class=\"c\">${fileDescriptor}</span><span class=\"p\">\n\n</span><span class=\"c\"># Directly store the file descriptor in a variable\nUpload Document</span><span class=\"p\">    </span><span class=\"c\">path/to/file.txt</span><span class=\"p\">\n\n</span><span class=\"c\"># Upload all files in a directory\nUpload Document</span><span class=\"p\">    </span><span class=\"c\">path/to/directory/*</span><span class=\"p\">   </span><span class=\"c\">variableName=&quot;invoices&quot;</span><span class=\"p\">\n\n</span><span class=\"c\"># Upload all .pdf files in the workspace\nSet Output Variable</span><span class=\"p\">    </span><span class=\"c\">fileDescriptor</span><span class=\"p\">    </span><span class=\"c\">variableName=&quot;invoices&quot;</span>\n</pre>\n</div>\n",
+      "shortdoc": "Upload a document to Camunda. Optionaly store the file descriptor in a variable.",
+      "tags": [],
+      "source": "/home/stamm/Develop/RPA/worker/runtime/Camunda/Camunda.py",
+      "lineno": 44
+    }
+  ],
+  "dataTypes": {
+    "enums": [],
+    "typedDicts": []
+  },
+  "typedocs": [
+    {
+      "type": "Standard",
+      "name": "None",
+      "doc": "<p>String <code>NONE</code> (case-insensitive) is converted to Python <code>None</code> object. Other values cause an error.</p>",
+      "usages": [
+        "Download Documents",
+        "Upload Documents"
+      ],
+      "accepts": [
+        "string"
+      ]
+    },
+    {
+      "type": "Standard",
+      "name": "string",
+      "doc": "<p>All arguments are converted to Unicode strings.</p>",
+      "usages": [
+        "Download Documents",
+        "Upload Documents"
+      ],
+      "accepts": [
+        "Any"
+      ]
+    }
+  ]
+}

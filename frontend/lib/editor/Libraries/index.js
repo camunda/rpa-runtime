@@ -8,12 +8,24 @@
  * except in compliance with the MIT License.
  */
 
+// BuiltIn
+import BuiltIn from './BuiltIn.json';
+import Collections from './Collections.json';
+import DateTime from './DateTime.json';
+import String from './String.json';
+import XML from './XML.json';
+import OperatingSystem from './OperatingSystem.json';
+
+// Camunda
+import Camunda from './Camunda.json';
+
+// RPA
 import Archive from './Archive.json';
 import Selenium from './Browser.Selenium.json';
 import Calendar from './Calendar.json';
 import Clipboard from './Desktop.Clipboard.json';
 import Desktop from './Desktop.json';
-import OperatingSystem from './Desktop.OperatingSystem.json';
+import DesktopOperatingSystem from './Desktop.OperatingSystem.json';
 import Application from './Excel.Application.json';
 import Files from './Excel.Files.json';
 import FileSystem from './FileSystem.json';
@@ -31,14 +43,20 @@ import Tasks from './Tasks.json';
 import Windows from './Windows.json';
 import Word from './Word.Application.json';
 
-
 export default [
+  Camunda,
+  BuiltIn,
+  Collections,
+  DateTime,
+  String,
+  XML,
+  OperatingSystem,
   Archive,
   Selenium,
   Calendar,
   Clipboard,
   Desktop,
-  OperatingSystem,
+  DesktopOperatingSystem,
   Application,
   Files,
   FileSystem,
